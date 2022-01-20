@@ -1,0 +1,61 @@
+# trigger relase
+
+name: Release
+
+on:
+  push:
+    # run when changes happen on these branches
+    branches:
+      - main
+      - beta
+      - next
+      - "*.x"
+    # ?or run when changes happen inside these directories
+    # paths:
+    #   - "apps/**"
+    #   - "packages/**"
+
+jobs:
+  release:
+    # name: Release
+    runs-on: ubuntu-latest
+    # do not run again if commit contains "ci skip" or "skip ci"
+    if: "!contains(github.event.head_commit.message, 'ci skip') && !contains(github.event.head_commit.message, 'skip ci')"
+    # strategy:
+    #   matrix:
+    #     node: [16]
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          # fetch all git history so that changesets can generate changelogs with the correct commits
+          fetch-depth: 0
+
+      # - name: Prepare repository
+      #   run: git fetch --unshallow --tags
+      # - name: Cache pnpm modules
+      #   uses: actions/cache@v2
+      #   with:
+      #     path: ~/.pnpm-store
+      #     key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+      #     restore-keys: |
+      #       ${{ runner.os }}-
+
+      - uses: pnpm/action-setup@v2.0.1
+        with:
+          version: "^6.28.0"
+          # run_install: true
+
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "16"
+          cache: "pnpm"
+      # - name: Install dependencies
+      #   uses: bahmutov/npm-install@v1
+
+      - name: Create Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          pnpm install
+          pnpm release

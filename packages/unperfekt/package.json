@@ -1,0 +1,78 @@
+{
+  "name": "unperfekt",
+  "version": "1.0.0",
+  "description": "Unperfekt Design System Components",
+  "homepage": "https://github.com/unperfekt/unperfekt#readme",
+  "bugs": {
+    "url": "https://github.com/unperfekt/unperfekt/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/unperfekt/unperfekt.git",
+    "directory": "packages/unperfekt"
+  },
+  "license": "MIT",
+  "author": "Martin Broder <hello@martinbroder.com> (https://martinbroder.com)",
+  "sideEffects": false,
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.mjs",
+      "require": "./dist/cjs/index.js"
+    },
+    "./css/*": "./css/*"
+  },
+  "main": "./dist/cjs/index.js",
+  "unpkg": "./dist/custom-elements.js",
+  "module": "./dist/esm/index.mjs",
+  "types": "./types/index.d.ts",
+  "files": [
+    "dist/esm",
+    "dist/cjs",
+    "src",
+    "types",
+    "css",
+    "CHANGELOG.md",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "build:types": "node scripts/types.cjs",
+    "check": "svelte-check --tsconfig ./tsconfig.json",
+    "dev": "rollup -c -w",
+    "lint:fix": "eslint --fix"
+  },
+  "dependencies": {
+    "@sveltejs/adapter-node": "^1.0.0-next.66",
+    "@sveltejs/adapter-static": "^1.0.0-next.26",
+    "@sveltejs/kit": "^1.0.0-next.244",
+    "cookie": "^0.4.1",
+    "svelte": "^3.46.2"
+  },
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^13.1.3",
+    "@rollup/plugin-typescript": "^8.3.0",
+    "@tsconfig/svelte": "^3.0.0",
+    "autoprefixer": "^10.4.2",
+    "esbuild": "^0.14.12",
+    "eslint-config-unperfekt": "*",
+    "html-minifier": "^4.0.0",
+    "postcss": "^8.4.5",
+    "postcss-import": "^14.0.2",
+    "rollup": "^2.65.0",
+    "rollup-plugin-esbuild": "^4.8.2",
+    "rollup-plugin-svelte": "^7.1.0",
+    "sveld": "^0.12.1",
+    "svelte-check": "^2.3.0",
+    "svelte-preprocess": "^4.10.2",
+    "svelte2tsx": "^0.4.14",
+    "tailwindcss": "^3.0.15",
+    "tslib": "^2.3.1",
+    "typescript": "^4.5.5"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "svelte": "./src/index.ts"
+}

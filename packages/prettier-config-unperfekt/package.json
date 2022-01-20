@@ -1,0 +1,50 @@
+{
+  "name": "prettier-config-unperfekt",
+  "version": "1.0.0",
+  "description": "prettier config for unperfekt",
+  "keywords": [
+    "prettier"
+  ],
+  "homepage": "https://github.com/unperfekt/unperfekt#readme",
+  "bugs": {
+    "url": "https://github.com/unperfekt/unperfekt/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/unperfekt/unperfekt.git",
+    "directory": "packages/prettier-config-unperfekt"
+  },
+  "license": "ISC",
+  "author": "Martin Broder <hello@martinbroder.com> (https://martinbroder.com)",
+  "type": "commonjs",
+  "main": "src/index.js",
+  "files": [
+    "src"
+  ],
+  "dependencies": {
+    "prettier": "^2.5.1",
+    "prettier-plugin-svelte": "^2.6.0",
+    "svelte": "^3.46.2",
+    "typescript": "^4.5.5"
+  },
+  "peerDependencies": {
+    "prettier": "^2.5.1",
+    "svelte": "^3.46.2",
+    "typescript": "^4.5.5"
+  },
+  "peerDependenciesMeta": {
+    "prettier": {
+      "optional": true
+    },
+    "svelte": {
+      "optional": true
+    },
+    "typescript": {
+      "optional": true
+    }
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  }
+}

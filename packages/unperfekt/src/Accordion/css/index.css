@@ -1,0 +1,51 @@
+/* Scale-specific styles for the component: dimensions, layout, etc */
+
+@layer components {
+  .Accordion {
+    @apply flex flex-col items-start w-full gap-y-4;
+  }
+
+  .Accordion-item {
+    @apply w-full border rounded;
+  }
+
+  /* h3 */
+  .Accordion-itemHeading {
+    @apply m-0;
+  }
+
+  /* button */
+  .Accordion-itemHeader {
+    @apply flex justify-between w-full p-4 rounded;
+    @apply font-sans text-2xl antialiased;
+  }
+
+  .Accordion-itemHeader:focus {
+    @apply outline-none;
+  }
+
+  /* TODO: Ugly, but better than not having focus style.
+   * We probably need something like :focus-visible-within on the parent (.Accordion-item)
+   * to make it look good, but this is currently still a dream
+   * https://github.com/WICG/focus-visible/issues/151
+   */
+  .Accordion-itemHeader:focus-visible {
+    @apply ring-2 ring-offset-2 ring-offset-gray-500;
+  }
+
+  .Accordion-icon {
+    @apply transition-transform transform -rotate-90;
+  }
+
+  .Accordion-panel {
+    @apply hidden px-4 pb-4;
+  }
+
+  .Accordion-item.is-open .Accordion-panel {
+    @apply block;
+  }
+
+  .Accordion-item.is-open .Accordion-icon {
+    @apply rotate-0;
+  }
+}

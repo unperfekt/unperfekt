@@ -1,0 +1,8 @@
+{
+  "ident": "postcss",
+  "plugins": {
+    "postcss-import": {},
+    "tailwindcss": {},
+    "autoprefixer": {}
+  }
+}
