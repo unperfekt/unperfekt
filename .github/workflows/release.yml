@@ -26,16 +26,17 @@ jobs:
     #     node: [16]
     steps:
       - uses: actions/checkout@v2
-        with:
+        run: git fetch --unshallow --tags
+        # with:
           # fetch all git history so that changesets can generate changelogs with the correct commits
-          fetch-depth: 0
+          # fetch-depth: 0
       # - uses: pnpm/action-setup@v2.0.1
       #   with:
       #     version: "6.27.1"
       # - name: Use Node.js ${{ matrix.node }}
       - uses: actions/setup-node@v2
         with:
-          node-version: '16'
+          node-version: "16"
           cache: "npm"
       - name: Create Release
         env:
