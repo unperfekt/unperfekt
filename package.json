@@ -24,7 +24,7 @@
     "msr": "node -r dotenv/config multi-semantic-release --dry-run --no-ci",
     "prepare": "husky install",
     "preview": "turbo run preview --paraallel",
-    "release": "auto release -vv",
+    "release": "auto release",
     "semantic-release": "semantic-release",
     "test": "turbo run test"
   },
