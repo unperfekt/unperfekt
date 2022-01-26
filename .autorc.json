@@ -1,4 +1,4 @@
 {
   "onlyPublishWithReleaseLabel": false,
-  "plugins": ["npm", "conventional-commits"]
+  "plugins": ["conventional-commits"]
 }
