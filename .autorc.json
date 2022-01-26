@@ -1,4 +1,5 @@
 {
+  "noVersionPrefix": true,
   "author": "Joe Schmo <joe@schmo.com>",
   "onlyPublishWithReleaseLabel": false,
   "plugins": ["conventional-commits"]
