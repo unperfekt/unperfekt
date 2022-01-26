@@ -26,6 +26,7 @@ jobs:
     #     node: [16]
     steps:
       - uses: actions/checkout@v2
+      - name: Prepare repository
         run: git fetch --unshallow --tags
         # with:
           # fetch all git history so that changesets can generate changelogs with the correct commits
