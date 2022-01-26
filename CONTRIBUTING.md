@@ -38,7 +38,7 @@ Martin got the task to add a new feature to the `packages/unperfekt` package. Th
 * Martin goes ahead and creates a new branch from the `main` branch via `git checkout -b feat/mb/PROJ-213-add-utils`
 * create a conventional commit, e.g. `✨ feat: add name component`
 * push to the right branch (`main`, `beta`, `next`, `N.x.x` or `N.x`)
-* release workflow will be triggered, which means building, testing and publishing
+* release workflow will be triggered, which means building, testing and publishing via `auto shipit`
 
 <br/>
 
