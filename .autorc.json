@@ -1,4 +1,8 @@
 {
+  "author": {
+    "name": "Joe Schmo",
+    "email": "joe@schmo.com"
+  },
   "onlyPublishWithReleaseLabel": false,
   "plugins": ["conventional-commits"]
 }
