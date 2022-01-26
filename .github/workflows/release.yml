@@ -38,12 +38,14 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: "16"
-          cache: "npm"
+          # cache: "npm"
+      - name: Install dependencies
+        uses: bahmutov/npm-install@v1
+
       - name: Create Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
-          npm ci
-          npm run bootstrap
-          npx auto shipit
+          npm whoami
+          npm run release
