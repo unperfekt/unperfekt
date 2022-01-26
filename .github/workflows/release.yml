@@ -45,4 +45,5 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
           npm ci
+          npm run bootstrap
           npx auto shipit
