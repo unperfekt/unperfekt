@@ -10,10 +10,10 @@ on:
       - beta
       - next
       - "*.x"
-    # or run when changes happen inside these directories
-    paths:
-      - "apps/**"
-      - "packages/**"
+    # ?or run when changes happen inside these directories
+    # paths:
+    #   - "apps/**"
+    #   - "packages/**"
 
 jobs:
   release:
