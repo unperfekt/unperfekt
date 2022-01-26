@@ -24,7 +24,6 @@
     selectedKeys,
   })
 
-
   setContext<AccordionContext>(contextKey, selectionStore)
 
   // eslint workaround
