@@ -2,19 +2,24 @@
 
 name: Release
 
-on: [push]
-# on:
-#   push:
-#     branches:
-#       - main
-#       - beta
-#       - next
-#       - "*.x"
+on:
+  push:
+    # run when changes happen on these branches
+    branches:
+      - main
+      - beta
+      - next
+      - "*.x"
+    # or run when changes happen inside these directories
+    paths:
+      - "apps/**"
+      - "packages/**"
 
 jobs:
   release:
     # name: Release
     runs-on: ubuntu-latest
+    # do not run again if commit contains "ci skip" or "skip ci"
     if: "!contains(github.event.head_commit.message, 'ci skip') && !contains(github.event.head_commit.message, 'skip ci')"
     strategy:
       matrix:
@@ -26,15 +31,16 @@ jobs:
           fetch-depth: 0
       - uses: pnpm/action-setup@v2.0.1
         with:
-          version: "^6.27.1"
-          run_install: true
+          version: "6.27.1"
       - name: Use Node.js ${{ matrix.node }}
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node }}
           cache: "pnpm"
-      - name: Semantic Release
+      - name: Create Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npx auto shipit
+        run: |
+          pnpm install
+          pnpm dlx auto shipit
