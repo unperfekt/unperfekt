@@ -24,6 +24,8 @@
     selectedKeys,
   })
 
+  console.log("test")
+
   setContext<AccordionContext>(contextKey, selectionStore)
 
   // eslint workaround
