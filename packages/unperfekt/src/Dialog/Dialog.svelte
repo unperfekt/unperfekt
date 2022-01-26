@@ -1,6 +1,6 @@
 <script lang="ts">
   import { createEventDispatcher, onDestroy } from "svelte"
-  
+
   import Overlay from "./Overlay.svelte"
 
   /** Wheter the dialog is open or not */
@@ -35,6 +35,8 @@
       e.preventDefault()
     }
   }
+
+  console.log("test")
 
   const previouslyFocused =
     typeof document !== "undefined" && (document.activeElement as HTMLElement)
