@@ -55,7 +55,7 @@
     "@tsconfig/svelte": "^3.0.0",
     "autoprefixer": "^10.4.2",
     "esbuild": "^0.14.12",
-    "eslint-config-unperfekt": "workspace:*",
+    "eslint-config-unperfekt": "*",
     "html-minifier": "^4.0.0",
     "postcss": "^8.4.5",
     "postcss-import": "^14.0.2",
