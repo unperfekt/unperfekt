@@ -2,13 +2,14 @@
 
 name: Release
 
-on:
-  push:
-    branches:
-      - main
-      - beta
-      - next
-      - "*.x"
+on: [push]
+# on:
+#   push:
+#     branches:
+#       - main
+#       - beta
+#       - next
+#       - "*.x"
 
 jobs:
   release:
