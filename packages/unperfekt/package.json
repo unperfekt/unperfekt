@@ -12,11 +12,7 @@
     "directory": "packages/unperfekt"
   },
   "license": "MIT",
-  "author": {
-    "name": "Martin Broder",
-    "email": "hello@martinbroder.com",
-    "url": "https://martinbroder.com"
-  },
+  "author": "Martin Broder <hello@martinbroder.com> (https://martinbroder.com)",
   "sideEffects": false,
   "type": "module",
   "exports": {

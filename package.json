@@ -9,11 +9,7 @@
     "type": "git",
     "url": "https://github.com/unperfekt/unperfekt.git"
   },
-  "author": {
-    "name": "Martin Broder",
-    "email": "hello@martinbroder.com",
-    "url": "https://martinbroder.com"
-  },
+  "author": "Martin Broder <hello@martinbroder.com> (https://martinbroder.com)",
   "type": "module",
   "workspaces": [
     "apps/*",

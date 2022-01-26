@@ -15,11 +15,7 @@
     "directory": "packages/commitlint-config-unperfekt"
   },
   "license": "ISC",
-  "author": {
-    "name": "Martin Broder",
-    "email": "hello@martinbroder.com",
-    "url": "https://martinbroder.com"
-  },
+  "author": "Martin Broder <hello@martinbroder.com> (https://martinbroder.com)",
   "type": "commonjs",
   "main": "src/index.js",
   "files": [
