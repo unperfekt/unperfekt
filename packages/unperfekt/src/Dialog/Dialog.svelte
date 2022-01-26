@@ -36,8 +36,6 @@
     }
   }
 
-  console.log("test")
-
   const previouslyFocused =
     typeof document !== "undefined" && (document.activeElement as HTMLElement)
 
