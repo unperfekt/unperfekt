@@ -42,9 +42,8 @@ jobs:
 
       - uses: pnpm/action-setup@v2.0.1
         with:
-          version: "6"
-          # run_install: |
-          #   - args: [--frozen-lockfile, --strict-peer-dependencies]
+          version: "^6.28.0"
+          # run_install: true
 
       - uses: actions/setup-node@v2
         with:
@@ -57,4 +56,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: pnpm release
+        run: |
+          pnpm install
+          pnpm release
