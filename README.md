@@ -2,13 +2,11 @@
 
 unperfekt design systen
 
-[![Gitmoji][gitmoji]][gitmoji-url]
-![Github Workflow Status][github-workflow-status]
+[![Gitmoji][gitmoji]][gitmoji-url] ![Github Workflow Status][github-workflow-status]
 
 [gitmoji]: https://img.shields.io/badge/gitmoji-%20😜%20😍-FFDD67.svg
 [gitmoji-url]: https://gitmoji.carloscuesta.me/
 [github-workflow-status]: https://img.shields.io/github/workflow/status/unperfekt/unperfekt/Release?style=flat-square
-
 
 > unperfekt design system
 

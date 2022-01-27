@@ -19,7 +19,7 @@
     "bootstrap": "lerna bootstrap --hoist",
     "build": "turbo run build",
     "check": "turbo run check",
-    "dev": "turbo run dev --parallel --no-cache",
+    "dev": "turbo run dev --parallel",
     "lint": "turbo run lint",
     "prepare": "husky install",
     "preview": "turbo run preview --parallel",
@@ -28,11 +28,14 @@
   },
   "devDependencies": {
     "auto": "^10.32.6",
+    "commitlint": "^16.1.0",
     "commitlint-config-unperfekt": "*",
+    "eslint": "^8.7.0",
     "husky": "^7.0.4",
     "lerna": "^4.0.0",
+    "prettier": "^2.5.1",
     "prettier-config-unperfekt": "*",
-    "turbo": "latest"
+    "turbo": "^1.0.29"
   },
   "engines": {
     "node": ">=16.13.0"
@@ -40,5 +43,24 @@
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
+  },
+  "turbo": {
+    "pipeline": {
+      "build": {
+        "dependsOn": [
+          "^build"
+        ],
+        "outputs": [
+          "dist/**",
+          ".svelte-kit/**"
+        ]
+      },
+      "lint": {
+        "outputs": []
+      },
+      "dev": {
+        "cache": false
+      }
+    }
   }
 }

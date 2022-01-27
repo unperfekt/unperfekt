@@ -1,1 +1,1 @@
-module.exports = require("prettier-config-unperfekt");
+module.exports = require("prettier-config-unperfekt")
