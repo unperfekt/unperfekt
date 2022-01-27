@@ -1,6 +1,6 @@
 {
   "name": "unperfekt",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Unperfekt Design System Components",
   "homepage": "https://github.com/unperfekt/unperfekt#readme",
   "bugs": {
@@ -55,7 +55,7 @@
     "@tsconfig/svelte": "^3.0.0",
     "autoprefixer": "^10.4.2",
     "esbuild": "^0.14.12",
-    "eslint-config-unperfekt": "*",
+    "eslint-config-unperfekt": "^1.0.1",
     "html-minifier": "^4.0.0",
     "postcss": "^8.4.5",
     "postcss-import": "^14.0.2",
