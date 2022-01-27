@@ -36,8 +36,5 @@
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
-  },
-  "devDependencies": {
-    "@types/node": "^17.0.12"
   }
 }

@@ -1,6 +1,7 @@
 {
   "name": "semantic-release-config-unperfekt",
   "version": "1.0.0",
+  "private": true,
   "description": "semantic release config for unperfekt",
   "keywords": [
     "semantic-release"
