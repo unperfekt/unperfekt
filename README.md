@@ -1,4 +1,7 @@
-# unperfekt
+<p align="center">
+  <img alt="unperfekt light" src="./unperfekt-light.svg#gh-dark-mode-only" width="400"/>
+  <img alt="unperfekt dark" src="./unperfekt-dark.svg#gh-light-mode-only" width="400"/>
+</p>
 
 unperfekt design systen
 
