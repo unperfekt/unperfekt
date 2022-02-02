@@ -32,6 +32,7 @@ importers:
       '@tsconfig/svelte': ^3.0.0
       '@types/html-minifier': ^4.0.2
       autoprefixer: ^10.4.2
+      eslint-config-unperfekt: '*'
       html-minifier: ^4.0.0
       postcss: ^8.4.5
       postcss-import: ^14.0.2
@@ -53,6 +54,7 @@ importers:
       '@tsconfig/svelte': 3.0.0
       '@types/html-minifier': 4.0.2
       autoprefixer: 10.4.2_postcss@8.4.5
+      eslint-config-unperfekt: link:../../packages/eslint-config-unperfekt
       postcss: 8.4.5
       postcss-import: 14.0.2_postcss@8.4.5
       svelte-check: 2.3.0_postcss@8.4.5+svelte@3.46.3
