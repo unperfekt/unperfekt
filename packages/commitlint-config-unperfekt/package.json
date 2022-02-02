@@ -17,9 +17,11 @@
   "license": "ISC",
   "author": "Martin Broder <hello@martinbroder.com> (https://martinbroder.com)",
   "type": "commonjs",
-  "main": "src/index.js",
+  "main": "lib/index.js",
   "files": [
-    "src"
+    "lib",
+    "CHANGELOG.md",
+    "README.md"
   ],
   "dependencies": {
     "@commitlint/config-conventional": "^16.0.0",
@@ -36,5 +38,6 @@
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
-  }
+  },
+  "packageManager": "pnpm@6.29.1"
 }

@@ -14,12 +14,19 @@ const external = Object.keys(dependencies).concat([
   "svelte/store",
 ])
 
-const convertToKebabCase = (string) => string.replace(/\s+/g, "-").toLowerCase()
+const convertToKebabCase = (string) =>
+  string
+    .replace(/([a-z])([A-Z])/g, "$1-$2") // get all lowercase letters that are near to uppercase ones
+    .replace(/[\s_]+/g, "-") // replace all spaces and low dash
+    .toLowerCase() // convert to lower case
 
 const prependTagOption = (exceptions = []) => ({
   markup({ content, filename }) {
-    const basename = convertToKebabCase(path.basename(filename, ".svelte"))
-    const tagName = exceptions.includes(basename) ? "{null}" : `un-${basename}`
+    const basename = path.basename(filename, ".svelte")
+    const kebabName = convertToKebabCase(basename)
+    const tagName = exceptions.includes(kebabName)
+      ? "{null}"
+      : `un-${kebabName}`
     const optionsTag = `<svelte:options tag="${tagName}" />`
 
     return { code: optionsTag + "\n\n" + content }
@@ -40,7 +47,7 @@ export default [
     input: "src/index.ts",
     output: {
       file: "./dist/unpkg/custom-elements.js",
-      format: "iife",
+      format: "umd",
       name,
     },
     external,

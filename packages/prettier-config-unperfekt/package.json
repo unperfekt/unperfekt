@@ -19,7 +19,9 @@
   "type": "commonjs",
   "main": "lib/index.js",
   "files": [
-    "lib"
+    "lib",
+    "CHANGELOG.md",
+    "README.md"
   ],
   "dependencies": {
     "prettier": "^2.5.1",
@@ -46,5 +48,6 @@
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
-  }
+  },
+  "packageManager": "pnpm@6.29.1"
 }

@@ -6,6 +6,8 @@
     - configuration for unperfekt projects
   - `eslint-config-unperfekt`
     - linting configuration for unperfekt projects
+  - `prettier-config-unperfekt`
+    - prettier configuration for unperfekt projects
   - `unperfekt`
     - unperfekt design system components written in svelte, which need to be build before they can be published.
 
