@@ -17,9 +17,9 @@
   "license": "ISC",
   "author": "Martin Broder <hello@martinbroder.com> (https://martinbroder.com)",
   "type": "commonjs",
-  "main": "src/index.js",
+  "main": "lib/index.js",
   "files": [
-    "src"
+    "lib"
   ],
   "dependencies": {
     "prettier": "^2.5.1",
