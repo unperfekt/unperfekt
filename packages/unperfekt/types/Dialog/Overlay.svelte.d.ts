@@ -1,7 +1,7 @@
 import { SvelteComponentTyped } from "svelte";
 declare const __propDef: {
     props: {
-        isOpen?: boolean | undefined;
+        /** Wheter the portal is open or not. */ isOpen?: boolean | undefined;
     };
     events: {
         [evt: string]: CustomEvent<any>;

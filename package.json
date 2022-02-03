@@ -29,12 +29,12 @@
   "devDependencies": {
     "auto": "^10.32.6",
     "commitlint": "^16.1.0",
-    "commitlint-config-unperfekt": "*",
+    "commitlint-config-unperfekt": "workspace:*",
     "eslint": "^8.8.0",
     "husky": "^7.0.4",
     "lerna": "^4.0.0",
     "prettier": "^2.5.1",
-    "prettier-config-unperfekt": "*",
+    "prettier-config-unperfekt": "workspace:*",
     "turbo": "^1.1.2"
   },
   "engines": {

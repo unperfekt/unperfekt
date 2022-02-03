@@ -14,7 +14,6 @@
   }
 
   const close = () => {
-    console.log("close")
     isOpen = false
   }
 </script>
@@ -27,15 +26,17 @@
 <Accordion {items} />
 
 <Button on:click={open} variant="danger">Button</Button>
-<button > {isOpen} show modal </button>
+<Button on:click={open} type="button" variant="primary">Primary</Button>
+
+<button>{isOpen} show modal</button>
 
 <Dialog {isOpen} on:close={close}>
   <h2 slot="header">
     modal
-    <small><em>adjective</em> mod·al \ˈmō-dəl\</small>
+    <small><em>adjective</em> mod&middot;al \&#x2C8;m&omacr;-d&#x259;l\</small>
   </h2>
 
-  <ol class="list-disc">
+  <ol class="pl-4 ml-4 list-disc">
     <li>of or relating to modality in logic</li>
     <li>
       containing provisions as to the mode of procedure or the manner of taking
@@ -53,4 +54,9 @@
   <a href="https://www.merriam-webster.com/dictionary/modal">
     merriam-webster.com
   </a>
+
+  <div class="grid grid-cols-2 gap-x-4" slot="buttongroup">
+    <Button variant="outline" on:click={close}>Close</Button>
+    <Button on:click={close}>OK</Button>
+  </div>
 </Dialog>

@@ -65,8 +65,8 @@ export default [
       }),
       // sveld({
       //   glob: true,
-      //   markdown: true,
-      //   json: true
+      //   markdown: false,
+      //   json: false
       // }),
       // minify(),
     ],

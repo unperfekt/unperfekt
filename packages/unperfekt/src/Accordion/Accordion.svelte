@@ -24,17 +24,10 @@
     selectedKeys,
   })
 
-  // does this shit work now?
-
   setContext<AccordionContext>(contextKey, selectionStore)
-
-  // eslint workaround
-  // https://github.com/sveltejs/eslint-plugin-svelte3#installation-with-typescript
-  let className: string
-  $: className = `Accordion`
 </script>
 
-<div on:click class={className}>
+<div on:click class="Accordion">
   {#if items.length > 0}
     {#each items as item (item.id)}
       <AccordionItem key={item.id} title={item.title}>

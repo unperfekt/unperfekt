@@ -1,0 +1,46 @@
+/* Theme-specific styles for the component: colors, box-shadows etc */
+
+@layer components {
+  .Button {
+    @apply transition-colors outline-none;
+  }
+
+  /* Primary */
+  .Button--primary {
+    @apply bg-slate-400;
+    @apply focus-visible:ring-slate-400;
+  }
+
+  /* Dark */
+  .Button--dark {
+    @apply bg-slate-900;
+    @apply focus-visible:ring-slate-900;
+  }
+
+  /* Outline */
+  .Button--outline {
+    @apply border-slate-400;
+    @apply focus-visible:ring-slate-400;
+  }
+
+  /* Danger */
+  .Button--danger {
+    @apply bg-red-400;
+    @apply hover:bg-red-400;
+    @apply focus-visible:ring-red-400;
+  }
+
+  .Button--danger .Button-label {
+    @apply text-white;
+  }
+
+  .Button--danger:disabled,
+  .Button--danger.is-disabled {
+    @apply bg-gray-100;
+  }
+
+  .Button--danger:disabled .Button-label,
+  .Button--danger.is-disabled .Button-label {
+    @apply text-gray-700;
+  }
+}

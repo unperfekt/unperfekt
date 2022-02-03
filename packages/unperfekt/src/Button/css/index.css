@@ -1,11 +1,12 @@
+/* Scale-specific styles for the component: dimensions, layout, etc */
+
+@import "./skin.css";
+
 @layer components {
   .Button {
     @apply relative inline-flex items-center justify-center visible m-0 align-top rounded;
+    @apply focus-visible:ring-2 focus-visible:ring-offset-2;
     appearance: button;
-  }
-
-  .Button:focus-visible {
-    @apply ring-2 ring-offset-2;
   }
 
   .Button:disabled,
@@ -13,6 +14,19 @@
     @apply cursor-not-allowed;
   }
 
+  .Button-icon {
+    @apply inline-flex order-none max-h-full;
+  }
+
+  .Button-icon + .Button-label {
+    @apply ml-4;
+  }
+
+  .Button-label {
+    @apply font-semibold text-center normal-case;
+  }
+
+  /* Size */
   .Button--small {
     @apply px-8 py-2;
   }
@@ -29,58 +43,8 @@
     @apply block w-full px-8 py-4;
   }
 
+  /* Variants */
   .Button--outline {
     @apply border border-solid;
-  }
-
-  .Button-icon {
-    @apply inline-flex order-none max-h-full;
-  }
-
-  .Button-icon + .Button-label {
-    @apply ml-4;
-  }
-
-  .Button-label {
-    @apply font-semibold text-center normal-case;
-  }
-
-  .Button {
-    @apply transition-colors;
-  }
-
-  .Button:focus {
-    @apply outline-none;
-  }
-
-  .Button:focus-visible {
-    @apply ring-transparent;
-  }
-
-  /* Danger */
-  .Button--danger {
-    @apply bg-red-400;
-  }
-
-  .Button--danger .Button-label {
-    @apply text-white;
-  }
-
-  .Button--danger:hover {
-    @apply bg-red-400;
-  }
-
-  .Button--danger:disabled,
-  .Button--danger.is-disabled {
-    @apply bg-gray-100;
-  }
-
-  .Button--danger:disabled .Button-label,
-  .Button--danger.is-disabled .Button-label {
-    @apply text-gray-700;
-  }
-
-  .Button--danger:focus-visible {
-    @apply ring-red-400;
   }
 }

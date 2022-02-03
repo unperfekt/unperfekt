@@ -1,9 +1,7 @@
 import { SvelteComponentTyped } from "svelte";
 declare const __propDef: {
     props: {
-        /**
-           * Wheter the Dialog is open or not.
-           */ isOpen?: boolean | undefined;
+        /** Wheter the modal is open or not. */ isOpen?: boolean | undefined;
     };
     events: {
         close: CustomEvent<any>;

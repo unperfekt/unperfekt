@@ -1,18 +1,20 @@
 <script lang="ts">
+  import { fade, fly } from "svelte/transition"
+  import { expoInOut } from "svelte/easing"
   import { createEventDispatcher, onDestroy } from "svelte"
 
-  /** Wheter the dialog is open or not. */
+  /** Wheter the modal is open or not. */
   export let isOpen = false
 
-  /** The dialog element */
-  let dialog: HTMLElement
+  /** The modal element */
+  let modal: HTMLElement
 
   const dispatch = createEventDispatcher()
 
   const close = () => dispatch("close")
 
   const handleKeyDown = (e: KeyboardEvent) => {
-    if (!dialog) return
+    if (!modal) return
 
     if (e.key === "Escape") {
       return close()
@@ -20,7 +22,7 @@
 
     if (e.key === "Tab") {
       // trap focus
-      const nodes: NodeListOf<HTMLElement> = dialog.querySelectorAll("*")
+      const nodes: NodeListOf<HTMLElement> = modal.querySelectorAll("*")
       const tabbable = Array.from(nodes).filter((n) => n.tabIndex >= 0)
 
       let index = tabbable.indexOf(document.activeElement as HTMLElement)
@@ -46,8 +48,18 @@
 
 <svelte:window on:keydown={handleKeyDown} />
 
+<div
+  class="Backdrop"
+  transition:fade={{ easing: expoInOut }}
+  on:click={close}
+/>
 <div class="Modal-wrapper" class:is-open={isOpen}>
-  <div class="Modal">
+  <div
+    class="Modal"
+    bind:this={modal}
+    in:fly={{ y: 40, opacity: 0.001, easing: expoInOut }}
+    out:fly={{ y: 40, opacity: 0.001, easing: expoInOut }}
+  >
     <slot />
   </div>
 </div>

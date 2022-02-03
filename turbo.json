@@ -1,12 +1,23 @@
 {
   "pipeline": {
     "build": {
+      // "A package's `build` command depends on its dependencies'
+      // or devDependencies' `build` commands first being completed"
       "dependsOn": ["^build"],
-      "outputs": ["dist/**", ".svelte-kit/**", "lib/**"]
+      "outputs": ["dist/**", "lib/**"]
     },
-    "lint": {
-      "outputs": []
+    "deploy": {
+      // "A package's `deploy` command, depends on its own `build`
+      // and `test` commands first being completed"
+      "dependsOn": ["build", "test"]
     },
+    "test": {
+      // "A package's `test` command depends on its own `lint` and
+      // `build` commands first being completed"
+      "dependsOn": ["lint", "build"]
+    },
+    // "A package's `lint` command has no dependencies"
+    "lint": {},
     "dev": {
       "cache": false
     }
