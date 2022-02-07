@@ -44,5 +44,9 @@
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
+  "lint-staged": {
+    "*.{js,ts,svelte}": "eslint --cache --fix",
+    "*.{js,ts,svelte,md,json}": "prettier --write"
+  },
   "packageManager": "pnpm@6.29.1"
 }
