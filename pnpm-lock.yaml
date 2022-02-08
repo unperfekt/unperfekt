@@ -101,7 +101,7 @@ importers:
       '@storybook/addon-essentials': 6.4.18_5f8a08bfc7bd719397831e03f88cd776
       '@storybook/addon-links': 6.4.18
       '@storybook/addon-postcss': 2.0.0
-      '@storybook/addon-svelte-csf': 1.1.0_svelte@3.46.4
+      '@storybook/addon-svelte-csf': 1.1.0_6826c535e4ac58734dfff6113dead387
       '@storybook/svelte': 6.4.18_7c2622150fdc959f423075f609523d1d
       '@tsconfig/svelte': 3.0.0
       autoprefixer: 10.4.2_postcss@8.4.6
@@ -3460,10 +3460,12 @@ packages:
       - webpack-command
     dev: true
 
-  /@storybook/addon-svelte-csf/1.1.0_svelte@3.46.4:
+  /@storybook/addon-svelte-csf/1.1.0_6826c535e4ac58734dfff6113dead387:
     resolution: {integrity: sha512-AjP9kxVbbAyucB8vy889WERafjNM020vWel+psCuDJ2vLU+uObqbCLSGKRIznXjeL0BYR73l9ZF+niJfw6QSlg==}
     peerDependencies:
-      svelte: '*'
+      '@storybook/svelte': ^6.2.9
+      svelte: ^3.35.0
+      svelte-loader: ^3.0.0
     peerDependenciesMeta:
       react:
         optional: true
@@ -3472,10 +3474,21 @@ packages:
       svelte:
         optional: true
     dependencies:
+      '@storybook/addons': 6.4.18
+      '@storybook/api': 6.4.18_react-dom@16.14.0+react@16.14.0
+      '@storybook/client-api': 6.4.18
+      '@storybook/client-logger': 6.4.18
+      '@storybook/components': 6.4.18
+      '@storybook/core-events': 6.4.18
+      '@storybook/svelte': 6.4.18_7c2622150fdc959f423075f609523d1d
+      '@storybook/theming': 6.4.18
       react: 16.14.0
       react-dom: 16.14.0_react@16.14.0
       svelte: 3.46.4
+      svelte-loader: 3.1.2_svelte@3.46.4
       ts-dedent: 2.2.0
+    transitivePeerDependencies:
+      - '@types/react'
     dev: true
 
   /@storybook/addon-toolbars/6.4.18:

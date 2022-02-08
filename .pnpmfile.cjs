@@ -12,10 +12,17 @@ function readPackage(pkg) {
     pkg.peerDependencies["typescript"] = "^4.5.5"
   }
   if (pkg.name === "@storybook/addon-svelte-csf") {
-    pkg.peerDependencies = {}
+    pkg.dependencies = {
+      "@storybook/addons": "^6",
+      "@storybook/api": "^6",
+      "@storybook/client-api": "^6",
+      "@storybook/client-logger": "^6",
+      "@storybook/components": "^6",
+      "@storybook/core-events": "^6",
+      "@storybook/theming": "^6",
+    }
   }
   if (pkg.name === "@storybook/addon-docs") {
-    // console.log("pkg", pkg)
     pkg.dependencies["acorn"] = "^8"
   }
   if (
@@ -54,7 +61,6 @@ function readPackage(pkg) {
       "@storybook/ui",
     ].includes(pkg.name)
   ) {
-    // console.log("pkg", pkg)
     pkg.dependencies = {
       ...pkg.dependencies,
       "react": "*",

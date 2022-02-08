@@ -13,6 +13,7 @@
 
   /* Dark */
   .Button--dark {
+    @apply text-white;
     @apply bg-slate-900;
     @apply focus-visible:ring-slate-900;
   }

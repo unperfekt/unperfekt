@@ -26,7 +26,8 @@
 <Accordion {items} />
 
 <Button on:click={open} variant="danger">Button</Button>
-<Button on:click={open} type="button" variant="primary">Primary</Button>
+<Button on:click={open} type="submit" variant="primary">Primary</Button>
+<Button on:click={open} type="button" variant="dark">Dark</Button>
 
 <button>{isOpen} show modal</button>
 

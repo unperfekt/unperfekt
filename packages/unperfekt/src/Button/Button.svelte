@@ -1,7 +1,6 @@
 <script lang="ts">
-  /**
-   * @restProps {a | button}
-   */
+  /** @restProps {a | button} */
+
   import cn from "classnames"
 
   import { SIZE, VARIANT } from "./constants"
@@ -10,9 +9,7 @@
   let _class: string | null = null
   export { _class as class }
 
-  /**
-   * The visual style of the button.
-   */
+  /** The visual style of the button. */
   export let variant: keyof typeof VARIANT = "primary"
 
   /** The size of the button. */
@@ -21,24 +18,13 @@
   /** The behavior of the button when used in an HTML form. */
   export let type: "button" | "submit" | "reset" = "button"
 
-  /**
-   * Whether the button is disabled.
-   * @type {boolean|null}
-   * @default null
-   */
+  /** Whether the button is disabled. */
   export let disabled: boolean | null = null
 
-  /**
-   * A URL to link to. **Note**: This turns the button into an anchor element.
-   * @type {string}
-   */
+  /** A URL to link to. **Note**: This turns the button into an anchor element. */
   export let href: string | null = null
 
-  /**
-   * The relationship between the linked resource and the current page. See [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/rel).
-   * @type {string|null}
-   * @default null
-   */
+  /** The relationship between the linked resource and the current page. See [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/rel). */
   export let rel: string | null = null
 
   let className = cn("Button", VARIANT[variant], SIZE[size], _class)

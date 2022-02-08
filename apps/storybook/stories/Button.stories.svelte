@@ -1,19 +1,20 @@
-<script lang="ts">
-  import { Meta, Template, Story } from "@storybook/addon-svelte-csf"
-
+<script>
+  import { Meta, Story, Template } from "@storybook/addon-svelte-csf"
   import { Button } from "unperfekt"
+
+  const onClick = (e) => console.log("e", e)
 </script>
 
-<Meta title="Example/Button" component={Button} />
+<Meta title="Buttons/Button" component={Button} />
 
 <Template let:args>
   <Button {...args} on:click={args.onClick}>Button</Button>
 </Template>
 
-<Story name="Primary" args={{ variant: "primary" }} />
+<Story name="Primary" args={{ variant: "primary", onClick }} />
 
-<Story name="Dark" args={{ variant: "dark" }} />
+<Story name="Dark" args={{ variant: "dark", onClick }} />
 
-<Story name="Outline" args={{ variant: "outline" }} />
+<Story name="Outline" args={{ variant: "outline", onClick }} />
 
-<Story name="Danger" args={{ variant: "danger" }} />
+<Story name="Danger" args={{ variant: "danger", onClick }} />

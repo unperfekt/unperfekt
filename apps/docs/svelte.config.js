@@ -9,8 +9,6 @@ const config = {
 
   kit: {
     adapter: adapter({ handle404: false, out: "dist" }),
-    // hydrate the <div id="svelte"> element in src/app.html
-    target: "#svelte",
   },
 }
 
