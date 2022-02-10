@@ -4,7 +4,7 @@
 
 @layer components {
   .Button {
-    @apply relative inline-flex items-center justify-center visible m-0 align-top rounded;
+    @apply relative inline-flex items-center justify-center visible m-0 align-top transition-colors rounded outline-none;
     @apply focus-visible:ring-2 focus-visible:ring-offset-2;
     appearance: button;
   }

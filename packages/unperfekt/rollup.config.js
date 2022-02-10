@@ -3,7 +3,6 @@ import typescript from "@rollup/plugin-typescript"
 import path from "path"
 import svelte from "rollup-plugin-svelte"
 // import sveld from "sveld"
-// import sveld from "sveld"
 import pkg from "./package.json"
 import svelteConfig from "./svelte.config.js"
 
@@ -38,7 +37,7 @@ export default [
     input: "src/index.ts",
     output: [
       { file: pkg.module, format: "es", name },
-      { file: pkg.main, format: "cjs", name },
+      { file: pkg.main, format: "umd", name },
     ],
     external,
     plugins: [svelte(svelteConfig), typescript()],
@@ -47,7 +46,7 @@ export default [
     input: "src/index.ts",
     output: {
       file: "./dist/unpkg/custom-elements.js",
-      format: "umd",
+      format: "iife",
       name,
     },
     external,
@@ -65,7 +64,7 @@ export default [
       }),
       // sveld({
       //   glob: true,
-      //   markdown: false,
+      //   markdown: true,
       //   json: false
       // }),
       // minify(),

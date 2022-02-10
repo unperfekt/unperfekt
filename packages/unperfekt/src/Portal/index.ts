@@ -1,1 +1,1 @@
-export { default as Portal } from "./Portal.svelte"
+export * from './src'

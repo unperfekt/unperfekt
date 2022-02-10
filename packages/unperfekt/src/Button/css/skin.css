@@ -1,10 +1,6 @@
 /* Theme-specific styles for the component: colors, box-shadows etc */
 
 @layer components {
-  .Button {
-    @apply transition-colors outline-none;
-  }
-
   /* Primary */
   .Button--primary {
     @apply bg-slate-400;

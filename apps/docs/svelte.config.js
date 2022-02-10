@@ -1,4 +1,4 @@
-import adapter from "@sveltejs/adapter-node"
+// import adapter from "@sveltejs/adapter-node"
 import preprocess from "svelte-preprocess"
 
 /** @type {import('@sveltejs/kit').Config} */
@@ -7,9 +7,9 @@ const config = {
   // for more information about preprocessors
   preprocess: preprocess(),
 
-  kit: {
-    adapter: adapter({ handle404: false, out: "dist" }),
-  },
+  // kit: {
+  //   adapter: adapter({ handle404: false, out: "dist" }),
+  // },
 }
 
 export default config
