@@ -26,6 +26,10 @@
     "release": "auto shipit",
     "test": "turbo run test"
   },
+  "lint-staged": {
+    "*.{js,ts,svelte}": "eslint --cache --fix",
+    "*.{js,ts,svelte,md,json}": "prettier --write"
+  },
   "devDependencies": {
     "auto": "^10.32.6",
     "commitlint": "^16.1.0",
@@ -43,10 +47,6 @@
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
-  },
-  "lint-staged": {
-    "*.{js,ts,svelte}": "eslint --cache --fix",
-    "*.{js,ts,svelte,md,json}": "prettier --write"
   },
   "packageManager": "pnpm@6.29.1"
 }

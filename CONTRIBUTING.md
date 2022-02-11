@@ -37,10 +37,10 @@ Example workflow of creating, adding and commit a new feature to a package:
 
 Martin got the task to add a new feature to the `packages/unperfekt` package. The task is simple, create a new file called `packages/unperfekt/src/utils.ts` with one function called `const noOp = () => {}` and `export` it, so everyone using the `unperfekt` package in the future can `import` this function to use it.
 
-* Martin goes ahead and creates a new branch from the `main` branch via `git checkout -b feat/mb/PROJ-213-add-utils`
-* create a conventional commit, e.g. `✨ feat: add name component`
-* push to the right branch (`main`, `beta`, `next`, `N.x.x` or `N.x`)
-* release workflow will be triggered, which means building, testing and publishing via `auto shipit`
+- Martin goes ahead and creates a new branch from the `main` branch via `git checkout -b feat/mb/PROJ-213-add-utils`
+- create a conventional commit, e.g. `✨ feat: add name component`
+- push to the right branch (`main`, `beta`, `next`, `N.x.x` or `N.x`)
+- release workflow will be triggered, which means building, testing and publishing via `auto shipit`
 
 <br/>
 
@@ -59,7 +59,8 @@ Pushing to either of these branches will trigger a release (CI/CD) to happen, wh
 2. stuff gets tested via `pnpm run test` in root `package.json`
 3. stuff gets build via `pnpm run build` in root `package.json`
 4. stuff gets versioned via `pnpm run version` in root `package.json`
-    * this effectivly generates a changelog in each affected package that has since been touched/edited by either a commit or by depending on one of the other workspace packages.
+
+   - this effectivly generates a changelog in each affected package that has since been touched/edited by either a commit or by depending on one of the other workspace packages.
 
 5. stuff gets commited with a `[skip ci]` label to not end up within an infinite release loop cycle along with the new version number(s) of affected package(s).
 6. stuff gets published to npm

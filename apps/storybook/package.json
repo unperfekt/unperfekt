@@ -14,12 +14,12 @@
   "type": "module",
   "scripts": {
     "build": "svelte-kit build",
+    "build-storybook": "build-storybook",
     "check": "svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
     "dev": "svelte-kit dev --host",
     "preview": "svelte-kit preview",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "storybook": "start-storybook -p 6006"
   },
   "dependencies": {
     "@sveltejs/adapter-node": "^1.0.0-next.66",

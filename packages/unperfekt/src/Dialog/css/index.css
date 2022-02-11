@@ -2,11 +2,11 @@
 
 @layer components {
   .Backdrop {
-    @apply fixed inset-0 z-10 w-full h-full overflow-hidden bg-black bg-opacity-30;
+    @apply fixed inset-0 z-10 h-full w-full overflow-hidden bg-black bg-opacity-30;
   }
 
   .Dialog {
-    @apply box-border flex flex-col max-h-full outline-none w-fit;
+    @apply box-border flex max-h-full w-fit flex-col outline-none;
     /* inline-size: fit-content; */
     max-height: inherit;
     min-width: 90%;
@@ -16,7 +16,7 @@
   }
 
   .Modal-wrapper {
-    @apply box-border fixed top-0 left-0 z-20 flex items-center justify-center invisible w-screen h-screen pointer-events-none;
+    @apply pointer-events-none invisible fixed top-0 left-0 z-20 box-border flex h-screen w-screen items-center justify-center;
     /* inline-size: 100vw; */
     height: stretch;
   }
@@ -26,7 +26,7 @@
   }
 
   .Modal {
-    @apply z-20 overflow-hidden outline-none pointer-events-auto;
-    @apply p-6 bg-white;
+    @apply pointer-events-auto z-20 overflow-hidden outline-none;
+    @apply bg-white p-6;
   }
 }

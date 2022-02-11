@@ -1,19 +1,10 @@
 <script lang="ts" strictEvents>
-  import { Accordion, Dialog, Button, Combobox } from "unperfekt"
+  import { Accordion, Button, Dialog } from "unperfekt"
 
   const items = [
     { id: "1", title: "Dark Souls", description: "Lorem Ipsum" },
     { id: "2", title: "Dark Souls 2", description: "Lorem Ipsum" },
     { id: "3", title: "Dark Souls 3", description: "Lorem Ipsum" },
-  ]
-
-  const colors = [
-    { id: 1, name: "White", code: "#FFFFFF" },
-    { id: 2, name: "Red", code: "#FF0000" },
-    { id: 3, name: "Yellow", code: "#FF00FF" },
-    { id: 4, name: "Green", code: "#00FF00" },
-    { id: 5, name: "Blue", code: "#0000FF" },
-    { id: 6, name: "Black", code: "#000000" },
   ]
 
   let isOpen = false
@@ -41,23 +32,16 @@
 
 <Accordion {items} />
 
-<Button on:click={(e) => {
-  console.log("e", e)
-}} variant="danger">Button</Button>
+<Button
+  on:click={(e) => {
+    console.log("e", e)
+  }}
+  variant="danger">Button</Button
+>
 <Button on:click={open} type="submit" variant="primary">Primary</Button>
-<Button on:click={open} size="small" type="button" variant="dark">Dark</Button>
+<Button on:click={open} type="button" variant="dark" size="small">Dark</Button>
 
 <button>{isOpen} show modal</button>
-
-<div class="block">
-  <Combobox items={colors} bind:value={name} id="asdd">
-    <span slot="item" let:item>
-      <span>{item.name}</span>
-      <span>{item.id}</span>
-      <span>{item.code}</span>
-    </span>
-  </Combobox>
-</div>
 
 <Dialog {isOpen} on:close={close}>
   <h2 slot="header">

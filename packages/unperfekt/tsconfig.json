@@ -10,7 +10,7 @@
     "allowJs": true,
     "paths": {
       "#utils/*": ["src/utils/*"],
-      "#state/*": ["src/state/*"],
+      "#state/*": ["src/state/*"]
     }
   },
   "include": ["src/**/*.d.ts", "src/**/*.js", "src/**/*.ts", "src/**/*.svelte"]

@@ -4,7 +4,7 @@
 
 @layer components {
   .Button {
-    @apply relative inline-flex items-center justify-center visible m-0 align-top transition-colors rounded outline-none;
+    @apply visible relative m-0 inline-flex items-center justify-center rounded align-top outline-none transition-colors;
     @apply focus-visible:ring-2 focus-visible:ring-offset-2;
     appearance: button;
   }
@@ -15,7 +15,7 @@
   }
 
   .Button-icon {
-    @apply inline-flex order-none max-h-full;
+    @apply order-none inline-flex max-h-full;
   }
 
   .Button-icon + .Button-label {
@@ -23,7 +23,7 @@
   }
 
   .Button-label {
-    @apply font-semibold text-center normal-case;
+    @apply text-center font-semibold normal-case;
   }
 
   /* Size */

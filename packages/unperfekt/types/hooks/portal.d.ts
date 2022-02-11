@@ -1,3 +1,6 @@
-export declare const portal: (node: HTMLElement, target?: string) => {
-    destroy: () => void;
-};
+export declare const portal: (
+  node: HTMLElement,
+  target?: string,
+) => {
+  destroy: () => void
+}

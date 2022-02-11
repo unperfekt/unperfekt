@@ -1,0 +1,13 @@
+.svelte-kit
+**/node_modules/**
+.husky
+.github
+
+.env*
+
+pnpm-lock.yaml
+dist/**
+static/**
+assets/**
+build/**
+output/**

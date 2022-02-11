@@ -2,11 +2,11 @@
 
 @layer components {
   .Accordion {
-    @apply flex flex-col items-start w-full gap-y-4;
+    @apply flex w-full flex-col items-start gap-y-4;
   }
 
   .Accordion-item {
-    @apply w-full border rounded;
+    @apply w-full rounded border;
   }
 
   /* h3 */
@@ -16,7 +16,7 @@
 
   /* button */
   .Accordion-itemHeader {
-    @apply flex justify-between w-full p-4 rounded;
+    @apply flex w-full justify-between rounded p-4;
     @apply font-sans text-2xl antialiased;
   }
 
@@ -34,7 +34,7 @@
   }
 
   .Accordion-icon {
-    @apply transition-transform transform -rotate-90;
+    @apply -rotate-90 transform transition-transform;
   }
 
   .Accordion-panel {
