@@ -1,14 +1,16 @@
 <script lang="ts" strictEvents>
+  import { createEventDispatcher } from "svelte"
+
   import type { Item } from "./types"
 
   // --- Public State ----
   type T = $$Generic<Item>
 
-  interface SearchFn {
-    // (value: string): T[]
-    (value: string): Promise<T[]>
-    // (value: string): AsyncGenerator<T[], void, void>
-  }
+  // interface SearchFn {
+  //   // (value: string): T[]
+  //   (value: string): Promise<T[]>
+  //   // (value: string): AsyncGenerator<T[], void, void>
+  // }
 
   /** The id of the element. */
   export let id: string = Math.random().toString(36).substring(2, 15)
@@ -20,7 +22,7 @@
   export let label: string = ""
 
   /** The search function. */
-  export let searchFn: SearchFn | undefined = undefined
+  // export let searchFn: SearchFn | undefined = undefined
 
   /** The list of Combobox items. */
   export let items: T[] = []
@@ -31,9 +33,15 @@
   // --- Internal State ----
 
   // Behaviour
-  const minCharactersToSearch = 2
-  const maxItemsToShow = 10
-  const multiple = false
+
+  /** Minimum amount of characters needed to trigger a search */
+  // const minCharactersToSearch = 2
+
+  /** Maximum amount of items to show in the list. */
+  // const maxItemsToShow = 10
+
+  /** Allow selection of multiple values. */
+  // export let multiple = false
   // UI
   let show = false
   // Events
@@ -42,26 +50,31 @@
     currentTarget: EventTarget & HTMLInputElement
   }
 
-  const onInput = (e: InputEvent) => {
+  // const dispatch = createEventDispatcher<{ input: InputEvent }>()
+  const dispatch = createEventDispatcher<{ input: string }>()
+
+  export let onInput = (e: InputEvent) => {
     console.log("onInput", e.currentTarget.value)
+    dispatch("input", e.currentTarget.value)
   }
 
-  const search = async () => {
-    if (value.length < minCharactersToSearch) {
-      return
-    }
+  // const search = async (val: string) => {
+  //   if (val.length < minCharactersToSearch) {
+  //     return
+  //   }
 
-    if (searchFn) {
-      const result = await searchFn(value)
+  //   if (searchFn) {
+  //     const result = await searchFn(val)
 
-      items = result
-      show = result.length > 0
-    } else {
-      console.warn("No search function provided")
-    }
-  }
+  //     items = result
+  //     show = result.length > 0
+  //   } else {
+  //     console.warn("No search function provided")
+  //     show = false
+  //   }
+  // }
 
-  $: value, void search()
+  // $: void search(value)
 </script>
 
 <label for="{id}-input" id="{id}-label" class="combobox-label">

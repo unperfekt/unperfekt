@@ -1,10 +1,11 @@
 {
+  "$schema": "https://turborepo.org/schema.json",
   "pipeline": {
     "build": {
       // "A package's `build` command depends on its dependencies'
       // or devDependencies' `build` commands first being completed"
       "dependsOn": ["^build"],
-      "outputs": ["dist/**", "lib/**"]
+      "outputs": ["dist/**", "lib/**", ".next/**"]
     },
     "deploy": {
       // "A package's `deploy` command, depends on its own `build`

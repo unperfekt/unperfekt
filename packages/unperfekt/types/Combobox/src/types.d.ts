@@ -1,5 +1,5 @@
-import type { Key } from "../../state/collection/selection"
+import type { Key } from "../../state/collection/selection";
 export interface Item {
-  id: Key
-  name: string
+    id: Key;
+    name: string;
 }

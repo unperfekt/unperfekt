@@ -11,29 +11,72 @@
   interface StarWarsResponse {
     results: Character[]
   }
+  type LoadingState = "idle" | "loading" | "loaded" | "error"
 
-  // const items = [
-  //   { id: 1, name: "White", code: "#FFFFFF" },
-  //   { id: 2, name: "Red", code: "#FF0000" },
-  //   { id: 3, name: "Yellow", code: "#FF00FF" },
-  //   { id: 4, name: "Green", code: "#00FF00" },
-  //   { id: 5, name: "Blue", code: "#0000FF" },
-  //   { id: 6, name: "Black", code: "#000000" },
-  // ]
-  const items: Character[] = []
+  interface AsyncListStateUpdate<T> {
+    /** The new items to append to the list. */
+    items: T[]
+    /** The updated filter text for the list. */
+    filterText?: string
+  }
 
-  let value = ""
+  interface AsyncListLoadOptions<T> {
+    /** The items currently in the list. */
+    items: T[]
+    /** The current filter text used to perform server side filtering. */
+    filterText?: string
+    /** The current loading state of the list. */
+    loadingState?: LoadingState
+  }
 
-  /**
-   * @param keyword Search keyword.
-   * @returns {Promise<Character[]>} Promise of search results.
-   */
-  async function searchStarWars(keyword: string): Promise<Character[]> {
-    const url = `https://swapi.dev/api/people/?search=${keyword}`
-    const res = await fetch(url)
-    const json = (await res.json()) as StarWarsResponse
+  type AsyncListLoadFunction<T> = (
+    state: AsyncListLoadOptions<T>,
+  ) => AsyncListStateUpdate<T> | Promise<AsyncListStateUpdate<T>>
+  interface AsyncList<T> {
+    items: T[]
+    loadingState: LoadingState
+    loading: boolean
+    filterText: string
+    setFilterText: (event: CustomEvent<string>) => void
+    error?: Error
+    load: AsyncListLoadFunction<T>
+  }
 
-    return json.results
+  let list: AsyncList<Character> = {
+    items: [],
+    loadingState: "idle",
+    loading: false,
+    filterText: "",
+    setFilterText: (event) => {
+      console.log("setFilterText", event)
+      list.filterText = event.detail
+      void list.load({
+        items: list.items,
+        filterText: list.filterText,
+      })
+    },
+    error: undefined,
+    load: async ({ filterText }) => {
+      list.loading = true
+      list.loadingState = "loading"
+      try {
+        const response = await fetch(`https://swapi.dev/api/people?search=${filterText}`)
+        const data = (await response.json()) as StarWarsResponse
+        list.items = data.results
+        list.loadingState = "loaded"
+      } catch (err: unknown) {
+        console.log("err", err)
+        list.error = err as Error
+        list.loadingState = "error"
+      } finally {
+        list.loading = false
+      }
+
+      return {
+        items: list.items,
+        filterText: list.filterText,
+      }
+    },
   }
 </script>
 
@@ -41,10 +84,10 @@
 
 <div class="block">
   <Combobox
-    {items}
-    label="Star Wars Character"
-    searchFn={searchStarWars}
-    bind:value
+    label="Star Wars Character Lookup"
+    items={list.items}
+    on:input={list.setFilterText}
+    bind:value={list.filterText}
   >
     <span slot="item" let:item>
       <span>{item.name}</span>
