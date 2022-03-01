@@ -29,7 +29,7 @@
   "lint-staged": {
     "package.json": "sort-package-json",
     "*.{js,ts,svelte}": "eslint --cache --fix",
-    "*.{js,ts,svelte,md,json}": "prettier --write"
+    "*.{js,ts,css,svelte,md,json}": "prettier --write"
   },
   "devDependencies": {
     "auto": "^10.32.6",
@@ -43,12 +43,12 @@
     "sort-package-json": "^1.54.0",
     "turbo": "^1.1.4"
   },
-  "packageManager": "pnpm@6.29.1",
   "engines": {
     "node": ">=16.13.0"
   },
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
-  }
+  },
+  "packageManager": "pnpm@6.29.1"
 }
