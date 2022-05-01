@@ -24,8 +24,8 @@
     "README.md"
   ],
   "dependencies": {
-    "@commitlint/config-conventional": "^16.2.1",
-    "commitlint": "^16.2.1"
+    "@commitlint/config-conventional": "^16.2.4",
+    "commitlint": "^16.2.4"
   },
   "peerDependencies": {
     "commitlint": "^16"
@@ -35,9 +35,9 @@
       "optional": true
     }
   },
+  "packageManager": "pnpm@6.29.1",
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
-  },
-  "packageManager": "pnpm@6.29.1"
+  }
 }

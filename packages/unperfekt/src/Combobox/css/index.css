@@ -4,6 +4,43 @@
 
 @layer components {
   .Combobox {
-    @apply relative;
+    @apply relative max-w-full;
+  }
+
+  .Combobox-listbox {
+    @apply absolute left-0 z-10 max-h-52 w-full origin-top-left select-none overflow-y-auto overflow-x-hidden py-2;
+    @apply rounded-md border border-solid border-gray-300 shadow-lg;
+  }
+
+  .Combobox-field {
+    @apply flex items-center justify-between rounded-md border border-solid px-2 py-3;
+    @apply focus-within:outline focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-transparent;
+    @apply border-gray-300 bg-white shadow-sm;
+    @apply focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50;
+  }
+
+  .Combobox-button {
+    @apply px-2;
+  }
+
+  .Combobox-option {
+    @apply flex cursor-pointer items-center py-1 px-2 font-sans text-base;
+    @apply hover:bg-red-100;
+    @apply bg-white;
+  }
+
+  .Combobox-label {
+    @apply font-sans text-base;
+    @apply text-gray-700;
+  }
+
+  .Combobox-input {
+    @apply block w-full appearance-none font-sans text-base;
+    @apply placeholder:text-gray-500 placeholder:opacity-100;
+    @apply outline-none;
+  }
+
+  .selected {
+    @apply bg-red-100;
   }
 }

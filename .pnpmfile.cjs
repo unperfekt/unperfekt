@@ -63,8 +63,8 @@ function readPackage(pkg) {
   ) {
     pkg.dependencies = {
       ...pkg.dependencies,
-      "react": "*",
-      "react-dom": "*",
+      "react": "^17.0.0",
+      "react-dom": "^17.0.0",
     }
     delete pkg.peerDependencies["react"]
     delete pkg.peerDependencies["react-dom"]

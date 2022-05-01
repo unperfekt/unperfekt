@@ -19,7 +19,7 @@
     "build": "turbo run build",
     "check": "turbo run check",
     "dev": "turbo run dev --parallel",
-    "format": "prettier --write .",
+    "format": "prettier -w",
     "lint": "turbo run lint",
     "prepare": "husky install",
     "preview": "turbo run preview --parallel",
@@ -28,27 +28,27 @@
   },
   "lint-staged": {
     "package.json": "sort-package-json",
-    "*.{js,ts,svelte}": "eslint --cache --fix",
-    "*.{js,ts,css,svelte,md,json}": "prettier --write"
+    "*.{mjs,js,ts,svelte}": "eslint --cache --report-unused-disable-directives --fix",
+    "*.{mjs,js,ts,svelte,css,md,json}": "prettier -w"
   },
   "devDependencies": {
-    "auto": "^10.32.6",
-    "commitlint": "^16.2.1",
+    "auto": "^10.36.5",
+    "commitlint": "^16.2.4",
     "commitlint-config-unperfekt": "workspace:*",
-    "eslint": "^8.10.0",
+    "eslint": "^8.14.0",
     "husky": "^7.0.4",
     "lerna": "^4.0.0",
-    "prettier": "^2.5.1",
+    "prettier": "^2.6.2",
     "prettier-config-unperfekt": "workspace:*",
-    "sort-package-json": "^1.54.0",
-    "turbo": "^1.1.4"
+    "sort-package-json": "^1.56.0",
+    "turbo": "^1.2.6"
   },
+  "packageManager": "pnpm@6.29.1",
   "engines": {
     "node": ">=16.13.0"
   },
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
-  },
-  "packageManager": "pnpm@6.29.1"
+  }
 }

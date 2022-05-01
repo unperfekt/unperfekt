@@ -1,1 +1,1 @@
-export declare const flash: (element: HTMLElement) => void;
+export declare const flash: (element: HTMLElement) => void

@@ -1,1 +1,1 @@
-export declare const replaceSpecialChars: (str: string) => string;
+export declare const replaceSpecialChars: (str: string) => string

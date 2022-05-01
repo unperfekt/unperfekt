@@ -1,3 +1,5 @@
+/* eslint-disable import/no-default-export */
+
 // import adapter from "@sveltejs/adapter-node"
 import preprocess from "svelte-preprocess"
 
