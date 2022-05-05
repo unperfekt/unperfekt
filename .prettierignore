@@ -1,13 +1,15 @@
-.svelte-kit
-**/node_modules/**
-.husky
-.github
-
-.env*
+.github/
+.husky/
+.svelte-kit/
+assets/
+build/
+dist/
+node_modules/
+output/
+out/
+static/
+storybook-static/
 
 pnpm-lock.yaml
-dist/**
-static/**
-assets/**
-build/**
-output/**
+
+.env*

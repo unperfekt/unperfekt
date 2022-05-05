@@ -40,10 +40,10 @@
     "lerna": "^4.0.0",
     "prettier": "^2.6.2",
     "prettier-config-unperfekt": "workspace:*",
-    "sort-package-json": "^1.56.0",
+    "sort-package-json": "^1.57.0",
     "turbo": "^1.2.6"
   },
-  "packageManager": "pnpm@6.29.1",
+  "packageManager": "pnpm@7.0.0",
   "engines": {
     "node": ">=16.13.0"
   },

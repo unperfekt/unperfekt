@@ -39,7 +39,7 @@
   variant="danger">Button</Button
 >
 <Button on:click={open} type="submit" variant="primary">Primary</Button>
-<Button on:click={open} type="button" variant="dark" size="small">Dark</Button>
+<Button on:click={open} type="button" variant="dark" size="sm">Dark</Button>
 
 <button>{isOpen} show modal</button>
 
@@ -49,7 +49,7 @@
     <small><em>adjective</em> mod&middot;al \&#x2C8;m&omacr;-d&#x259;l\</small>
   </h2>
 
-  <ol class="pl-4 ml-4 list-disc">
+  <ol class="ml-4 list-disc pl-4">
     <li>of or relating to modality in logic</li>
     <li>
       containing provisions as to the mode of procedure or the manner of taking

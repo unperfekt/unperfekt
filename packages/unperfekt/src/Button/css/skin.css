@@ -3,7 +3,7 @@
 @layer components {
   /* Primary */
   .Button--primary {
-    @apply bg-slate-400;
+    @apply bg-indigo-500 text-white;
     @apply focus-visible:ring-slate-400;
   }
 
@@ -39,5 +39,10 @@
   .Button--danger:disabled .Button-label,
   .Button--danger.is-disabled .Button-label {
     @apply text-gray-700;
+  }
+
+  .Button:disabled,
+  .Button.is-disabled {
+    @apply bg-gray-300;
   }
 }

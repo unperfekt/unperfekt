@@ -7,8 +7,7 @@ export const VARIANT = {
 } as const
 
 export const SIZE = {
-  small: "Button--small",
-  fixed: "Button--fixed",
-  large: "Button--large",
-  fill: "Button--fill",
+  sm: "Button--sm",
+  md: "Button--md",
+  lg: "Button--lg",
 } as const

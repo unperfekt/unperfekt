@@ -6,6 +6,7 @@
   .Button {
     @apply visible relative m-0 inline-flex items-center justify-center rounded align-top outline-none transition-colors;
     @apply focus-visible:ring-2 focus-visible:ring-offset-2;
+    @apply gap-x-2;
     appearance: button;
   }
 
@@ -22,25 +23,21 @@
     @apply ml-4;
   }
 
-  .Button-label {
+  .Button {
     @apply text-center font-semibold normal-case;
   }
 
   /* Size */
-  .Button--small {
-    @apply px-8 py-2;
+  .Button--sm {
+    @apply px-4 py-2;
   }
 
-  .Button--large {
+  .Button--md {
+    @apply px-6 py-3;
+  }
+
+  .Button--lg {
     @apply px-8 py-4;
-  }
-
-  .Button--fixed {
-    @apply w-24 px-8 py-2;
-  }
-
-  .Button--fill {
-    @apply block w-full px-8 py-4;
   }
 
   /* Variants */

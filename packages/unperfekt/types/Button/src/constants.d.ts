@@ -6,8 +6,7 @@ export declare const VARIANT: {
   readonly "on-danger": "Button--on-danger"
 }
 export declare const SIZE: {
-  readonly small: "Button--small"
-  readonly fixed: "Button--fixed"
-  readonly large: "Button--large"
-  readonly fill: "Button--fill"
+  readonly sm: "Button--sm"
+  readonly md: "Button--md"
+  readonly lg: "Button--lg"
 }

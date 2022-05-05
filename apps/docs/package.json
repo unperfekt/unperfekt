@@ -17,11 +17,13 @@
     "check": "svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
     "dev": "svelte-kit dev --host",
-    "preview": "svelte-kit preview"
+    "preview": "svelte-kit preview",
+    "sync": "svelte-kit sync"
   },
   "dependencies": {
     "@sveltejs/adapter-auto": "^1.0.0-next.40",
     "@sveltejs/kit": "^1.0.0-next.324",
+    "classnames": "^2.3.1",
     "html-minifier": "^4.0.0",
     "svelte": "^3.48.0",
     "unperfekt": "workspace:*"
@@ -29,7 +31,7 @@
   "devDependencies": {
     "@tsconfig/svelte": "^3.0.0",
     "@types/html-minifier": "^4.0.2",
-    "autoprefixer": "^10.4.5",
+    "autoprefixer": "^10.4.7",
     "eslint-config-unperfekt": "workspace:*",
     "postcss": "^8.4.13",
     "postcss-import": "^14.1.0",

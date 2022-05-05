@@ -12,50 +12,19 @@ declare class __sveltets_Render<T extends Item> {
       | undefined
     /** The Combobox label. */ label?: string | undefined
     /** The Combobox input placeholder. */ placeholder?: string | undefined
-    /** The Combobox floating strategy. Change this to 'fixed' when used on a fixed container. */ strategy?:
+    /** The Combobox floating strategy. Change this to 'fixed' when the combobox resides on a fixed container. */ strategy?:
       | Strategy
       | undefined
     /** The list of Combobox items. */ items?: T[] | undefined
     /** Whether the Combobox is disabled. */ disabled?: boolean | undefined
-    onInput?:
-      | ((
-          e: Event & {
-            currentTarget: EventTarget & HTMLInputElement
-          },
-        ) => void)
-      | undefined
-    onFocus?:
-      | ((
-          _e: FocusEvent & {
-            currentTarget: EventTarget & HTMLInputElement
-          },
-        ) => void)
-      | undefined
-    onBlur?:
-      | ((
-          _e: FocusEvent & {
-            currentTarget: EventTarget & HTMLInputElement
-          },
-        ) => void)
-      | undefined
-    onKeyDown?:
-      | ((
-          e: KeyboardEvent & {
-            currentTarget: EventTarget & HTMLInputElement
-          },
-        ) => void)
-      | undefined
-    onKeyUp?:
-      | ((
-          e: KeyboardEvent & {
-            currentTarget: EventTarget & HTMLInputElement
-          },
-        ) => void)
-      | undefined
     getLabel?: ((item: Item) => string) | undefined
   }
   events(): {
-    input: CustomEvent<string>
+    blur: FocusEvent
+    focus: FocusEvent
+    input: Event
+    keydown: KeyboardEvent
+    keyup: KeyboardEvent
   }
   slots(): {
     item: {

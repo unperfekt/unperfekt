@@ -1,15 +1,13 @@
 <script lang="ts" strictEvents>
-  // import { elasticIn, elasticOut } from "svelte/easing"
   import { scale } from "svelte/transition"
   import { sineIn, sineOut } from "svelte/easing"
-  import { createEventDispatcher } from "svelte"
   import { offset, type Strategy } from "@floating-ui/dom"
 
+  import { noOp } from "../../utils/noOp"
   import { createFloating } from "../../hooks/floating"
 
   import type { Item } from "./types"
   import type { LoadingState } from "../../state/collection/loadingState"
-  // import { linear } from "svelte/easing"
 
   // --- Public State ----
   type T = $$Generic<Item>
@@ -32,7 +30,7 @@
   /** The Combobox input placeholder. */
   export let placeholder: string = ""
 
-  /** The Combobox floating strategy. Change this to 'fixed' when used on a fixed container. */
+  /** The Combobox floating strategy. Change this to 'fixed' when the combobox resides on a fixed container. */
   export let strategy: Strategy = "absolute"
 
   /** The search function. */
@@ -80,53 +78,33 @@
   const open = () => void (show = true)
   const close = () => void (show = false)
 
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
-  const noOp = () => {}
-
   // Events
 
   // const dispatch = createEventDispatcher<{ input: InputEvent }>()
-  const dispatch = createEventDispatcher<{ input: string }>()
+  // const dispatch = createEventDispatcher<{ input: string }>()
 
   type PointerEvent = MouseEvent & {
     currentTarget: EventTarget & Window
   }
 
-  type InputEvent = Event & {
-    currentTarget: EventTarget & HTMLInputElement
-  }
+  // type InputEvent = Event & {
+  //   currentTarget: EventTarget & HTMLInputElement
+  // }
 
   type KeyEvent = KeyboardEvent & {
     currentTarget: EventTarget & HTMLInputElement
   }
 
-  type BlurEvent = FocusEvent & {
-    currentTarget: EventTarget & HTMLInputElement
-  }
-
-  export let onInput = (e: InputEvent) => {
-    // console.log("onInput", e.currentTarget.value)
-    dispatch("input", e.currentTarget.value)
-  }
-
-  export let onFocus = (_e: BlurEvent) => {
-    // console.log("onInput", e.currentTarget.value)
-    // dispatch("focus", e)
-    open()
-  }
-
-  export let onBlur = (_e: BlurEvent) => {
-    // console.log("onInput", e.currentTarget.value)
-    // dispatch("blur", e)
-    // close()
-  }
+  // type BlurEvent = FocusEvent & {
+  //   currentTarget: EventTarget & HTMLInputElement
+  // }
 
   const stopEvent = (e: Event) => {
     e.preventDefault()
     e.stopPropagation()
   }
 
-  export let onKeyDown = (e: KeyEvent) => {
+  let onKeyDown = (e: KeyEvent) => {
     const fnmap = {
       Tab: close,
       ArrowDown: () => {
@@ -154,7 +132,7 @@
     }
   }
 
-  export let onKeyUp = (e: KeyEvent) => {
+  let onKeyUp = (e: KeyEvent) => {
     if (e.key === "Enter") {
       onEnter(e)
     }
@@ -222,6 +200,7 @@
     if (el) {
       el.scrollIntoView({
         block: "center",
+        inline: "center",
       })
     }
   }
@@ -232,7 +211,8 @@
     strategy,
   })
 
-  const isLoading = loadingState === "loading"
+  // let isLoading = false
+  $: isLoading = loadingState === "loading"
 
   $: highlightIndex, listboxNode, highlight()
 </script>
@@ -263,10 +243,12 @@
       id="{id}-input"
       name={name || `${id}-input`}
       type="text"
-      on:blur={onBlur}
-      on:focus={onFocus}
-      on:input={onInput}
+      on:blur
+      on:focus
+      on:input
+      on:keydown
       on:keydown={onKeyDown}
+      on:keyup
       on:keyup={onKeyUp}
     />
     <button

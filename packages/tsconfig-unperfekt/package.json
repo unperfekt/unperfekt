@@ -1,9 +1,10 @@
 {
-  "name": "commitlint-config-unperfekt",
+  "name": "tsconfig-unperfekt",
   "version": "1.0.0",
-  "description": "commitlint config for unperfekt",
+  "description": "tsconfig config for unperfekt",
   "keywords": [
-    "commitlint"
+    "typescript",
+    "tsconfig"
   ],
   "homepage": "https://github.com/unperfekt/unperfekt#readme",
   "bugs": {
@@ -12,26 +13,25 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/unperfekt/unperfekt.git",
-    "directory": "packages/commitlint-config-unperfekt"
+    "directory": "packages/tsconfig-unperfekt"
   },
   "license": "ISC",
   "author": "Martin Broder <hello@martinbroder.com> (https://martinbroder.com)",
   "type": "commonjs",
-  "main": "lib/index.js",
   "files": [
-    "lib",
+    "strict.json",
+    "svelte.json",
     "CHANGELOG.md",
     "README.md"
   ],
   "dependencies": {
-    "@commitlint/config-conventional": "^16.2.4",
-    "commitlint": "^16.2.4"
+    "typescript": "^4.6.4"
   },
   "peerDependencies": {
-    "commitlint": "^16"
+    "typescript": "^4"
   },
   "peerDependenciesMeta": {
-    "commitlint": {
+    "typescript": {
       "optional": true
     }
   },

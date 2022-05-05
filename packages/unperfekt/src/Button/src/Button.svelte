@@ -1,6 +1,4 @@
 <script lang="ts" strictEvents>
-  /** @restProps {a | button} */
-
   import cn from "classnames"
 
   import { SIZE, VARIANT } from "./constants"
@@ -13,7 +11,7 @@
   export let variant: keyof typeof VARIANT = "primary"
 
   /** The size of the button. */
-  export let size: keyof typeof SIZE = "large"
+  export let size: keyof typeof SIZE = "md"
 
   /** The behavior of the button when used in an HTML form. */
   export let type: "button" | "submit" | "reset" = "button"
@@ -24,30 +22,37 @@
   /** The URL that the hyperlink points to. **Note**: This turns the button into an `<a>` element. */
   export let href: string | undefined = undefined
 
-  /** The relationship between the linked resource and the current page. See [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/rel). */
+  /** Causes the browser to treat the linked URL as a download. Can be used with or without a value. */
+  export let download: string | undefined = undefined
+
+  /**
+   * The relationship between the linked resource and the current page.
+   *
+   * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/rel
+   */
   export let rel: string | undefined = undefined
 
   let className = cn("Button", VARIANT[variant], SIZE[size], _class)
 </script>
 
 {#if href}
-  <a on:click class={className} {href} {rel} {type} {disabled}>
+  <a
+    sveltekit:prefetch
+    class={className}
+    {disabled}
+    {download}
+    {href}
+    {rel}
+    on:click
+  >
+    <slot name="icon-start" />
     <slot />
+    <slot name="icon-end" />
   </a>
 {:else}
-  <button on:click class={className} {type} {disabled}>
+  <button class={className} {disabled} {type} on:click>
+    <slot name="icon-start" />
     <slot />
+    <slot name="icon-end" />
   </button>
 {/if}
-
-<!--
-@component
-@example
-<Button variant="primary" size="small">
-  Click me
-</Button>
-
-<Button href="https://unperfekt.design" rel="prefetch">
-  Click me
-</Button>
--->

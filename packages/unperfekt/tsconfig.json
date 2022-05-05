@@ -1,5 +1,5 @@
 {
-  "extends": "@tsconfig/svelte/tsconfig.json",
+  "extends": "tsconfig-unperfekt/svelte.json",
   "compilerOptions": {
     "strict": true,
     "module": "es2020",
@@ -13,5 +13,6 @@
       "#state/*": ["src/state/*"]
     }
   },
-  "include": ["src/**/*.d.ts", "src/**/*.js", "src/**/*.ts", "src/**/*.svelte"]
+  "include": ["src/**/*.d.ts", "src/**/*.js", "src/**/*.ts", "src/**/*.svelte"],
+  "exclude": ["node_modules", "*.stories.svelte"]
 }

@@ -89,25 +89,24 @@
 
   // const toLower = (str: string) => str.toLowerCase()
 
-  const { items, filterText, setFilterText, loadingState } =
-    createAsyncList<Character>({
-      // initialItems: countries,
-      // initialFilterText: "L",
-      async load(state) {
-        // console.log("state", state)
-        const swapi = new URL("https://swapi.dev/api/people")
-        swapi.searchParams.set("search", state.filterText as string)
-        const response = await fetch(swapi.toString(), { signal: state.signal })
-        const data = (await response.json()) as unknown as StarWarsResponse
-        // await delay(2000)
+  const { items, filterText, loadingState } = createAsyncList<Character>({
+    // initialItems: countries,
+    // initialFilterText: "L",
+    async load(state) {
+      // console.log("state", state)
+      const swapi = new URL("https://swapi.dev/api/people")
+      swapi.searchParams.set("search", state.filterText as string)
+      const response = await fetch(swapi.toString(), { signal: state.signal })
+      const data = (await response.json()) as unknown as StarWarsResponse
+      // await delay(2000)
 
-        return { items: data.results }
-      },
-      // filter: (item, filterText) => {
-      // 	// console.log('item', item, 'filterText', filterText)
-      // 	return toLower(item.name).includes(toLower(filterText))
-      // }
-    })
+      return { items: data.results }
+    },
+    // filter: (item, filterText) => {
+    // 	// console.log('item', item, 'filterText', filterText)
+    // 	return toLower(item.name).includes(toLower(filterText))
+    // }
+  })
 
   // const { items, filterText, setFilterText } = createListData<Country>({
   //   initialItems: countries,
@@ -128,10 +127,11 @@
   //   },
   // })
 
-  const _setFilterText = (event: CustomEvent<string>) => {
-    const text: string = event.detail
+  const _setFilterText = (event: Event) => {
+    console.log("event", event)
+    // const text: string = event.currentTargetvalue
 
-    setFilterText(text)
+    // setFilterText(text)
   }
 
   const onSubmit = (event: SubmitEvent) => {
@@ -185,7 +185,7 @@
         </span>
       </Combobox>
     </div>
-    <Button type="submit" size="fill">Submit</Button>
+    <Button type="submit" size="lg">Submit</Button>
   </div>
 </form>
 

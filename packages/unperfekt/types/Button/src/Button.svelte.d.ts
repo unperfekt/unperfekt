@@ -9,12 +9,7 @@ declare const __propDef: {
       | "danger"
       | "on-danger"
       | undefined
-    /** The size of the button. */ size?:
-      | "fixed"
-      | "small"
-      | "large"
-      | "fill"
-      | undefined
+    /** The size of the button. */ size?: "sm" | "md" | "lg" | undefined
     /** The behavior of the button when used in an HTML form. */ type?:
       | "reset"
       | "submit"
@@ -24,12 +19,17 @@ declare const __propDef: {
     /** The URL that the hyperlink points to. **Note**: This turns the button into an `<a>` element. */ href?:
       | string
       | undefined
+    /** Causes the browser to treat the linked URL as a download. Can be used with or without a value. */ download?:
+      | string
+      | undefined
     /** The relationship between the linked resource and the current page. See [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/rel). */ rel?:
       | string
       | undefined
   }
   slots: {
+    iconLeading: {}
     default: {}
+    iconTrailing: {}
   }
   getters: {}
   events: {

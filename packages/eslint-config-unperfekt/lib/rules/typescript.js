@@ -18,6 +18,8 @@ module.exports = {
           "error",
           { prefer: "type-imports" },
         ],
+        "no-duplicate-imports": "off",
+        "@typescript-eslint/no-duplicate-imports": "error",
         "@typescript-eslint/no-unsafe-assignment": "off",
         "@typescript-eslint/no-unsafe-call": "off",
         "@typescript-eslint/no-unsafe-member-access": "off",
