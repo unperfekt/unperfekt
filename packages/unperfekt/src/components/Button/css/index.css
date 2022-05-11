@@ -1,0 +1,38 @@
+/* Scale-specific styles for the component: dimensions, layout, etc */
+
+@import "./skin.css";
+
+@layer components {
+  .Button {
+    @apply relative m-0 inline-flex items-center justify-center gap-x-2 rounded text-center align-top font-semibold normal-case outline-none transition-colors;
+    @apply focus-visible:ring-2 focus-visible:ring-offset-2;
+    appearance: button;
+  }
+
+  .Button:disabled,
+  .Button.is-disabled {
+    @apply cursor-not-allowed;
+  }
+
+  .Button-icon {
+    @apply order-none inline-flex max-h-full;
+  }
+
+  /* Size */
+  .Button--sm {
+    @apply px-4 py-2;
+  }
+
+  .Button--md {
+    @apply px-6 py-3;
+  }
+
+  .Button--lg {
+    @apply px-8 py-4;
+  }
+
+  /* Variants */
+  .Button--outline {
+    @apply border border-solid;
+  }
+}

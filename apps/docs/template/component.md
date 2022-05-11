@@ -10,11 +10,15 @@
 - of
 - Features
 
-(Healthy) Version: x.x.x (latest) Size: x.xx kB
+* (Healthy) Version: x.x.x (latest)
+* Size: x.xx kB
 
 ---
 
-View Source View on NPM Report an issue WAI-ARIA design pattern
+- View Source
+- View on NPM
+- Report an issue
+- WAI-ARIA design pattern
 
 ## Introduction
 
@@ -36,11 +40,19 @@ When not to use
 
 ### Keyboard Interactions
 
+| Key   | Description |
+| ----- | ----------- |
+| `Key` | Does stuff. |
+
 ## Component API / API Reference
 
 ### Props
 
-### Typedefs
+| Prop   | Type       | Default | Description |
+| ------ | ---------- | ------- | ----------- |
+| `prop` | `"string"` | `""`    | Does stuff  |
+
+### Typedefs / Generics
 
 ### Slots
 

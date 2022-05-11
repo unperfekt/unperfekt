@@ -2,8 +2,8 @@ module.exports = {
   stories: [
     // "../src/**/*.stories.mdx",
     // "../src/**/*.stories.@(js|jsx|ts|tsx|svelte)",
-    "../stories/*.stories.@(js|jsx|ts|tsx|svelte)",
-    // "../node_modules/unperfekt/src/**/stories/*.stories.@(js|jsx|ts|tsx|svelte)",
+    // "../stories/*.stories.@(js|jsx|ts|tsx|svelte)",
+    "../node_modules/unperfekt/src/components/*/stories/*.stories.svelte",
   ],
   addons: [
     "@storybook/addon-links",

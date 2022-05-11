@@ -1,8 +1,6 @@
 <script lang="ts" strictEvents>
   import { Button, Combobox, createAsyncList } from "unperfekt"
 
-  // import json from "./countries.json"
-
   interface Character {
     id: string
     name: string

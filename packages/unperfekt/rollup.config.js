@@ -1,12 +1,12 @@
 /* eslint-disable import/no-default-export, import/default, import/namespace, import/no-named-as-default, import/no-named-as-default-member */
 import path from "path"
 
-import { sveld } from "sveld"
+// import { sveld } from "sveld"
 import svelte from "rollup-plugin-svelte"
 import typescript from "@rollup/plugin-typescript"
 import resolve from "@rollup/plugin-node-resolve"
+import commonjs from "@rollup/plugin-commonjs"
 
-// import sveld from "sveld"
 import svelteConfig from "./svelte.config.js"
 import pkg from "./package.json"
 
@@ -17,16 +17,26 @@ const external = Object.keys(dependencies).concat([
   "svelte/store",
   "svelte/transition",
   "svelte/easing",
-  "@floating-ui/dom",
-  "classnames",
 ])
 
-const convertToKebabCase = (string) =>
-  string
+const globals = {
+  "classnames": "cn",
+  "svelte": "svelte",
+  "svelte/internal": "internal",
+  "svelte/store": "store",
+  "svelte/transition": "transition",
+  "svelte/easing": "easing",
+  "@floating-ui/dom": "dom",
+}
+
+/** @param {string} str */
+const convertToKebabCase = (str) =>
+  str
     .replace(/([a-z])([A-Z])/g, "$1-$2") // get all lowercase letters that are near to uppercase ones
     .replace(/[\s_]+/g, "-") // replace all spaces and low dash
     .toLowerCase() // convert to lower case
 
+/** @param {string[]} exceptions */
 const prependTagOption = (exceptions = []) => ({
   markup({ content, filename }) {
     const basename = path.basename(filename, ".svelte")
@@ -44,8 +54,8 @@ export default [
   {
     input: "src/index.ts",
     output: [
-      { file: pkg.module, format: "es", name },
-      { file: pkg.main, format: "umd", name },
+      { file: pkg.module, format: "es", name, globals },
+      { file: pkg.main, format: "umd", name, globals },
     ],
     external,
     plugins: [
@@ -53,24 +63,18 @@ export default [
         ...svelteConfig,
         emitCss: false,
       }),
-      typescript(),
+      typescript({ sourceMap: false }),
+      resolve(),
+      commonjs(),
     ],
   },
   {
     input: "src/index.ts",
     output: {
-      file: "./dist/unpkg/custom-elements.js",
+      file: pkg.unpkg,
       format: "iife",
-      // globals: {
-      //   "classnames": "cn",
-      //   "svelte": "svelte",
-      //   "svelte/internal": "svelte",
-      //   "svelte/store": "svelte",
-      //   "svelte/transition": "svelte",
-      //   "svelte/easing": "svelte",
-      //   "@floating-ui/dom": "dom",
-      // },
       name,
+      globals,
     },
     external,
     plugins: [
@@ -83,18 +87,19 @@ export default [
         },
         preprocess: [prependTagOption()].concat(svelteConfig.preprocess),
       }),
-      resolve(),
       typescript({
         sourceMap: false,
       }),
-      sveld({
-        typesOptions: {
-          outDir: "types",
-        },
-        glob: true,
-        // markdown: true,
-        // json: true,
-      }),
+      resolve({ browser: true }),
+      commonjs(),
+      // sveld({
+      //   typesOptions: {
+      //     outDir: "types",
+      //   },
+      //   glob: true,
+      //   // markdown: true,
+      //   // json: true,
+      // }),
       // minify(),
     ],
   },

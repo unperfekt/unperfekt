@@ -1,4 +1,4 @@
-@import "../src/Accordion/css/index.css";
-@import "../src/Button/css/index.css";
-@import "../src/Combobox/css/index.css";
-@import "../src/Dialog/css/index.css";
+@import "../src/components/Accordion/css/index.css";
+@import "../src/components/Button/css/index.css";
+@import "../src/components/Combobox/css/index.css";
+@import "../src/components/Dialog/css/index.css";

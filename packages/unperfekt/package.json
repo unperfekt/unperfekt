@@ -20,11 +20,12 @@
       "import": "./dist/esm/index.mjs",
       "require": "./dist/cjs/index.js"
     },
-    "./css/*": "./css/*"
+    "./css/*": "./css/*",
+    "./src/components/*/docs/*": "./src/components/*/docs/*.svx"
   },
   "main": "./dist/cjs/index.js",
   "svelte": "./src/index.ts",
-  "unpkg": "./dist/custom-elements.js",
+  "unpkg": "./dist/unpkg/custom-elements.js",
   "module": "./dist/esm/index.mjs",
   "types": "./types/index.d.ts",
   "files": [
@@ -39,24 +40,22 @@
   "scripts": {
     "build": "rollup -c",
     "build:types": "node scripts/types.cjs",
-    "build:watch": "rollup -c -w",
     "check": "svelte-check --tsconfig ./tsconfig.json",
     "dev": "rollup -c -w",
     "lint": "eslint",
     "lint:fix": "eslint --fix"
   },
   "dependencies": {
-    "@floating-ui/dom": "^0.4.5",
-    "@sveltejs/adapter-auto": "^1.0.0-next.40",
-    "@sveltejs/kit": "^1.0.0-next.324",
+    "@floating-ui/dom": "^0.5.0",
     "classnames": "^2.3.1",
     "svelte": "^3.48.0"
   },
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^22.0.0",
     "@rollup/plugin-node-resolve": "^13.3.0",
     "@rollup/plugin-typescript": "^8.3.2",
     "eslint-config-unperfekt": "workspace:*",
-    "rollup": "^2.71.1",
+    "rollup": "^2.72.1",
     "rollup-plugin-svelte": "^7.1.0",
     "sveld": "^0.15.1",
     "svelte-check": "^2.7.0",

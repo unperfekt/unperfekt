@@ -3,8 +3,8 @@ module.exports = {
     "./rules/best-practices",
     "./rules/jsdoc",
     "./rules/import",
-    "./rules/typescript",
     "./rules/svelte",
+    "./rules/typescript",
     "./rules/prettier",
   ].map(require.resolve),
   env: {

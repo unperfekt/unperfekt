@@ -35,13 +35,13 @@
     "auto": "^10.36.5",
     "commitlint": "^16.2.4",
     "commitlint-config-unperfekt": "workspace:*",
-    "eslint": "^8.14.0",
+    "eslint": "^8.15.0",
     "husky": "^7.0.4",
     "lerna": "^4.0.0",
     "prettier": "^2.6.2",
     "prettier-config-unperfekt": "workspace:*",
     "sort-package-json": "^1.57.0",
-    "turbo": "^1.2.6"
+    "turbo": "^1.2.8"
   },
   "packageManager": "pnpm@7.0.0",
   "engines": {

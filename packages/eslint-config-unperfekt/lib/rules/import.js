@@ -2,7 +2,7 @@ module.exports = {
   extends: ["plugin:import/recommended"],
   rules: {
     "import/no-default-export": "error",
-    // "import/no-unresolved": "off",
+    "import/no-unresolved": "off",
     "import/order": [
       "error",
       {
