@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { Button } from "unperfekt"
   import { Meta, Story, Template } from "@storybook/addon-svelte-csf"
+  import { Button } from "../"
 </script>
 
 <!-- More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export -->
@@ -9,11 +9,7 @@
   title="Example/Button"
   component={Button}
   argTypes={{
-    onClick: { action: "onClick" },
-    href: { control: "text" },
-    download: { control: "text" },
     disabled: { control: "boolean" },
-    loading: { control: "boolean" },
     variant: {
       control: { type: "select" },
       options: ["primary", "outline", "dark", "danger", "on-danger"],
@@ -29,7 +25,7 @@
   }}
 />
 
-<!-- Variants (primary, secondary) - Sizes (sm, md, lg) - States (disabled, readOnly, loading) - Accessibility (focus, hover) -->
+<!-- Variants (primary, secondary) - Sizes (sm, md, lg) - States (disabled, readonly) - Accessibility (focus, hover) -->
 
 <!-- More on component templates: https://storybook.js.org/docs/svelte/writing-stories/introduction#using-args -->
 <Template let:args>

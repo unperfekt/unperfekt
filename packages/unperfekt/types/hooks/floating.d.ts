@@ -1,6 +1,8 @@
-import { type ComputePositionConfig } from "@floating-ui/dom"
+import {
+  type ComputePositionConfig,
+  type ReferenceElement,
+} from "@floating-ui/dom"
+import type { Action } from "svelte/action"
 export declare const createFloating: (
   options?: Partial<ComputePositionConfig>,
-) => ((node: HTMLElement) => {
-  destroy: () => void
-})[]
+) => readonly [Action<ReferenceElement, any>, Action<HTMLElement, any>]

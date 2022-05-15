@@ -1,0 +1,14 @@
+/* Scale-specific styles for the component: dimensions, layout, etc */
+
+@import "./skin.css";
+
+@layer components {
+  .ButtonGroup {
+    @apply flex justify-end gap-x-4;
+  }
+
+  .ButtonGroup:disabled,
+  .ButtonGroup.is-disabled {
+    @apply cursor-not-allowed;
+  }
+}

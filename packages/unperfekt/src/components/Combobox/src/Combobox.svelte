@@ -2,13 +2,12 @@
   import { scale } from "svelte/transition"
   import { sineIn, sineOut } from "svelte/easing"
   import { offset, type Strategy } from "@floating-ui/dom"
-  
+
   import { noOp } from "../../../utils/noOp"
-  import { createFloating } from "../../../hooks/floating"
-  
+  import { createFloating } from "../../../actions/floating"
+
   import type { Item } from "./types"
   import type { LoadingState } from "../../../state/collection/loadingState"
-  
 
   // --- Public State ----
   type T = $$Generic<Item>
@@ -100,9 +99,10 @@
   //   currentTarget: EventTarget & HTMLInputElement
   // }
 
-  const stopEvent = (e: Event) => {
+  const stopEvent = <T extends Event>(e: T): T => {
     e.preventDefault()
     e.stopPropagation()
+    return e
   }
 
   let onKeyDown = (e: KeyEvent) => {
@@ -139,11 +139,7 @@
     }
   }
 
-  /**
-   * Get the items label.
-   *
-   * @param item
-   */
+  /** Get the label. */
   export let getLabel = (item: Item): string => item.name
 
   const getItem = (index: number): Item | undefined =>
@@ -217,11 +213,12 @@
     strategy,
   })
 
-  // let isLoading = false
   $: isLoading = loadingState === "loading"
 
   $: highlightIndex, listboxNode, highlight()
 </script>
+
+<svelte:window on:click={onOutsideClick} />
 
 <label for="{id}-input" id="{id}-label" class="Combobox-label">
   {label}
@@ -326,5 +323,3 @@
     </ul>
   {/if}
 </div>
-
-<svelte:window on:click={onOutsideClick} />

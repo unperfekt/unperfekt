@@ -22,7 +22,19 @@ module.exports = {
   svelteOptions: {
     preprocess: require("svelte-preprocess")(),
   },
-  core: {
-    builder: "@storybook/builder-vite",
-  },
+  // features: {
+  //   storyStoreV7: true,
+  // },
+  // core: {
+  //   builder: {
+  //     name: "webpack5",
+  //     options: {
+  //       lazyCompilation: true,
+  //       fsCache: true,
+  //     },
+  //   },
+  // },
+  // core: {
+  //   builder: "@storybook/builder-vite",
+  // },
 }

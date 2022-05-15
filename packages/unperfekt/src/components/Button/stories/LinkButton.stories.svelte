@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { LinkButton } from "unperfekt"
   import { Meta, Story, Template } from "@storybook/addon-svelte-csf"
+  import { LinkButton } from "../"
 </script>
 
 <!-- More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export -->
@@ -10,7 +10,7 @@
   component={LinkButton}
   argTypes={{
     onClick: { action: "onClick" },
-    href: { control: "text" },
+    href: { control: "text", defaultValue: "#" },
     download: { control: "text" },
     disabled: { control: "boolean" },
     variant: {
@@ -43,10 +43,8 @@
 <Story name="Type - Reset" args={{ type: "reset" }} />
 
 <Story name="Disabled" args={{ disabled: true }} />
-<Story name="Link - Disabled" args={{ href: "#", disabled: true }} />
-<Story name="Loading" args={{ loading: true }} />
-<Story name="Href" args={{ href: "#" }} />
-<Story name="Download" args={{ href: "#", download: "#" }} />
+<Story name="Link - Disabled" args={{ disabled: true }} />
+<Story name="Download" args={{ download: "#" }} />
 
 <Story name="Size - lg" args={{ size: "lg" }} />
 <Story name="Size - md" args={{ size: "md" }} />

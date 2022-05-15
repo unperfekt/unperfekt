@@ -28,13 +28,11 @@
 </script>
 
 <div on:click class="Accordion">
-  {#if items.length > 0}
-    {#each items as item (item.id)}
-      <AccordionItem key={item.id} title={item.title}>
-        {item.description}
-      </AccordionItem>
-    {/each}
+  {#each items as item (item.id)}
+    <AccordionItem key={item.id} title={item.title}>
+      {item.description}
+    </AccordionItem>
   {:else}
     <slot />
-  {/if}
+  {/each}
 </div>

@@ -1,16 +1,17 @@
-<script context="module">
-  import { portal } from "../../../hooks/portal"
-</script>
-
 <script lang="ts" strictEvents>
+  import { portal } from "./portal"
+
   /**
-   * DOM Element or CSS Selector.
+   * @name Portal
    *
-   * @default "body"
+   * Convinient wrapper to use the portal hook, as it also adds the "hidden"
+   * attribute to the element for SSR support.
    */
-  export const target: HTMLElement | string = "body"
+
+  /** DOM Element or CSS Selector. */
+  export let target: HTMLElement | string = "body"
 </script>
 
-<div use:portal={target} hidden>
+<div use:portal={target} hidden {...$$restProps}>
   <slot />
 </div>

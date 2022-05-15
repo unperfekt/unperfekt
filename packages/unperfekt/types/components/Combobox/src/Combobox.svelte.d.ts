@@ -17,7 +17,7 @@ declare class __sveltets_Render<T extends Item> {
       | undefined
     /** The list of Combobox items. */ items?: T[] | undefined
     /** Whether the Combobox is disabled. */ disabled?: boolean | undefined
-    getLabel?: ((item: Item) => string) | undefined
+    /** Get the label. */ getLabel?: ((item: Item) => string) | undefined
   }
   events(): {
     blur: FocusEvent

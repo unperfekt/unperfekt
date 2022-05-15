@@ -1,18 +1,15 @@
 import { SvelteComponentTyped } from "svelte"
 declare const __propDef: {
   props: {
-    /**
-     * DOM Element or CSS Selector.
-     *
-     * @default "body"
-     */ target?: string | HTMLElement | undefined
+    /** DOM Element or CSS Selector. */ target?:
+      | string
+      | HTMLElement
+      | undefined
   }
   slots: {
     default: {}
   }
-  getters: {
-    target: string
-  }
+  getters: {}
   events: {}
 }
 export declare type PortalProps = typeof __propDef.props
@@ -22,7 +19,5 @@ export default class Portal extends SvelteComponentTyped<
   PortalProps,
   PortalEvents,
   PortalSlots
-> {
-  get target(): string
-}
+> {}
 export {}

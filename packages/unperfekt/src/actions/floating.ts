@@ -6,6 +6,8 @@ import {
   type ReferenceElement,
 } from "@floating-ui/dom"
 
+import type { Action } from "svelte/action"
+
 export const createFloating = (
   options: Partial<ComputePositionConfig> = {},
 ) => {
@@ -30,16 +32,17 @@ export const createFloating = (
     }
   }
 
-  // create reference to the anchor element
-  const createAnchor = (node: ReferenceElement) => {
+  /** Creates a reference to the anchor element. */
+  const createAnchor: Action<ReferenceElement> = (node) => {
     anchor = node
+
     return {
       destroy: cleanup,
     }
   }
 
-  // create reference to the target element
-  const createTarget = (node: HTMLElement) => {
+  /** Creates a reference to the target element. */
+  const createTarget: Action = (node) => {
     target = node
     cleanup =
       (anchor && target && autoUpdate(anchor, target, () => void update())) ||
@@ -50,5 +53,5 @@ export const createFloating = (
     }
   }
 
-  return [createAnchor, createTarget]
+  return [createAnchor, createTarget] as const
 }

@@ -1,51 +1,53 @@
 <script lang="ts" strictEvents>
+  import cn from "classnames"
+
   import Overlay from "./Overlay.svelte"
   import Modal from "./Modal.svelte"
+  import { SIZE } from "./constants"
+
+  /** Space-separated list of the case-sensitive classes of the element. */
+  let _class: string | undefined = undefined
+  export { _class as class }
 
   /** Wheter the dialog is open or not. */
-  export let isOpen = false
+  export let open: boolean = false
 
-  // const handleKeyDown = (e: KeyboardEvent) => {
-  //   if (!dialog) return
+  /** The size of the dialog. */
+  export let size: keyof typeof SIZE = "md"
 
-  //   if (e.key === "Escape") {
-  //     return close()
-  //   }
+  let classes = cn("Dialog", SIZE[size], _class)
 
-  //   if (e.key === "Tab") {
-  //     // trap focus
-  //     const nodes: NodeListOf<HTMLElement> = dialog.querySelectorAll("*")
-  //     const tabbable = Array.from(nodes).filter((n) => n.tabIndex >= 0)
+  window.visualViewport.addEventListener("resize", () => {
+    visualHeight = `${visualViewport.height}px`
+  })
 
-  //     let index = tabbable.indexOf(document.activeElement as HTMLElement)
-  //     if (index === -1 && e.shiftKey) index = 0
+  $: visualHeight = `${visualViewport.height}px`
 
-  //     index += tabbable.length + (e.shiftKey ? -1 : 1)
-  //     index %= tabbable.length
+  $: document.documentElement.style.setProperty(
+    "--visual-viewport-height",
+    visualHeight,
+  )
 
-  //     tabbable[index].focus()
-  //     e.preventDefault()
-  //   }
-  // }
-
-  // const previouslyFocused =
-  //   typeof document !== "undefined" && (document.activeElement as HTMLElement)
-
-  // if (previouslyFocused) {
-  //   onDestroy(() => {
-  //     previouslyFocused.focus()
-  //   })
+  // $: if (open) {
+  //   // When the modal is shown, we want a fixed body
+  //   document.body.style.position = "fixed"
+  //   document.body.style.top = `-${window.scrollY}px`
+  // } else {
+  //   const scrollY = document.body.style.top
+  //   document.body.style.position = ""
+  //   document.body.style.top = ""
+  //   window.scrollTo(0, parseInt(scrollY || "0") * -1)
   // }
 </script>
 
-<!-- <svelte:window on:keydown={handleKeyDown} /> -->
-
-<Overlay {isOpen}>
-  <Modal {isOpen} on:close>
-    <div class="Dialog" role="dialog" aria-modal="true">
-      <slot name="header" />
-      <slot />
-      <slot name="buttongroup" />
+<Overlay {open}>
+  <Modal {open} on:close>
+    <div class={classes} role="dialog" aria-modal="true">
+      <div class="Dialog-content">
+        <slot name="header" />
+        <slot />
+        <slot name="buttongroup" />
+      </div>
     </div>
   </Modal>
 </Overlay>

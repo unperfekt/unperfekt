@@ -2,31 +2,77 @@
 
 @layer components {
   .Backdrop {
-    @apply fixed inset-0 z-10 h-full w-full overflow-hidden bg-black bg-opacity-30;
+    @apply fixed inset-0 z-10 h-screen w-screen overflow-hidden bg-black bg-opacity-30;
   }
 
-  .Dialog {
-    @apply box-border flex max-h-full w-fit flex-col outline-none;
-    /* inline-size: fit-content; */
-    max-height: inherit;
-    min-width: 90%;
-    max-width: 100%;
-    /* min-inline-size: 90%; */
-    /* max-inline-size: 100%; */
-  }
-
+  /* Positions the modal. */
   .Modal-wrapper {
-    @apply pointer-events-none invisible fixed top-0 left-0 z-20 box-border flex h-screen w-screen items-center justify-center;
-    /* inline-size: 100vw; */
-    height: stretch;
+    @apply pointer-events-none invisible fixed inset-0 z-20 box-border flex h-screen w-screen items-center justify-center;
+    height: 100dvh;
+    max-height: 100dvh;
+    height: var(--visual-viewport-height, 100vh);
+    max-height: var(--visual-viewport-height, 100vh);
+    will-change: transform, opacity;
   }
 
   .Modal-wrapper.is-open {
     @apply visible;
   }
 
+  /* Positions the modal content. */
   .Modal {
     @apply pointer-events-auto z-20 overflow-hidden outline-none;
-    @apply bg-white p-6;
+    @apply bg-white;
+    /* padding: 0 env(save-area-inset-right) 0 env(save-area-inset-left); */
+  }
+
+  .Modal--fullscreen {
+    @apply fixed inset-4 max-w-none;
+    max-height: none;
+    width: calc(100vw - 32px);
+    height: calc(var(--visual-viewport-height, 100vh) - 32px);
+  }
+
+  .Modal--fullscreenTakeover {
+    @apply fixed inset-0 max-w-none;
+    max-height: none;
+  }
+
+  .Dialog {
+    @apply box-border flex w-fit max-w-full outline-none;
+    max-height: inherit;
+    max-height: 100dvh;
+    max-height: var(--visual-viewport-height, inherit);
+    min-width: 288px; /* (320px - 16px - 16px) */
+
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  .Dialog-content {
+    @apply flex flex-col;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .Dialog--sm {
+    /* @apply max-w-sm; */
+    /* same as max-w-sm */
+    width: 384px;
+  }
+
+  .Dialog--md {
+    /* @apply max-w-md; */
+    /* same as max-w-md */
+    width: 448px;
+  }
+
+  .Dialog--lg {
+    /* @apply max-w-lg; */
+    /* same as max-w-lg */
+    width: 512px;
+  }
+
+  .Dialog--fullscreen,
+  .Dialog--fullscreenTakeover {
+    @apply h-full w-full;
   }
 }

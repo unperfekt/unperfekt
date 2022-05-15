@@ -1,4 +1,5 @@
 /* eslint-disable import/no-default-export, import/default, import/namespace, import/no-named-as-default, import/no-named-as-default-member */
+
 import path from "path"
 
 // import { sveld } from "sveld"
@@ -29,14 +30,14 @@ const globals = {
   "@floating-ui/dom": "dom",
 }
 
-/** @param {string} str */
+/** @param {string} str String to kebab-case. */
 const convertToKebabCase = (str) =>
   str
     .replace(/([a-z])([A-Z])/g, "$1-$2") // get all lowercase letters that are near to uppercase ones
     .replace(/[\s_]+/g, "-") // replace all spaces and low dash
     .toLowerCase() // convert to lower case
 
-/** @param {string[]} exceptions */
+/** @param {string[]} exceptions Strings to exclude. */
 const prependTagOption = (exceptions = []) => ({
   markup({ content, filename }) {
     const basename = path.basename(filename, ".svelte")
@@ -64,7 +65,7 @@ export default [
         emitCss: false,
       }),
       typescript({ sourceMap: false }),
-      resolve(),
+      resolve({ dedupe: external }),
       commonjs(),
     ],
   },
@@ -90,7 +91,7 @@ export default [
       typescript({
         sourceMap: false,
       }),
-      resolve({ browser: true }),
+      resolve({ browser: true, dedupe: external }),
       commonjs(),
       // sveld({
       //   typesOptions: {
