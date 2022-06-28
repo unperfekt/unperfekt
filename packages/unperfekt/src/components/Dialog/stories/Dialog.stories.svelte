@@ -30,14 +30,14 @@
 
 <Template let:args>
   <Button on:click={toggle}>Open</Button>
-  <Dialog {open} on:close={toggle} {...args}>
+  <Dialog {...args} open={open} on:close={toggle}>
     <h1 slot="header">Dialog</h1>
-    <p>
+    <svelte:fragment>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eget nisl
       id libero tincidunt euismod. Nulla euismod, nisl eu consectetur
       consectetur, nisi nisl consectetur, nisi nisl euismod, nisi nisl euismod,
       nisi nisl euismod.
-    </p>
+    </svelte:fragment>
     <ButtonGroup slot="buttongroup">
       <Button variant="outline" on:click={toggle}>Close</Button>
       <Button on:click={toggle}>Open</Button>
@@ -140,9 +140,9 @@
     rutrum.
   </p>
   <div class="h-96" />
-  <Dialog {open} on:close={toggle}>
+  <Dialog open={open} on:close={toggle}>
     <h1 slot="header">Dialog</h1>
-    <div class="overflow-y-auto overscroll-y-contain">
+    <svelte:fragment>
       <p class="mb-4">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean id
         accumsan augue. Phasellus consequat augue vitae tellus tincidunt
@@ -185,7 +185,7 @@
         condimentum risus. Nulla facilisi. Etiam venenatis molestie tellus.
         Quisque consectetur non risus eu rutrum.
       </p>
-    </div>
+    </svelte:fragment>
 
     <ButtonGroup slot="buttongroup">
       <Button variant="outline" on:click={toggle}>Close</Button>
@@ -194,7 +194,7 @@
   </Dialog>
   <Dialog open={openx} on:close={togglex}>
     <h1 slot="header">Dialog</h1>
-    <div class="overflow-y-auto overscroll-y-contain">
+    <svelte:fragment>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean id
         accumsan augue. Phasellus consequat augue vitae tellus tincidunt
@@ -202,7 +202,7 @@
         condimentum risus. Nulla facilisi. Etiam venenatis molestie tellus.
         Quisque consectetur non risus eu rutrum.
       </p>
-    </div>
+    </svelte:fragment>
 
     <ButtonGroup slot="buttongroup">
       <Button variant="outline" on:click={togglex}>Close</Button>
@@ -238,7 +238,7 @@
 
 <Story name="Stacking">
   <Button on:click={toggle}>Open</Button>
-  <Dialog {...args} {open} on:close={toggle}>
+  <Dialog {...args} open={open} on:close={toggle}>
     <h1 slot="header">Dialog</h1>
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eget nisl

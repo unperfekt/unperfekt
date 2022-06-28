@@ -1,8 +1,9 @@
 <script lang="ts" strictEvents>
-  import { fade, fly } from "svelte/transition"
-  import { expoInOut } from "svelte/easing"
+  import { fade, scale } from "svelte/transition"
   import { createEventDispatcher, onDestroy } from "svelte"
   import cn from "classnames"
+
+  import { fadeIn, fadeOut, scaleIn } from "../../../utils/transitions"
 
   import { TYPE } from "./constants"
 
@@ -22,9 +23,6 @@
   const dispatch = createEventDispatcher()
 
   const close = () => dispatch("close")
-
-  const flyIn = { y: 40, opacity: 0.001, easing: expoInOut }
-  // const flyOut = { y: 40, opacity: 0.001, easing: expoInOut }
 
   const handleKeyDown = (e: KeyboardEvent) => {
     if (!modal) return
@@ -49,8 +47,6 @@
     }
   }
 
-  let classes = cn("Modal-wrapper", { "is-open": open })
-
   const previouslyFocused =
     typeof document !== "undefined" && (document.activeElement as HTMLElement)
 
@@ -63,13 +59,13 @@
 
 <svelte:window on:keydown={handleKeyDown} />
 
-<div class="Backdrop" transition:fade on:click={close} />
-<div class={classes}>
+<div class="Backdrop" in:fade={fadeIn} out:fade={fadeOut} on:click={close} />
+<div class={cn("Modal-container", { "is-open": open })}>
   <div
     class={cn("Modal", TYPE[type], _class)}
     bind:this={modal}
-    in:fly={flyIn}
-    out:fade
+    in:scale={scaleIn}
+    out:fade={fadeOut}
   >
     <slot />
   </div>

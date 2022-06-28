@@ -21,7 +21,7 @@ module.exports = {
   // See https://github.com/prettier/prettier/pull/9167
   // and https://github.com/sveltejs/prettier-plugin-svelte/issues/155
   plugins: [require.resolve("prettier-plugin-tailwindcss")],
-  svelteAllowShorthand: true,
+  svelteAllowShorthand: false,
   svelteIndentScriptAndStyle: true,
   svelteSortOrder: "options-scripts-markup-styles",
   svelteStrictMode: false,

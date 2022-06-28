@@ -1,9 +1,13 @@
 <script lang="ts" strictEvents>
   import cn from "classnames"
 
+  import { visualViewport } from "../../../stores/visualViewport"
+
   import Overlay from "./Overlay.svelte"
   import Modal from "./Modal.svelte"
   import { SIZE } from "./constants"
+
+  import type { TYPE } from "./constants"
 
   /** Space-separated list of the case-sensitive classes of the element. */
   let _class: string | undefined = undefined
@@ -15,37 +19,42 @@
   /** The size of the dialog. */
   export let size: keyof typeof SIZE = "md"
 
-  let classes = cn("Dialog", SIZE[size], _class)
+  let modaltype = {
+    sm: "modal",
+    md: "modal",
+    lg: "modal",
+    fullscreen: "fullscreen",
+    fullscreenTakeover: "fullscreenTakeover",
+  }[size] as keyof typeof TYPE
 
-  window.visualViewport.addEventListener("resize", () => {
-    visualHeight = `${visualViewport.height}px`
-  })
+  $: if (typeof window !== "undefined") {
+    // TODO: this should only run once within a global "provider" rather
+    // than for each component instance.
+    document.documentElement.style.setProperty(
+      "--visual-viewport-height",
+      `${$visualViewport.height}px`,
+    )
 
-  $: visualHeight = `${visualViewport.height}px`
-
-  $: document.documentElement.style.setProperty(
-    "--visual-viewport-height",
-    visualHeight,
-  )
-
-  // $: if (open) {
-  //   // When the modal is shown, we want a fixed body
-  //   document.body.style.position = "fixed"
-  //   document.body.style.top = `-${window.scrollY}px`
-  // } else {
-  //   const scrollY = document.body.style.top
-  //   document.body.style.position = ""
-  //   document.body.style.top = ""
-  //   window.scrollTo(0, parseInt(scrollY || "0") * -1)
-  // }
+    if (open) {
+      document.body.classList.add("overflow-hidden")
+    } else {
+      document.body.classList.remove("overflow-hidden")
+    }
+  }
 </script>
 
-<Overlay {open}>
-  <Modal {open} on:close>
-    <div class={classes} role="dialog" aria-modal="true">
+<Overlay open={open}>
+  <Modal open={open} type={modaltype} on:close>
+    <div
+      class={cn("Dialog", SIZE[size], _class)}
+      role="dialog"
+      aria-modal="true"
+    >
       <div class="Dialog-content">
         <slot name="header" />
-        <slot />
+        <div class="overflow-y-auto overscroll-y-contain">
+          <slot />
+        </div>
         <slot name="buttongroup" />
       </div>
     </div>

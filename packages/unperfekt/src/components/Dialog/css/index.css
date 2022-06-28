@@ -2,26 +2,30 @@
 
 @layer components {
   .Backdrop {
-    @apply fixed inset-0 z-10 h-screen w-screen overflow-hidden bg-black bg-opacity-30;
+    @apply fixed inset-0 z-10 h-screen w-screen overflow-hidden;
+    @apply bg-black bg-opacity-30;
   }
 
   /* Positions the modal. */
-  .Modal-wrapper {
-    @apply pointer-events-none invisible fixed inset-0 z-20 box-border flex h-screen w-screen items-center justify-center;
-    height: 100dvh;
+  .Modal-container {
+    @apply pointer-events-none invisible fixed inset-0 z-20 flex h-screen w-screen items-center justify-center;
     max-height: 100dvh;
-    height: var(--visual-viewport-height, 100vh);
     max-height: var(--visual-viewport-height, 100vh);
-    will-change: transform, opacity;
+    /* will-change: transform, opacity; */
   }
 
-  .Modal-wrapper.is-open {
+  .Modal-container.is-open {
     @apply visible;
   }
 
-  /* Positions the modal content. */
+  /* Prevent scrolling while the modal is open. */
+  html:has(.Modal-container.is-open) body {
+    @apply overflow-hidden;
+  }
+
+  /* Holds the modal content. */
   .Modal {
-    @apply pointer-events-auto z-20 overflow-hidden outline-none;
+    @apply pointer-events-auto overflow-hidden outline-none;
     @apply bg-white;
     /* padding: 0 env(save-area-inset-right) 0 env(save-area-inset-left); */
   }
@@ -40,16 +44,16 @@
 
   .Dialog {
     @apply box-border flex w-fit max-w-full outline-none;
-    max-height: inherit;
-    max-height: 100dvh;
     max-height: var(--visual-viewport-height, inherit);
+    max-height: 100dvh;
     min-width: 288px; /* (320px - 16px - 16px) */
 
     padding-bottom: env(safe-area-inset-bottom);
   }
 
   .Dialog-content {
-    @apply flex flex-col;
+    /* @apply flex flex-col; */
+    @apply grid grid-rows-[auto,1fr,auto] gap-y-2;
     -webkit-overflow-scrolling: touch;
   }
 

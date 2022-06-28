@@ -9,7 +9,7 @@
 </script>
 
 {#if open}
-  <Portal {target} class="isolate bg-transparent">
+  <Portal target={target} class="isolate bg-transparent">
     <slot />
   </Portal>
 {/if}

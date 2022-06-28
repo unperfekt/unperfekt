@@ -12,16 +12,18 @@
 
   /** Whether the buttons are disabled. */
   export let disabled: boolean | undefined = undefined
+</script>
 
-  let className = cn(
+<div
+  class={cn(
     "ButtonGroup",
     {
       "is-disabled": disabled,
     },
     _class,
-  )
-</script>
-
-<div class={className} {disabled} {...$$restProps}>
+  )}
+  disabled={disabled}
+  {...$$restProps}
+>
   <slot />
 </div>

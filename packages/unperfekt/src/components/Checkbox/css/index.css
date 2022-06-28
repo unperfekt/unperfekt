@@ -1,0 +1,29 @@
+/* Scale-specific styles for the component: dimensions, layout, etc */
+
+@import "./skin.css";
+
+@layer components {
+  .Checkbox {
+    @apply mb-2 flex items-start;
+  }
+
+  .Checkbox-box {
+    @apply mr-2 flex h-5 w-5 items-center;
+  }
+
+  .Checkbox-text {
+    @apply text-sm;
+  }
+
+  .Checkbox-desc {
+    @apply text-gray-500;
+  }
+
+  .Checkbox-input {
+    @apply h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500;
+  }
+
+  .Checkbox-label {
+    @apply h-5 cursor-pointer font-medium;
+  }
+}

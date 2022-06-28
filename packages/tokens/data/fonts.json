@@ -1,0 +1,38 @@
+{
+  "dsp_spec_version": "0.0.1",
+  "last_updated_by": "",
+  "last_updated": "2022-05-22T10:00:59.303Z",
+  "entities": [
+    {
+      "class": "collection",
+      "type": "font",
+      "id": "30092f11-72cf-41de-adeb-db532b3147fa",
+      "name": "un.ref.typescale",
+      "last_updated": "2022-05-22T10:11:22.738Z",
+      "last_updated_by": "",
+      "description": "",
+      "tags": [],
+      "related_entity_ids": [],
+      "tokens": [
+        {
+          "id": "Open Sans-weight",
+          "type": "custom",
+          "value": "400",
+          "key": "weight"
+        },
+        {
+          "id": "Open Sans-size",
+          "type": "custom",
+          "value": "16",
+          "key": "size"
+        },
+        {
+          "id": "un.ref.typescale-family",
+          "type": "custom",
+          "value": "open-sans",
+          "key": "family"
+        }
+      ]
+    }
+  ]
+}

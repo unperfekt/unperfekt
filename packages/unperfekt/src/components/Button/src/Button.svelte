@@ -23,8 +23,10 @@
 
   /** Whether the button is disabled. */
   export let disabled: boolean | undefined = undefined
+</script>
 
-  let className = cn(
+<button
+  class={cn(
     "Button",
     {
       "is-disabled": disabled,
@@ -32,12 +34,8 @@
     VARIANT[variant],
     SIZE[size],
     _class,
-  )
-</script>
-
-<button
-  class={className}
-  {disabled}
+  )}
+  disabled={disabled}
   on:click
   on:mouseenter
   on:mouseleave

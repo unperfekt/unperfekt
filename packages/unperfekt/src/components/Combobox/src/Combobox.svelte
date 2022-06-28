@@ -4,6 +4,7 @@
   import { offset, type Strategy } from "@floating-ui/dom"
 
   import { noOp } from "../../../utils/noOp"
+  import { composedPathContains } from "../../../utils/composedPathContains"
   import { createFloating } from "../../../actions/floating"
 
   import type { Item } from "./types"
@@ -82,10 +83,6 @@
 
   // const dispatch = createEventDispatcher<{ input: InputEvent }>()
   // const dispatch = createEventDispatcher<{ input: string }>()
-
-  type PointerEvent = MouseEvent & {
-    currentTarget: EventTarget & Window
-  }
 
   // type InputEvent = Event & {
   //   currentTarget: EventTarget & HTMLInputElement
@@ -187,11 +184,8 @@
     }
   }
 
-  const onOutsideClick = (e: PointerEvent) => {
-    // does the click contain the input element?
-    const target = e.composedPath().some((path) => path === inputNode)
-
-    if (!target) {
+  const onOutsideClick = (e: Event) => {
+    if (!composedPathContains(e, inputNode)) {
       close()
     }
   }
@@ -236,8 +230,8 @@
     <input
       bind:value
       bind:this={inputNode}
-      {disabled}
-      {placeholder}
+      disabled={disabled}
+      placeholder={placeholder}
       aria-autocomplete="list"
       aria-controls="{id}-listbox"
       aria-labelledby="{id}-label"
@@ -315,7 +309,7 @@
           role="option"
           on:click={() => selectItem(i)}
         >
-          <slot name="item" {item}>
+          <slot name="item" item={item}>
             <span>{item.name}</span>
           </slot>
         </li>
