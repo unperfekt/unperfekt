@@ -2,10 +2,10 @@
   import { derived } from "svelte/store"
   import { getContext } from "svelte"
 
-  import { contextKey } from "./context"
+  import { contextKey } from "./context.js"
 
-  import type { AccordionContext } from "./context"
-  import type { Key } from "../../../state/collection/selection"
+  import type { AccordionContext } from "./context.js"
+  import type { Key } from "../../../state/collection/selection.js"
 
   /** Unique identifier for this row. */
   export let key: Key

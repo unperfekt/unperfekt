@@ -2,6 +2,7 @@
   /**
    * @name Checkbox
    */
+
   import cn from "classnames"
 
   /** Space-separated list of the case-sensitive classes of the element. */
@@ -24,7 +25,7 @@
   export let checked: boolean | undefined = undefined
 
   /** Binds the checkbox checked state to a group. */
-  export let group: unknown[] | null = null
+  // export let group: unknown
 
   /** Whether the checkbox is indeterminate. */
   export let indeterminate: boolean | undefined = undefined
@@ -35,10 +36,26 @@
   /** The name of the checkbox. */
   export let name: string = id
 
+  // function onChange({
+  //   currentTarget,
+  // }: Event & {
+  //   currentTarget: EventTarget & HTMLInputElement
+  // }) {
+  //   if (!Array.isArray(group)) return
+
+  //   const { value, checked } = currentTarget
+
+  //   if (checked) {
+  //     group = [...group, value]
+  //   } else {
+  //     group = group.filter((item) => item !== value)
+  //   }
+  // }
+
   const descId = id + "-desc"
 
   $: if (!label) console.log("a label is required")
-  $: console.log(group)
+  // $: console.log(group)
 </script>
 
 <div class="Checkbox">

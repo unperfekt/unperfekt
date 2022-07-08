@@ -3,26 +3,16 @@
   "compilerOptions": {
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    /**
-      Svelte Preprocess cannot figure out whether you have a value or a type, so tell TypeScript
-      to enforce using `import type` instead of `import` for Types.
-     */
-    "importsNotUsedAsValues": "error",
+    "importsNotUsedAsValues": "error", // Svelte Preprocess cannot figure out whether you have a value or a type, so tell TypeScript to enforce using `import type` instead of `import` for Types.
     "isolatedModules": true,
-    "moduleResolution": "node",
-    /**
-      TypeScript doesn't know about import usages in the template because it only sees the
-      script of a Svelte file. Therefore preserve all value imports. Requires TS 4.5 or higher.
-     */
-    "preserveValueImports": true,
+    "module": "node16",
+    "moduleResolution": "node16",
+    "moduleDetection": "force",
+    "preserveValueImports": true, // TypeScript doesn't know about import usages in the template because it only sees the script of a Svelte file. Therefore preserve all value imports. Requires TS 4.5 or higher.
     "skipLibCheck": true,
-    /**
-      To have warnings/errors of the Svelte compiler at the correct position,
-      enable source maps by default.
-     */
-    "sourceMap": true,
+    "sourceMap": true, // To have warnings/errors of the Svelte compiler at the correct position, enable source maps by default.
     "strict": false,
-    "target": "es2020"
+    "noEmit": true
   },
   "display": "Svelte"
 }

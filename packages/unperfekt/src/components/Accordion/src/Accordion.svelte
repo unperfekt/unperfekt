@@ -1,14 +1,14 @@
 <script lang="ts" strictEvents>
   import { setContext } from "svelte"
 
-  import { createSelectionManager } from "../../../state/collection/selection"
+  import { createSelectionManager } from "../../../state/collection/selection.js"
 
-  import { contextKey } from "./context"
+  import { contextKey } from "./context.js"
   import AccordionItem from "./AccordionItem.svelte"
 
-  import type { Item } from "./types"
-  import type { AccordionContext } from "./context"
-  import type { Key } from "../../../state/collection/selection"
+  import type { Item } from "./types.js"
+  import type { AccordionContext } from "./context.js"
+  import type { Key } from "../../../state/collection/selection.js"
 
   /** Wheter to allow multiple items to be open at the same time or not. */
   export let multiple: boolean = false

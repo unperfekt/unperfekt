@@ -16,7 +16,7 @@
     "build": "style-dictionary build"
   },
   "devDependencies": {
-    "style-dictionary": "^3.7.0"
+    "style-dictionary": "^3.7.1"
   },
   "publishConfig": {
     "access": "public",

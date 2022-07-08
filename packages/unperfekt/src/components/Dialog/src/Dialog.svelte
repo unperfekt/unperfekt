@@ -1,4 +1,8 @@
 <script lang="ts" strictEvents>
+  /**
+   * @name Dialog
+   */
+
   import cn from "classnames"
 
   import { visualViewport } from "../../../stores/visualViewport"
@@ -27,7 +31,10 @@
     fullscreenTakeover: "fullscreenTakeover",
   }[size] as keyof typeof TYPE
 
-  $: if (typeof window !== "undefined") {
+  const supportsHas =
+    typeof window !== "undefined" && CSS.supports("selector(:has(a) b)")
+
+  $: if (!supportsHas && typeof window !== "undefined") {
     // TODO: this should only run once within a global "provider" rather
     // than for each component instance.
     document.documentElement.style.setProperty(

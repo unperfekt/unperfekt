@@ -32,17 +32,17 @@
     "*.{mjs,js,ts,svelte,css,md,json}": "prettier -w"
   },
   "devDependencies": {
-    "auto": "^10.36.5",
-    "commitlint": "^16.2.4",
+    "auto": "^10.37.1",
+    "commitlint": "^16.3.0",
     "commitlint-config-unperfekt": "workspace:*",
-    "eslint": "^8.15.0",
+    "eslint": "^8.19.0",
     "husky": "^7.0.4",
     "lerna": "^4.0.0",
-    "lint-staged": "^12.4.1",
-    "prettier": "^2.6.2",
+    "lint-staged": "^12.5.0",
+    "prettier": "^2.7.1",
     "prettier-config-unperfekt": "workspace:*",
     "sort-package-json": "^1.57.0",
-    "turbo": "^1.2.8"
+    "turbo": "^1.3.1"
   },
   "packageManager": "pnpm@7.0.0",
   "engines": {

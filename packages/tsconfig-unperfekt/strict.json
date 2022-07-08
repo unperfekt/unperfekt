@@ -1,6 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
   "compilerOptions": {
+    "allowSyntheticDefaultImports": true, // To provide backwards compatibility, Node.js allows you to import most CommonJS packages with a default import. This flag tells TypeScript that it's okay to use import on CommonJS modules.
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
     "checkJs": true,
@@ -8,6 +9,10 @@
     "exactOptionalPropertyTypes": true,
     "forceConsistentCasingInFileNames": true,
     "importsNotUsedAsValues": "error",
+    "module": "node16",
+    "moduleDetection": "force",
+    "moduleResolution": "node16",
+    "noEmit": true,
     "noFallthroughCasesInSwitch": true,
     "noImplicitOverride": true,
     "noImplicitReturns": true,
@@ -15,8 +20,10 @@
     "noUncheckedIndexedAccess": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
+    "resolveJsonModule": false, // ESM doesn't yet support JSON modules.
     "skipLibCheck": true,
-    "strict": true
+    "strict": true,
+    "stripInternal": true
   },
   "display": "Strictest"
 }

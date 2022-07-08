@@ -17,13 +17,13 @@
   "type": "module",
   "exports": {
     ".": {
-      "import": "./dist/esm/index.mjs",
-      "require": "./dist/cjs/index.js"
+      "require": "./dist/cjs/index.cjs",
+      "default": "./dist/esm/index.mjs"
     },
     "./css/*": "./css/*",
     "./src/components/*/docs/*": "./src/components/*/docs/*.svx"
   },
-  "main": "./dist/cjs/index.js",
+  "main": "./dist/cjs/index.cjs",
   "svelte": "./src/index.ts",
   "unpkg": "./dist/unpkg/custom-elements.js",
   "module": "./dist/esm/index.mjs",
@@ -46,26 +46,29 @@
     "lint:fix": "eslint --fix"
   },
   "dependencies": {
-    "@floating-ui/dom": "^0.5.0",
+    "@floating-ui/dom": "^0.5.4",
     "classnames": "^2.3.1",
-    "svelte": "^3.48.0"
+    "svelte": "^3.49.0"
   },
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^22.0.0",
+    "@rollup/plugin-commonjs": "^22.0.1",
     "@rollup/plugin-node-resolve": "^13.3.0",
-    "@rollup/plugin-typescript": "^8.3.2",
+    "@rollup/plugin-typescript": "^8.3.3",
     "eslint-config-unperfekt": "workspace:*",
-    "rollup": "^2.72.1",
+    "rollup": "^2.75.7",
     "rollup-plugin-svelte": "^7.1.0",
-    "sveld": "^0.15.1",
-    "svelte-check": "^2.7.0",
-    "svelte-preprocess": "^4.10.6",
-    "svelte2tsx": "^0.5.9",
+    "sveld": "^0.15.3",
+    "svelte-check": "^2.8.0",
+    "svelte-preprocess": "^4.10.7",
+    "svelte2tsx": "^0.5.11",
     "tsconfig-unperfekt": "workspace:*",
     "tslib": "^2.4.0",
-    "typescript": "^4.6.4"
+    "typescript": "^4.7.4"
   },
   "packageManager": "pnpm@7.0.0",
+  "engines": {
+    "node": ">=16.13.0"
+  },
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
