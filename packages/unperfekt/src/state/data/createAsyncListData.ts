@@ -10,9 +10,9 @@ import {
   createListData,
   type ListData,
   type ListOptions,
-} from "./createListData"
+} from "./createListData.js"
 
-import type { LoadingState } from "../collection/loadingState"
+import type { LoadingState } from "../collection/loadingState.js"
 
 export type ActionType =
   | "success"

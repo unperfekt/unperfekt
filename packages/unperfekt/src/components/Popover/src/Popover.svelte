@@ -1,12 +1,12 @@
 <script lang="ts" strictEvents>
   import { fade, scale } from "svelte/transition"
   import { createEventDispatcher } from "svelte"
-  import cn from "classnames"
+  import { default as cn } from "classnames"
   import { offset, type Placement } from "@floating-ui/dom"
 
-  import { fadeOut, scaleIn } from "../../../utils/transitions"
-  import { composedPathContains } from "../../../utils/composedPathContains"
-  import { createFloating } from "../../../actions/floating"
+  import { fadeOut, scaleIn } from "../../../utils/transitions.js"
+  import { composedPathContains } from "../../../utils/composedPathContains.js"
+  import { createFloating } from "../../../actions/floating.js"
 
   /** Space-separated list of the case-sensitive classes of the element. */
   let _class: string | undefined = undefined

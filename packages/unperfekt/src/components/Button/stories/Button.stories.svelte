@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Meta, Story, Template } from "@storybook/addon-svelte-csf"
-  import { Button } from "../"
+  import { Button } from "../index.js"
 </script>
 
 <!-- More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export -->

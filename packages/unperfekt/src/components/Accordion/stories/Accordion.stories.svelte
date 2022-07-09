@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Meta, Story, Template } from "@storybook/addon-svelte-csf"
-  import { Accordion, AccordionItem } from "../"
+  import { Accordion, AccordionItem } from "../index.js"
 
   const items = [
     { id: "1", title: "Dark Souls", description: "Lorem Ipsum" },

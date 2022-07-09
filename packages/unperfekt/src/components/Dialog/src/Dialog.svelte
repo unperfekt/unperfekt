@@ -3,15 +3,15 @@
    * @name Dialog
    */
 
-  import cn from "classnames"
+  import { default as cn } from "classnames"
 
-  import { visualViewport } from "../../../stores/visualViewport"
+  import { visualViewport } from "../../../stores/visualViewport.js"
 
   import Overlay from "./Overlay.svelte"
   import Modal from "./Modal.svelte"
-  import { SIZE } from "./constants"
+  import { SIZE } from "./constants.js"
 
-  import type { TYPE } from "./constants"
+  import type { TYPE } from "./constants.js"
 
   /** Space-separated list of the case-sensitive classes of the element. */
   let _class: string | undefined = undefined

@@ -1,8 +1,8 @@
 <script>
   import { Meta, Story, Template } from "@storybook/addon-svelte-csf"
-  import { Dialog } from "../"
-  import { Button } from "../../Button"
-  import { ButtonGroup } from "../../ButtonGroup"
+  import { Dialog } from "../index.js"
+  import { Button } from "../../Button/index.js"
+  import { ButtonGroup } from "../../ButtonGroup/index.js"
 
   let open = false
   const toggle = () => void (open = !open)

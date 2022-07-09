@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Meta, Story, Template } from "@storybook/addon-svelte-csf"
-  import { ButtonGroup } from "../"
-  import { Button } from "../../Button"
+  import { ButtonGroup } from "../index.js"
+  import { Button } from "../../Button/index.js"
 </script>
 
 <!-- More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export -->

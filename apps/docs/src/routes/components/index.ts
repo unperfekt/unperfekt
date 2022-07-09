@@ -1,4 +1,4 @@
-import { getComponents } from "../../lib/components/getComponents"
+import { getComponents } from "../../lib/components/getComponents.js"
 
 import type { RequestHandler } from "@sveltejs/kit"
 

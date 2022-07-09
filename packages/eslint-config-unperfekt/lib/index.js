@@ -1,14 +1,14 @@
 module.exports = {
   extends: [
-    "./rules/best-practices",
-    "./rules/jsdoc",
-    "./rules/import",
-    "./rules/svelte",
-    "./rules/typescript",
-    "./rules/prettier",
+    "./rules/best-practices.js",
+    "./rules/jsdoc.js",
+    "./rules/import.js",
+    "./rules/svelte.js",
+    "./rules/typescript.js",
+    "./rules/prettier.js",
   ].map(require.resolve),
   env: {
-    es2020: true,
+    es2021: true,
     browser: true,
     node: true,
   },

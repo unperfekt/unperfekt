@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Meta, Story, Template } from "@storybook/addon-svelte-csf"
-  import { CheckboxGroup } from "../"
+  import { CheckboxGroup } from "../index.js"
 
   let values = ["Apple", "Banana", "Orange"]
   let scoops = values.slice(0, 2)

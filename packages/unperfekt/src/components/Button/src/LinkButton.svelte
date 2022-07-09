@@ -1,7 +1,7 @@
 <script lang="ts" strictEvents>
-  import cn from "classnames"
+  import { default as cn } from "classnames"
 
-  import { SIZE, VARIANT } from "./constants"
+  import { SIZE, VARIANT } from "./constants.js"
 
   /**
    * We need to manually type the props because svelte2tsx has some issues

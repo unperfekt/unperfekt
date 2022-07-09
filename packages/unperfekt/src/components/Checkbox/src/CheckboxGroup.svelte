@@ -2,7 +2,7 @@
   /**
    * @name CheckboxGroup
    */
-  import cn from "classnames"
+  import { default as cn } from "classnames"
 
   import Checkbox from "./Checkbox.svelte"
 

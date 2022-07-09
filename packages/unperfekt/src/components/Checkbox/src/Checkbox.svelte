@@ -3,7 +3,7 @@
    * @name Checkbox
    */
 
-  import cn from "classnames"
+  import { default as cn } from "classnames"
 
   /** Space-separated list of the case-sensitive classes of the element. */
   let _class: string | undefined = undefined

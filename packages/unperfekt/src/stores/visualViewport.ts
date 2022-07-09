@@ -1,6 +1,6 @@
 import { readable } from "svelte/store"
 
-import { addEvent } from "../utils/addEvent"
+import { addEvent } from "../utils/addEvent.js"
 
 const getDimensions = () => {
   const width = window.visualViewport?.width || window.innerWidth

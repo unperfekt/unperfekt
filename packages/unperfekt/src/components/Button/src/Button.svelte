@@ -7,9 +7,9 @@
    * attention to where a user needs to do something in order to move forward
    * in a flow.
    */
-  import cn from "classnames"
+  import { default as cn } from "classnames"
 
-  import { SIZE, VARIANT } from "./constants"
+  import { SIZE, VARIANT } from "./constants.js"
 
   /** Space-separated list of the case-sensitive classes of the element. */
   let _class: string | undefined = undefined

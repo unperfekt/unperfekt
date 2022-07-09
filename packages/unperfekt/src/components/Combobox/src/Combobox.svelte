@@ -3,12 +3,12 @@
   import { sineIn, sineOut } from "svelte/easing"
   import { offset, type Strategy } from "@floating-ui/dom"
 
-  import { noOp } from "../../../utils/noOp"
-  import { composedPathContains } from "../../../utils/composedPathContains"
-  import { createFloating } from "../../../actions/floating"
+  import { noOp } from "../../../utils/noOp.js"
+  import { composedPathContains } from "../../../utils/composedPathContains.js"
+  import { createFloating } from "../../../actions/floating.js"
 
-  import type { Item } from "./types"
-  import type { LoadingState } from "../../../state/collection/loadingState"
+  import type { Item } from "./types.js"
+  import type { LoadingState } from "../../../state/collection/loadingState.js"
 
   // --- Public State ----
   type T = $$Generic<Item>

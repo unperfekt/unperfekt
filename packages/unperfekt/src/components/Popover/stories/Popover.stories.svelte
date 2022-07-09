@@ -1,7 +1,7 @@
 <script>
   import { Meta, Story, Template } from "@storybook/addon-svelte-csf"
-  import { Popover } from "../"
-  import { Button } from "../../Button"
+  import { Popover } from "../index.js"
+  import { Button } from "../../Button/index.js"
 
   let open = false
   const toggle = () => void (open = !open)

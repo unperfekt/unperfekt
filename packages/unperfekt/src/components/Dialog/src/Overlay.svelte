@@ -1,5 +1,5 @@
 <script lang="ts" strictEvents>
-  import { Portal } from "../../Portal"
+  import { Portal } from "../../Portal/index.js"
 
   /** Wheter to show the overlay or not. */
   export let open: boolean = false

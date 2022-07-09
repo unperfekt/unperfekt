@@ -1,5 +1,5 @@
 <script lang="ts" strictEvents>
-  import cn from "classnames"
+  import { default as cn } from "classnames"
 
   interface Nav {
     [key: string]: {
