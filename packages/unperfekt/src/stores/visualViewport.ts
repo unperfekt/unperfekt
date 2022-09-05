@@ -10,6 +10,8 @@ const getDimensions = () => {
 }
 
 export const createVisualViewport = () => {
+  if (typeof window === "undefined") return
+
   const { subscribe } = readable(getDimensions(), (set) => {
     const onResize = () => set(getDimensions())
 

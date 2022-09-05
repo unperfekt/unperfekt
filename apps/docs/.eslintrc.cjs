@@ -1,5 +1,4 @@
 module.exports = {
-  root: true,
   extends: ["unperfekt"],
   parserOptions: {
     tsconfigRootDir: __dirname,

@@ -1,5 +1,5 @@
 export const addEvent = <T extends EventTarget>(
-  element: T,
+  element: T | null,
   event: string,
   callback: () => void,
 ) => {

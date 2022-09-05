@@ -16,32 +16,32 @@
     "build": "svelte-kit build",
     "check": "svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "pnpm check --watch",
-    "dev": "svelte-kit dev --host",
+    "dev": "vite dev",
     "preview": "svelte-kit preview",
     "sync": "svelte-kit sync"
   },
   "dependencies": {
-    "@sveltejs/adapter-static": "1.0.0-next.29",
-    "@sveltejs/kit": "^1.0.0-next.361",
+    "@sveltejs/adapter-static": "1.0.0-next.39",
+    "@sveltejs/kit": "^1.0.0-next.405",
     "classnames": "^2.3.1",
     "svelte": "^3.49.0",
     "unperfekt": "workspace:*"
   },
   "devDependencies": {
-    "@floating-ui/dom": "^0.5.4",
+    "@floating-ui/dom": "^1.0.1",
     "@tsconfig/svelte": "^3.0.0",
-    "autoprefixer": "^10.4.7",
+    "autoprefixer": "^10.4.8",
     "eslint-config-unperfekt": "workspace:*",
     "mdsvex": "^0.10.6",
-    "postcss": "^8.4.14",
+    "postcss": "^8.4.16",
     "postcss-import": "^14.1.0",
     "svelte-check": "^2.8.0",
     "svelte-preprocess": "^4.10.7",
     "tailwind-config-unperfekt": "workspace:*",
-    "tailwindcss": "^3.1.5",
+    "tailwindcss": "^3.1.8",
     "tslib": "^2.4.0",
     "typescript": "^4.7.4",
-    "vite": "^2.9.13"
+    "vite": "^3.0.5"
   },
   "publishConfig": {
     "access": "public",
