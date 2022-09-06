@@ -1,0 +1,20 @@
+ 
+ 
+ 
+ 
+/* eslint-disable import/no-default-export */
+import { sveltekit } from "@sveltejs/kit/vite"
+
+/** @type {import('vite').UserConfig} */
+const config = {
+  plugins: [sveltekit()],
+  server: {
+    fs: {
+      // allow access to files in the node_modules folder, required to
+      // get the docs from "unperfekt"
+      allow: ["."],
+    },
+  },
+}
+
+export default config

@@ -24,17 +24,17 @@
     "README.md"
   ],
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.30.5",
-    "@typescript-eslint/parser": "^5.30.5",
-    "eslint": "^8.19.0",
+    "@typescript-eslint/eslint-plugin": "^5.36.2",
+    "@typescript-eslint/parser": "^5.36.2",
+    "eslint": "^8.23.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-jsdoc": "^37.9.7",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-svelte3": "^3.4.1",
     "prettier": "^2.7.1",
-    "svelte": "^3.49.0",
-    "typescript": "^4.7.4"
+    "svelte": "^3.50.0",
+    "typescript": "^4.8.2"
   },
   "peerDependencies": {
     "eslint": "^8",

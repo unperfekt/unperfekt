@@ -1,3 +1,7 @@
+/* eslint-disable import/no-named-as-default-member */
+/* eslint-disable import/no-named-as-default */
+/* eslint-disable import/default */
+/* eslint-disable import/namespace */
 /* eslint-disable import/no-default-export */
 
 import preprocess from "svelte-preprocess"
@@ -14,24 +18,7 @@ const config = {
     immutable: true,
   },
   kit: {
-    adapter: adapter({}),
-    prerender: {
-      default: true,
-    },
-    vite: {
-      // build: {
-      //   rollupOptions: {
-      //     external: ["@floating-ui/dom"],
-      //   },
-      // },
-      server: {
-        fs: {
-          // allow access to files in the node_modules folder, required to
-          // get the docs from "unperfekt"
-          allow: ["."],
-        },
-      },
-    },
+    adapter: adapter(),
   },
 }
 

@@ -1,11 +1,7 @@
-import {
-  getComponents,
-  type ComponentMetadata,
-  type ComponentModule,
-} from "./getComponents.js"
+import { getComponents, type ComponentModule } from "./getComponents.js"
 
 export const getComponent = async (
-  params: ComponentMetadata,
+  params: Record<string, unknown>,
 ): Promise<ComponentModule> => {
   const components = await getComponents()
   const component = components.find(
