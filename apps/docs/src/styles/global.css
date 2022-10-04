@@ -4,3 +4,8 @@
 @import "unperfekt/css/index.css";
 
 @import "tailwindcss/utilities";
+
+.gmap {
+  width: 100%;
+  height: 60vh;
+}

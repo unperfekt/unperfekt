@@ -47,23 +47,23 @@
   },
   "dependencies": {
     "@floating-ui/dom": "^0.5.4",
-    "classnames": "^2.3.1",
-    "svelte": "^3.50.0"
+    "classnames": "^2.3.2",
+    "svelte": "^3.50.1"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^22.0.2",
     "@rollup/plugin-node-resolve": "^13.3.0",
     "@rollup/plugin-typescript": "^8.5.0",
     "eslint-config-unperfekt": "workspace:*",
-    "rollup": "^2.79.0",
+    "rollup": "^2.79.1",
     "rollup-plugin-svelte": "^7.1.0",
     "sveld": "^0.15.3",
-    "svelte-check": "^2.9.0",
+    "svelte-check": "^2.9.1",
     "svelte-preprocess": "^4.10.7",
-    "svelte2tsx": "^0.5.16",
+    "svelte2tsx": "^0.5.19",
     "tsconfig-unperfekt": "workspace:*",
     "tslib": "^2.4.0",
-    "typescript": "^4.8.2"
+    "typescript": "^4.8.4"
   },
   "packageManager": "pnpm@7.0.0",
   "engines": {

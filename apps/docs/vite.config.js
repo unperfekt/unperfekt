@@ -1,7 +1,3 @@
- 
- 
- 
- 
 /* eslint-disable import/no-default-export */
 import { sveltekit } from "@sveltejs/kit/vite"
 
@@ -9,6 +5,7 @@ import { sveltekit } from "@sveltejs/kit/vite"
 const config = {
   plugins: [sveltekit()],
   server: {
+    port: 3000,
     fs: {
       // allow access to files in the node_modules folder, required to
       // get the docs from "unperfekt"

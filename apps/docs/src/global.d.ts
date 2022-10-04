@@ -8,3 +8,11 @@ declare namespace App {
   // interface Session {}
   // interface Stuff {}
 }
+
+declare global {
+  interface Window {
+    initMap?: () => void
+  }
+}
+
+export {}
