@@ -1,7 +1,17 @@
 import { SvelteComponentTyped } from "svelte"
 declare const __propDef: {
   props: {
-    /** Wheter the dialog is open or not. */ isOpen?: boolean | undefined
+    /** Space-separated list of the case-sensitive classes of the element. */ class?:
+      | string
+      | undefined
+    /** Wheter the dialog is open or not. */ open?: boolean | undefined
+    /** The size of the dialog. */ size?:
+      | "sm"
+      | "md"
+      | "lg"
+      | "fullscreen"
+      | "fullscreenTakeover"
+      | undefined
   }
   slots: {
     header: {}

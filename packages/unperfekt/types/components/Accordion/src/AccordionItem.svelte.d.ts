@@ -1,5 +1,5 @@
 import { SvelteComponentTyped } from "svelte"
-import type { Key } from "../../../state/collection/selection"
+import type { Key } from "../../../state/collection/selection.js"
 declare const __propDef: {
   props: {
     /** Unique identifier for this row. */ key: Key

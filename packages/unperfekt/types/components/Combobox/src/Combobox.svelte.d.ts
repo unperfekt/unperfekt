@@ -1,7 +1,7 @@
 import { SvelteComponentTyped } from "svelte"
 import { type Strategy } from "@floating-ui/dom"
-import type { Item } from "./types"
-import type { LoadingState } from "../../../state/collection/loadingState"
+import type { Item } from "./types.js"
+import type { LoadingState } from "../../../state/collection/loadingState.js"
 declare class __sveltets_Render<T extends Item> {
   props(): {
     /** The id of the element. */ id?: string | undefined

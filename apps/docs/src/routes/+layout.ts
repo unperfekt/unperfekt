@@ -5,7 +5,7 @@ interface Navigation {
   [key: string]: ComponentMetadata[]
 }
 
-export const load: LayoutLoad = async ({ fetch }) => {
+export const load = (async ({ fetch }) => {
   const components = await fetch("/api/components.json")
   const json: ComponentMetadata[] = await components.json()
   const navigation = json.reduce((acc, component) => {
@@ -17,7 +17,7 @@ export const load: LayoutLoad = async ({ fetch }) => {
   return {
     navigation,
   }
-}
+}) satisfies LayoutLoad
 
 // export const csr = false
 export const prerender = true

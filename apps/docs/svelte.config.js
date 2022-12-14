@@ -3,17 +3,16 @@
 /* eslint-disable import/default */
 /* eslint-disable import/namespace */
 /* eslint-disable import/no-default-export */
-
-import preprocess from "svelte-preprocess"
 import { mdsvex } from "mdsvex"
-import adapter from "@sveltejs/adapter-static"
+import { vitePreprocess } from "@sveltejs/kit/vite"
+import adapter from "@sveltejs/adapter-auto"
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
   extensions: [".svelte", ".svx"],
-  // Consult https://github.com/sveltejs/svelte-preprocess
+  // Consult https://kit.svelte.dev/docs/integrations#preprocessors
   // for more information about preprocessors
-  preprocess: [preprocess(), mdsvex()],
+  preprocess: [vitePreprocess(), mdsvex()],
   compilerOptions: {
     immutable: true,
   },

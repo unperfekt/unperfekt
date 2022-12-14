@@ -1,4 +1,4 @@
-import type { Key } from "../../../state/collection/selection"
+import type { Key } from "../../../state/collection/selection.js"
 export interface Item {
   id: Key
   title: string

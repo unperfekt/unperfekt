@@ -11,17 +11,14 @@
    * @see https://github.com/sveltejs/language-tools/issues/1377
    * @see https://github.com/sveltejs/language-tools/issues/1345
    */
-  interface $$Props extends Partial<HTMLAnchorElement> {
-    /** CSS class for the element. */
-    "class"?: string
-    "variant"?: keyof typeof VARIANT
-    "href"?: string
-    "size"?: keyof typeof SIZE
-    "disabled"?: boolean
-    "sveltekit:prefetch"?: boolean
-    "sveltekit:reload"?: boolean
-    "sveltekit:noscroll"?: boolean
-  }
+  // interface $$Props extends Partial<HTMLAnchorElement> {
+  //   /** CSS class for the element. */
+  //   "class"?: string
+  //   "variant"?: keyof typeof VARIANT
+  //   "href"?: string
+  //   "size"?: keyof typeof SIZE
+  //   "disabled"?: boolean
+  // }
 
   /** CSS class for the element. */
   let _class: string | undefined = undefined

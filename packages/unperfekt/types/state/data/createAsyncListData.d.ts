@@ -1,6 +1,6 @@
 import { type Readable, type Writable } from "svelte/store"
-import { type ListData, type ListOptions } from "./createListData"
-import type { LoadingState } from "../collection/loadingState"
+import { type ListData, type ListOptions } from "./createListData.js"
+import type { LoadingState } from "../collection/loadingState.js"
 export declare type ActionType =
   | "success"
   | "error"

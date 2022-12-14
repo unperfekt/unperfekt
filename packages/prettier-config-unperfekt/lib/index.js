@@ -20,7 +20,11 @@ module.exports = {
   // to resolve the plugin and also add the override for svelte files.
   // See https://github.com/prettier/prettier/pull/9167
   // and https://github.com/sveltejs/prettier-plugin-svelte/issues/155
-  plugins: [require.resolve("prettier-plugin-tailwindcss")],
+  plugins: [
+    require.resolve("prettier-plugin-svelte"),
+    require.resolve("prettier-plugin-tailwindcss"),
+  ],
+  pluginSearchDirs: false,
   svelteAllowShorthand: false,
   svelteIndentScriptAndStyle: true,
   svelteSortOrder: "options-scripts-markup-styles",

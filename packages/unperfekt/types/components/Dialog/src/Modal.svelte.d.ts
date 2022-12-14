@@ -1,7 +1,15 @@
 import { SvelteComponentTyped } from "svelte"
 declare const __propDef: {
   props: {
-    /** Wheter the modal is open or not. */ isOpen?: boolean | undefined
+    /** Space-separated list of the case-sensitive classes of the element. */ class?:
+      | string
+      | undefined
+    /** Wheter the modal is open or not. */ open?: boolean | undefined
+    /** The type of the modal. */ type?:
+      | "modal"
+      | "fullscreen"
+      | "fullscreenTakeover"
+      | undefined
   }
   slots: {
     default: {}

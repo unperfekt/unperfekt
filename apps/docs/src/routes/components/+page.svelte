@@ -8,5 +8,5 @@
 
 {#each data.components as component}
   <h2>{component.title}</h2>
-  <a sveltekit:prefetch href={component.href}>{component.title}</a>
+  <a href={component.href}>{component.title}</a>
 {/each}

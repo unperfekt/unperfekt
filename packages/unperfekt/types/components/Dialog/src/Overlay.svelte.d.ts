@@ -1,7 +1,11 @@
 import { SvelteComponentTyped } from "svelte"
 declare const __propDef: {
   props: {
-    /** Wheter the portal is open or not. */ isOpen?: boolean | undefined
+    /** Wheter to show the overlay or not. */ open?: boolean | undefined
+    /** DOM Element or CSS Selector. */ target?:
+      | string
+      | HTMLElement
+      | undefined
   }
   slots: {
     default: {}

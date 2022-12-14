@@ -13,36 +13,34 @@
   "author": "Martin Broder <hello@martinbroder.com> (https://martinbroder.com)",
   "type": "module",
   "scripts": {
-    "build": "svelte-kit build",
-    "check": "svelte-check --tsconfig ./tsconfig.json",
-    "check:watch": "pnpm check --watch",
+    "build": "vite build",
+    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
     "dev": "vite dev",
-    "preview": "svelte-kit preview",
-    "sync": "svelte-kit sync"
+    "preview": "vite preview"
   },
   "dependencies": {
-    "@sveltejs/adapter-static": "1.0.0-next.42",
-    "@sveltejs/kit": "^1.0.0-next.508",
+    "@sveltejs/adapter-auto": "^1.0.0-next.91",
+    "@sveltejs/kit": "^1.0.0-next.587",
     "classnames": "^2.3.2",
-    "svelte": "^3.50.1",
+    "svelte": "^3.55.0",
     "unperfekt": "workspace:*"
   },
   "devDependencies": {
-    "@floating-ui/dom": "^1.0.2",
+    "@floating-ui/dom": "^1.0.10",
     "@tsconfig/svelte": "^3.0.0",
-    "@types/google.maps": "^3.50.2",
-    "autoprefixer": "^10.4.12",
+    "@types/google.maps": "^3.51.0",
+    "autoprefixer": "^10.4.13",
     "eslint-config-unperfekt": "workspace:*",
     "mdsvex": "^0.10.6",
-    "postcss": "^8.4.17",
-    "postcss-import": "^15.0.0",
-    "svelte-check": "^2.9.1",
-    "svelte-preprocess": "^4.10.7",
+    "postcss": "^8.4.20",
+    "postcss-import": "^15.1.0",
+    "svelte-check": "^2.10.2",
     "tailwind-config-unperfekt": "workspace:*",
-    "tailwindcss": "^3.1.8",
-    "tslib": "^2.4.0",
-    "typescript": "^4.8.4",
-    "vite": "^3.1.4"
+    "tailwindcss": "^3.2.4",
+    "tslib": "^2.4.1",
+    "typescript": "^4.9.4",
+    "vite": "^4.0.1"
   },
   "publishConfig": {
     "access": "public",
