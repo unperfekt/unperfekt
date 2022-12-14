@@ -3,23 +3,6 @@
 
   import { SIZE, VARIANT } from "./constants.js"
 
-  /**
-   * We need to manually type the props because svelte2tsx has some issues
-   * generating the correct types.
-   *
-   * @see https://github.com/sveltejs/language-tools/issues/442
-   * @see https://github.com/sveltejs/language-tools/issues/1377
-   * @see https://github.com/sveltejs/language-tools/issues/1345
-   */
-  // interface $$Props extends Partial<HTMLAnchorElement> {
-  //   /** CSS class for the element. */
-  //   "class"?: string
-  //   "variant"?: keyof typeof VARIANT
-  //   "href"?: string
-  //   "size"?: keyof typeof SIZE
-  //   "disabled"?: boolean
-  // }
-
   /** CSS class for the element. */
   let _class: string | undefined = undefined
   export { _class as class }

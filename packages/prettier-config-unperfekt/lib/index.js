@@ -1,6 +1,4 @@
-/**
- * @type {import('prettier').Options}
- */
+/** @type {import('prettier').Options} */
 module.exports = {
   $schema: "http://json.schemastore.org/prettierrc",
   arrowParens: "always",
