@@ -24,9 +24,9 @@ declare const __propDef: {
     default: {}
   }
 }
-export declare type LinkButtonProps = typeof __propDef.props
-export declare type LinkButtonEvents = typeof __propDef.events
-export declare type LinkButtonSlots = typeof __propDef.slots
+export type LinkButtonProps = typeof __propDef.props
+export type LinkButtonEvents = typeof __propDef.events
+export type LinkButtonSlots = typeof __propDef.slots
 export default class LinkButton extends SvelteComponentTyped<
   LinkButtonProps,
   LinkButtonEvents,

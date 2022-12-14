@@ -10,9 +10,9 @@ declare const __propDef: {
     default: {}
   }
 }
-export declare type ButtonGroupProps = typeof __propDef.props
-export declare type ButtonGroupEvents = typeof __propDef.events
-export declare type ButtonGroupSlots = typeof __propDef.slots
+export type ButtonGroupProps = typeof __propDef.props
+export type ButtonGroupEvents = typeof __propDef.events
+export type ButtonGroupSlots = typeof __propDef.slots
 export default class ButtonGroup extends SvelteComponentTyped<
   ButtonGroupProps,
   ButtonGroupEvents,

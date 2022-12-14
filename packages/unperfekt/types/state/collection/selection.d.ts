@@ -1,5 +1,5 @@
 import type { Readable } from "svelte/store"
-export declare type Key = string | number
+export type Key = string | number
 export interface SelectionManager<T> extends Readable<T> {
   toggleSelect(key: Key): void
   reset(): void

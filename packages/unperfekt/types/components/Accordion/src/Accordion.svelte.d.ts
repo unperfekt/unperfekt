@@ -14,14 +14,13 @@ declare const __propDef: {
   slots: {
     default: {}
   }
-  getters: {}
   events: {
     click: MouseEvent
   }
 }
-export declare type AccordionProps = typeof __propDef.props
-export declare type AccordionEvents = typeof __propDef.events
-export declare type AccordionSlots = typeof __propDef.slots
+export type AccordionProps = typeof __propDef.props
+export type AccordionEvents = typeof __propDef.events
+export type AccordionSlots = typeof __propDef.slots
 export default class Accordion extends SvelteComponentTyped<
   AccordionProps,
   AccordionEvents,

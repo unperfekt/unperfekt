@@ -9,9 +9,9 @@ declare const __propDef: {
     default: {}
   }
 }
-export declare type PortalProps = typeof __propDef.props
-export declare type PortalEvents = typeof __propDef.events
-export declare type PortalSlots = typeof __propDef.slots
+export type PortalProps = typeof __propDef.props
+export type PortalEvents = typeof __propDef.events
+export type PortalSlots = typeof __propDef.slots
 export default class Portal extends SvelteComponentTyped<
   PortalProps,
   PortalEvents,

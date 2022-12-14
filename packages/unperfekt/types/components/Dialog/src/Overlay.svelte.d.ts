@@ -10,12 +10,11 @@ declare const __propDef: {
   slots: {
     default: {}
   }
-  getters: {}
   events: {}
 }
-export declare type OverlayProps = typeof __propDef.props
-export declare type OverlayEvents = typeof __propDef.events
-export declare type OverlaySlots = typeof __propDef.slots
+export type OverlayProps = typeof __propDef.props
+export type OverlayEvents = typeof __propDef.events
+export type OverlaySlots = typeof __propDef.slots
 export default class Overlay extends SvelteComponentTyped<
   OverlayProps,
   OverlayEvents,

@@ -32,13 +32,13 @@ declare class __sveltets_Render<T extends Item> {
     }
   }
 }
-export declare type ComboboxProps<T extends Item> = ReturnType<
+export type ComboboxProps<T extends Item> = ReturnType<
   __sveltets_Render<T>["props"]
 >
-export declare type ComboboxEvents<T extends Item> = ReturnType<
+export type ComboboxEvents<T extends Item> = ReturnType<
   __sveltets_Render<T>["events"]
 >
-export declare type ComboboxSlots<T extends Item> = ReturnType<
+export type ComboboxSlots<T extends Item> = ReturnType<
   __sveltets_Render<T>["slots"]
 >
 export default class Combobox<T extends Item> extends SvelteComponentTyped<

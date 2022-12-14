@@ -1,5 +1,5 @@
 import { type Readable, type Writable } from "svelte/store"
-export declare type Key = string | number | symbol
+export type Key = string | number | symbol
 export interface ListOptions<T> {
   /** Inital items in the list. */
   initialItems?: T[]

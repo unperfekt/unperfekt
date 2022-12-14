@@ -1,15 +1,18 @@
-/* eslint-disable import/no-default-export, import/default, import/namespace, import/no-named-as-default, import/no-named-as-default-member */
+/* eslint-disable import/no-default-export */
 
-import path from "path"
+import path from "node:path"
+import { readFileSync } from "node:fs"
 
-// import { sveld } from "sveld"
 import svelte from "rollup-plugin-svelte"
 import typescript from "@rollup/plugin-typescript"
 import resolve from "@rollup/plugin-node-resolve"
 import commonjs from "@rollup/plugin-commonjs"
 
 import svelteConfig from "./svelte.config.js"
-import pkg from "./package.json"
+
+const fileUrl = new URL("./package.json", import.meta.url)
+const pkg = JSON.parse(readFileSync(fileUrl))
+console.log("pkg", pkg)
 
 const { name, dependencies } = pkg
 

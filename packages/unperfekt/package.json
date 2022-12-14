@@ -46,28 +46,28 @@
     "lint:fix": "eslint --fix"
   },
   "dependencies": {
-    "@floating-ui/dom": "^0.5.4",
+    "@floating-ui/dom": "^1.0.10",
     "classnames": "^2.3.2",
-    "svelte": "^3.50.1"
+    "svelte": "^3.55.0"
   },
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^22.0.2",
-    "@rollup/plugin-node-resolve": "^13.3.0",
-    "@rollup/plugin-typescript": "^8.5.0",
+    "@rollup/plugin-commonjs": "^23.0.4",
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "@rollup/plugin-typescript": "^10.0.1",
     "eslint-config-unperfekt": "workspace:*",
-    "rollup": "^2.79.1",
+    "rollup": "^3.7.4",
     "rollup-plugin-svelte": "^7.1.0",
-    "sveld": "^0.15.3",
-    "svelte-check": "^2.9.1",
-    "svelte-preprocess": "^4.10.7",
-    "svelte2tsx": "^0.5.19",
+    "sveld": "^0.18.0",
+    "svelte-check": "^2.10.2",
+    "svelte-preprocess": "^5.0.0",
+    "svelte2tsx": "^0.5.22",
     "tsconfig-unperfekt": "workspace:*",
-    "tslib": "^2.4.0",
-    "typescript": "^4.8.4"
+    "tslib": "^2.4.1",
+    "typescript": "^4.9.4"
   },
   "packageManager": "pnpm@7.0.0",
   "engines": {
-    "node": ">=16.13.0"
+    "node": ">=17"
   },
   "publishConfig": {
     "access": "public",

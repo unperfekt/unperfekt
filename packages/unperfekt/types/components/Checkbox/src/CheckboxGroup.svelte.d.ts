@@ -12,12 +12,11 @@ declare const __propDef: {
   slots: {
     default: {}
   }
-  getters: {}
   events: {}
 }
-export declare type CheckboxGroupProps = typeof __propDef.props
-export declare type CheckboxGroupEvents = typeof __propDef.events
-export declare type CheckboxGroupSlots = typeof __propDef.slots
+export type CheckboxGroupProps = typeof __propDef.props
+export type CheckboxGroupEvents = typeof __propDef.events
+export type CheckboxGroupSlots = typeof __propDef.slots
 export default class CheckboxGroup extends SvelteComponentTyped<
   CheckboxGroupProps,
   CheckboxGroupEvents,

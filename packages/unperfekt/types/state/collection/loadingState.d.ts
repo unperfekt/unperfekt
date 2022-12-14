@@ -1,4 +1,4 @@
-export declare type LoadingState =
+export type LoadingState =
   | "idle"
   | "error"
   | "loading"

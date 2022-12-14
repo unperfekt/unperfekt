@@ -1,7 +1,7 @@
 import { type Readable, type Writable } from "svelte/store"
 import { type ListData, type ListOptions } from "./createListData.js"
 import type { LoadingState } from "../collection/loadingState.js"
-export declare type ActionType =
+export type ActionType =
   | "success"
   | "error"
   | "loading"
@@ -31,7 +31,7 @@ export interface AsyncListLoadOptions<T> {
   /** An abort signal used to notify the load function that the request has been aborted. */
   signal: AbortSignal
 }
-export declare type AsyncListLoadFunction<T> = (
+export type AsyncListLoadFunction<T> = (
   state: AsyncListLoadOptions<T>,
 ) => AsyncListStateUpdate<T> | Promise<AsyncListStateUpdate<T>>
 export interface AsyncListData<T> extends ListData<T> {

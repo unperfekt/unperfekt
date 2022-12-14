@@ -12,14 +12,13 @@ declare const __propDef: {
     default: {}
     content: {}
   }
-  getters: {}
   events: {
     close: CustomEvent<any>
   }
 }
-export declare type PopoverProps = typeof __propDef.props
-export declare type PopoverEvents = typeof __propDef.events
-export declare type PopoverSlots = typeof __propDef.slots
+export type PopoverProps = typeof __propDef.props
+export type PopoverEvents = typeof __propDef.events
+export type PopoverSlots = typeof __propDef.slots
 export default class Popover extends SvelteComponentTyped<
   PopoverProps,
   PopoverEvents,
