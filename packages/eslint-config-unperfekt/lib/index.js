@@ -8,7 +8,7 @@ module.exports = {
     "./rules/prettier.js",
   ].map(require.resolve),
   env: {
-    es2021: true,
+    es2022: true,
     browser: true,
     node: true,
   },
