@@ -1,0 +1,183 @@
+sys:
+  color:
+    gray:
+      "50":
+        value: "#1d1d1d"
+      "75":
+        value: "#262626"
+      "100":
+        value: "#323232"
+      "200":
+        value: "#3f3f3f"
+      "300":
+        value: "#545454"
+      "400":
+        value: "#707070"
+      "500":
+        value: "#909090"
+      "600":
+        value: "#b2b2b2"
+      "700":
+        value: "#d1d1d1"
+      "800":
+        value: "#ebebeb"
+      "900":
+        value: "#ffffff"
+    blue:
+      "100":
+        value: "#003877"
+      "200":
+        value: "#00418a"
+      "300":
+        value: "#004da3"
+      "400":
+        value: "#0059c2"
+      "500":
+        value: "#0367e0"
+      "600":
+        value: "#1379f3"
+      "700":
+        value: "#348ff4"
+      "800":
+        value: "#54a3f6"
+      "900":
+        value: "#72b7f9"
+      "1000":
+        value: "#8fcafc"
+      "1100":
+        value: "#aedbfe"
+      "1200":
+        value: "#cce9ff"
+      "1300":
+        value: "#e8f6ff"
+    green:
+      "100":
+        value: "#044329"
+      "200":
+        value: "#004e2f"
+      "300":
+        value: "#005c38"
+      "400":
+        value: "#006c43"
+      "500":
+        value: "#007d4e"
+      "600":
+        value: "#008f5d"
+      "700":
+        value: "#12a26c"
+      "800":
+        value: "#2bb47d"
+      "900":
+        value: "#43c78f"
+      "1000":
+        value: "#5ed9a2"
+      "1100":
+        value: "#81e9b8"
+      "1200":
+        value: "#b1f4d1"
+      "1300":
+        value: "#dffaea"
+    orange:
+      "100":
+        value: "#662500"
+      "200":
+        value: "#752d00"
+      "300":
+        value: "#893700"
+      "400":
+        value: "#9e4200"
+      "500":
+        value: "#b44e00"
+      "600":
+        value: "#ca5d00"
+      "700":
+        value: "#e16d00"
+      "800":
+        value: "#f4810c"
+      "900":
+        value: "#fe9a2e"
+      "1000":
+        value: "#ffb558"
+      "1100":
+        value: "#fdce88"
+      "1200":
+        value: "#ffe1b3"
+      "1300":
+        value: "#fff2dd"
+    red:
+      "100":
+        value: "#7b0000"
+      "200":
+        value: "#8d0000"
+      "300":
+        value: "#a50000"
+      "400":
+        value: "#be0403"
+      "500":
+        value: "#d71913"
+      "600":
+        value: "#ea3829"
+      "700":
+        value: "#f65843"
+      "800":
+        value: "#ff755e"
+      "900":
+        value: "#ff9581"
+      "1000":
+        value: "#ffb0a1"
+      "1100":
+        value: "#ffc9bd"
+      "1200":
+        value: "#ffded8"
+      "1300":
+        value: "#fff1ee"
+    indigo:
+      "100":
+        value: "#282c8c"
+      "200":
+        value: "#2f34a3"
+      "300":
+        value: "#393fbb"
+      "400":
+        value: "#464bd3"
+      "500":
+        value: "#555be7"
+      "600":
+        value: "#686df4"
+      "700":
+        value: "#7c81fb"
+      "800":
+        value: "#9195ff"
+      "900":
+        value: "#a7aaff"
+      "1000":
+        value: "#bcbeff"
+      "1100":
+        value: "#d0d2ff"
+      "1200":
+        value: "#e2e4ff"
+      "1300":
+        value: "#f3f3fe"
+    steel:
+      "50":
+        value: "#FCFCFD"
+      "75":
+        value: "#F9FAFB"
+      "100":
+        value: "#F2F4F7"
+      "200":
+        value: "#EAECF0"
+      "300":
+        value: "#D0D5DD"
+      "400":
+        value: "#98A2B3"
+      "500":
+        value: "#667085"
+      "600":
+        value: "#475467"
+      "700":
+        value: "#344054"
+      "800":
+        value: "#1D2939"
+      "900":
+        value: "#101828"

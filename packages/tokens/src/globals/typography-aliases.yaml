@@ -1,0 +1,43 @@
+body:
+  family:
+    value: "{font.family.sans}"
+  line-height:
+    value: "{font.line-height.100}"
+  size:
+    xxs:
+      value: "{font.size.100}"
+    xs:
+      value: "{font.size.200}"
+    sm:
+      value: "{font.size.300}"
+    md:
+      value: "{font.size.500}"
+    lg:
+      value: "{font.size.700}"
+    xl:
+      value: "{font.size.900}"
+    2xl:
+      value: "{font.size.1100}"
+    3xl:
+      value: "{font.size.1300}"
+
+heading:
+  family:
+    value: "{font.family.sans}"
+  line-height:
+    value: "{font.line-height.100}"
+  size:
+    xs:
+      value: "{font.size.75}"
+    sm:
+      value: "{font.size.100}"
+    md:
+      value: "{font.size.200}"
+    lg:
+      value: "{font.size.300}"
+    xl:
+      value: "{font.size.400}"
+    2xl:
+      value: "{font.size.500}"
+    3xl:
+      value: "{font.size.600}"

@@ -32,20 +32,20 @@
     "*.{mjs,js,ts,svelte,css,md,json}": "prettier --cache --write"
   },
   "devDependencies": {
-    "@types/node": "^18.8.1",
-    "auto": "^10.37.6",
-    "commitlint": "^16.3.0",
+    "@types/node": "^18.13.0",
+    "auto": "^10.40.0",
+    "commitlint": "^17.4.2",
     "commitlint-config-unperfekt": "workspace:*",
-    "eslint": "^8.29.0",
-    "husky": "^7.0.4",
-    "lerna": "^4.0.0",
-    "lint-staged": "^12.5.0",
-    "prettier": "^2.8.1",
+    "eslint": "^8.33.0",
+    "husky": "^8.0.3",
+    "lerna": "^6.4.1",
+    "lint-staged": "^13.1.1",
+    "prettier": "^2.8.4",
     "prettier-config-unperfekt": "workspace:*",
-    "sort-package-json": "^1.57.0",
-    "turbo": "^1.5.5"
+    "sort-package-json": "^2.4.1",
+    "turbo": "^1.7.4"
   },
-  "packageManager": "pnpm@7.0.0",
+  "packageManager": "pnpm@7.27.0",
   "engines": {
     "node": ">=16.13.0"
   },

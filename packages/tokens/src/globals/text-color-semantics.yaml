@@ -1,0 +1,3 @@
+text:
+  default:
+    value: "{global.color.neutral.800}"

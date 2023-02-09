@@ -1,5 +1,5 @@
 <script lang="ts" strictEvents>
-  import { Button, Combobox, createAsyncList } from "unperfekt"
+  import { Button, Combobox, createAsyncList } from "unperfekt/src/index.js"
 
   interface Character {
     id: string

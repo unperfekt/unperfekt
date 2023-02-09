@@ -1,3 +1,4 @@
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
     // "./node_modules/unperfekt/src/**/*.css",

@@ -3,7 +3,7 @@ static/**
 build/**
 node_modules/**
 types/**
+dist/**
 
 *.stories.svelte
 *.cjs
-

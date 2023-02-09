@@ -11,11 +11,10 @@
     "test": {
       "dependsOn": ["lint", "build"]
     },
-    "lint": {
-      "outputs": []
-    },
+    "lint": {},
     "dev": {
-      "cache": false
+      "cache": false,
+      "persistent": true
     }
   }
 }

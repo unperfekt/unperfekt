@@ -1,0 +1,160 @@
+global:
+  color:
+    accent:
+      "100":
+        value: "{sys.color.indigo.100.value}"
+      "200":
+        value: "{sys.color.indigo.200.value}"
+      "300":
+        value: "{sys.color.indigo.300.value}"
+      "400":
+        value: "{sys.color.indigo.400.value}"
+      "500":
+        value: "{sys.color.indigo.500.value}"
+      "600":
+        value: "{sys.color.indigo.600.value}"
+      "700":
+        value: "{sys.color.indigo.700.value}"
+      "800":
+        value: "{sys.color.indigo.800.value}"
+      "900":
+        value: "{sys.color.indigo.900.value}"
+      "1000":
+        value: "{sys.color.indigo.1000.value}"
+      "1100":
+        value: "{sys.color.indigo.1100.value}"
+      "1200":
+        value: "{sys.color.indigo.1200.value}"
+      "1300":
+        value: "{sys.color.indigo.1300.value}"
+    neutral:
+      "50":
+        value: "{sys.color.gray.50.value}"
+      "75":
+        value: "{sys.color.gray.75.value}"
+      "100":
+        value: "{sys.color.gray.100.value}"
+      "200":
+        value: "{sys.color.gray.200.value}"
+      "300":
+        value: "{sys.color.gray.300.value}"
+      "400":
+        value: "{sys.color.gray.400.value}"
+      "500":
+        value: "{sys.color.gray.500.value}"
+      "600":
+        value: "{sys.color.gray.600.value}"
+      "700":
+        value: "{sys.color.gray.700.value}"
+      "800":
+        value: "{sys.color.gray.800.value}"
+      "900":
+        value: "{sys.color.gray.900.value}"
+    negative:
+      "100":
+        value: "{sys.color.red.100.value}"
+      "200":
+        value: "{sys.color.red.200.value}"
+      "300":
+        value: "{sys.color.red.300.value}"
+      "400":
+        value: "{sys.color.red.400.value}"
+      "500":
+        value: "{sys.color.red.500.value}"
+      "600":
+        value: "{sys.color.red.600.value}"
+      "700":
+        value: "{sys.color.red.700.value}"
+      "800":
+        value: "{sys.color.red.800.value}"
+      "900":
+        value: "{sys.color.red.900.value}"
+      "1000":
+        value: "{sys.color.red.1000.value}"
+      "1100":
+        value: "{sys.color.red.1100.value}"
+      "1200":
+        value: "{sys.color.red.1200.value}"
+      "1300":
+        value: "{sys.color.red.1300.value}"
+    notice:
+      "100":
+        value: "{sys.color.orange.100.value}"
+      "200":
+        value: "{sys.color.orange.200.value}"
+      "300":
+        value: "{sys.color.orange.300.value}"
+      "400":
+        value: "{sys.color.orange.400.value}"
+      "500":
+        value: "{sys.color.orange.500.value}"
+      "600":
+        value: "{sys.color.orange.600.value}"
+      "700":
+        value: "{sys.color.orange.700.value}"
+      "800":
+        value: "{sys.color.orange.800.value}"
+      "900":
+        value: "{sys.color.orange.900.value}"
+      "1000":
+        value: "{sys.color.orange.1000.value}"
+      "1100":
+        value: "{sys.color.orange.1100.value}"
+      "1200":
+        value: "{sys.color.orange.1200.value}"
+      "1300":
+        value: "{sys.color.orange.1300.value}"
+    informative:
+      "100":
+        value: "{sys.color.blue.100.value}"
+      "200":
+        value: "{sys.color.blue.200.value}"
+      "300":
+        value: "{sys.color.blue.300.value}"
+      "400":
+        value: "{sys.color.blue.400.value}"
+      "500":
+        value: "{sys.color.blue.500.value}"
+      "600":
+        value: "{sys.color.blue.600.value}"
+      "700":
+        value: "{sys.color.blue.700.value}"
+      "800":
+        value: "{sys.color.blue.800.value}"
+      "900":
+        value: "{sys.color.blue.900.value}"
+      "1000":
+        value: "{sys.color.blue.1000.value}"
+      "1100":
+        value: "{sys.color.blue.1100.value}"
+      "1200":
+        value: "{sys.color.blue.1200.value}"
+      "1300":
+        value: "{sys.color.blue.1300.value}"
+    positive:
+      "100":
+        value: "{sys.color.green.100.value}"
+      "200":
+        value: "{sys.color.green.200.value}"
+      "300":
+        value: "{sys.color.green.300.value}"
+      "400":
+        value: "{sys.color.green.400.value}"
+      "500":
+        value: "{sys.color.green.500.value}"
+      "600":
+        value: "{sys.color.green.600.value}"
+      "700":
+        value: "{sys.color.green.700.value}"
+      "800":
+        value: "{sys.color.green.800.value}"
+      "900":
+        value: "{sys.color.green.900.value}"
+      "1000":
+        value: "{sys.color.green.1000.value}"
+      "1100":
+        value: "{sys.color.green.1100.value}"
+      "1200":
+        value: "{sys.color.green.1200.value}"
+      "1300":
+        value: "{sys.color.green.1300.value}"

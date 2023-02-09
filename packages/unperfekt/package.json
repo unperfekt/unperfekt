@@ -16,29 +16,22 @@
   "sideEffects": false,
   "type": "module",
   "exports": {
-    ".": {
-      "require": "./dist/cjs/index.cjs",
-      "default": "./dist/esm/index.mjs"
-    },
+    ".": "./dist/index.js",
     "./css/*": "./css/*",
     "./src/components/*/docs/*": "./src/components/*/docs/*.svx"
   },
-  "main": "./dist/cjs/index.cjs",
   "svelte": "./src/index.ts",
   "unpkg": "./dist/unpkg/custom-elements.js",
-  "module": "./dist/esm/index.mjs",
-  "types": "./types/index.d.ts",
+  "types": "./dist/types/index.d.ts",
   "files": [
-    "dist/esm",
-    "dist/cjs",
+    "dist",
     "src",
-    "types",
     "css",
     "CHANGELOG.md",
     "README.md"
   ],
   "scripts": {
-    "build": "rollup -c",
+    "build": "rollup -c && pnpm build:types",
     "build:types": "node scripts/types.cjs",
     "check": "svelte-check --tsconfig ./tsconfig.json",
     "dev": "rollup -c -w",
@@ -51,7 +44,7 @@
     "svelte": "^3.55.0"
   },
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^23.0.4",
+    "@rollup/plugin-commonjs": "^23.0.5",
     "@rollup/plugin-node-resolve": "^15.0.1",
     "@rollup/plugin-typescript": "^10.0.1",
     "eslint-config-unperfekt": "workspace:*",
@@ -65,7 +58,7 @@
     "tslib": "^2.4.1",
     "typescript": "^4.9.4"
   },
-  "packageManager": "pnpm@7.0.0",
+  "packageManager": "pnpm@7.27.0",
   "engines": {
     "node": ">=17"
   },

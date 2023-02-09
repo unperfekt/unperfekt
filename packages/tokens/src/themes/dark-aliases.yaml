@@ -1,0 +1,16 @@
+background:
+  base:
+    value: "{global.color.neutral.50}"
+  layer1:
+    value: "{global.color.neutral.75}"
+  layer2:
+    value: "{global.color.neutral.100}"
+
+button:
+  background:
+    default:
+      value: "{global.color.accent.500}"
+    hover:
+      value: "{global.color.accent.400}"
+    down:
+      value: "{global.color.accent.300}"
