@@ -3,27 +3,7 @@
   import { Button } from "../index.js"
 </script>
 
-<!-- More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export -->
-<!-- More on argTypes: https://storybook.js.org/docs/svelte/api/argtypes -->
-<Meta
-  title="Example/Button"
-  component={Button}
-  argTypes={{
-    disabled: { control: "boolean" },
-    variant: {
-      control: { type: "select" },
-      options: ["primary", "outline", "dark", "danger", "on-danger"],
-    },
-    size: {
-      control: { type: "select" },
-      options: ["sm", "md", "lg"],
-    },
-    type: {
-      control: { type: "select" },
-      options: ["button", "submit", "reset"],
-    },
-  }}
-/>
+<Meta title="Button" tags={["autodocs"]} component={Button} />
 
 <!-- Variants (primary, secondary) - Sizes (sm, md, lg) - States (disabled, readonly) - Accessibility (focus, hover) -->
 

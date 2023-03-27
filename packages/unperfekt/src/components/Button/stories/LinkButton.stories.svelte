@@ -1,28 +1,12 @@
 <script lang="ts">
   import { Meta, Story, Template } from "@storybook/addon-svelte-csf"
+
   import { LinkButton } from "../index.js"
 </script>
 
 <!-- More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export -->
 <!-- More on argTypes: https://storybook.js.org/docs/svelte/api/argtypes -->
-<Meta
-  title="Example/LinkButton"
-  component={LinkButton}
-  argTypes={{
-    onClick: { action: "onClick" },
-    href: { control: "text", defaultValue: "#" },
-    download: { control: "text" },
-    disabled: { control: "boolean" },
-    variant: {
-      control: { type: "select" },
-      options: ["primary", "outline", "dark", "danger", "on-danger"],
-    },
-    size: {
-      control: { type: "select" },
-      options: ["sm", "md", "lg"],
-    },
-  }}
-/>
+<Meta title="LinkButton" component={LinkButton} tags={["autodocs"]} />
 
 <!-- Variants (primary, secondary) - Sizes (sm, md, lg) - States (disabled, readOnly, loading) - Accessibility (focus, hover) -->
 

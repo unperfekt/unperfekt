@@ -97,6 +97,7 @@
       const response = await fetch(swapi.toString(), { signal: state.signal })
       const data = (await response.json()) as unknown as StarWarsResponse
       // await delay(2000)
+      console.log("data", data)
 
       return { items: data.results }
     },

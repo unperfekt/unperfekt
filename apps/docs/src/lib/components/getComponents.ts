@@ -13,7 +13,7 @@ export interface ComponentModule {
 
 export const getComponents = async () => {
   const modules = import.meta.glob(
-    "../../../node_modules/unperfekt/src/components/*/docs/*.svx",
+    "../../../../../packages/unperfekt/src/components/*/docs/*.svx",
   )
   const components = (await Promise.all(
     Object.entries(modules).map(([_path, mod]) => mod()),

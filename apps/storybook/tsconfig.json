@@ -1,0 +1,7 @@
+{
+  "extends": "tsconfig-unperfekt/strict.json",
+  "compilerOptions": {
+    "jsx": "react-jsx"
+  },
+  "include": [".storybook/**/*.ts", ".storybook/**/*.tsx"]
+}
