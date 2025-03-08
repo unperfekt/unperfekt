@@ -1,7 +1,10 @@
-<script lang="ts" strictEvents>
+<svelte:options runes={true} />
+
+<script lang="ts" >
   import type { PageData } from "./$types"
 
-  export let data: PageData
+  let { component }: PageData = $props()
+  let Comp: any = $derived(component)
 </script>
 
-<svelte:component this={data.component} />
+<Comp />

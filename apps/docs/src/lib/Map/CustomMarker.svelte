@@ -1,12 +1,19 @@
-<script lang="ts" strictEvents>
+<svelte:options runes={true} />
+
+<script lang="ts" >
   import { onMount, getContext, onDestroy } from "svelte"
 
   import { key, type MapContext } from "./context.js"
 
   import type { MyMarker } from "./marker.js"
 
-  export let lat: number
-  export let lng: number
+  interface MarkerProps {
+    lat: number
+    lng: number
+    [key: string]: unknown
+  }
+
+  let { lat, lng }: MarkerProps = $props()
 
   const { getMap } = getContext<MapContext>(key)
   const map = getMap()

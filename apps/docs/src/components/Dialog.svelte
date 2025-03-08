@@ -1,4 +1,6 @@
-<script lang="ts" strictEvents>
+<svelte:options runes={true} />
+
+<script lang="ts">
   import { Accordion, LinkButton, Button, Dialog } from "unperfekt"
 
   const items = [
@@ -19,10 +21,6 @@
   }
 
   let name = ""
-
-  $: {
-    console.log(name)
-  }
 </script>
 
 <h1>Welcome to SvelteKit</h1>

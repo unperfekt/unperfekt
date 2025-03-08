@@ -1,3 +1,5 @@
+<svelte:options runes={true} />
+
 <main class="relative z-20 mx-auto max-w-3xl pt-10 xl:max-w-none">
   <header id="header" class="mb-10 md:flex md:items-start">
     <div class="max-w-4xl flex-auto">

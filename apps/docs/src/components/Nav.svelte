@@ -1,21 +1,30 @@
-<script lang="ts" strictEvents>
+<svelte:options runes={true} />
+
+<script lang="ts">
   import { default as cn } from "classnames"
 
   interface Nav {
-    [key: string]: {
-      href: string
-      title: string
-    }[]
+    navigation: {
+      [key: string]: {
+        href: string
+        title: string
+      }[]
+    }
+    children: () => any
   }
-  export let navigation: Nav = {}
+
+  let props: Nav = $props()
+
   let mobile = false
 </script>
 
 <nav id="nav" class="relative lg:text-sm lg:leading-6">
   <ul>
     <!-- <TopLevelNav mobile={mobile} /> -->
-    <slot />
-    {#each Object.entries(navigation) as [title, category]}
+    {#if props.children}
+      {@render props.children()}
+    {/if}
+    {#each Object.entries(props.navigation) as [title, category]}
       <li class="mt-12 lg:mt-8">
         <h5
           class={cn("mb-8 font-semibold lg:mb-3", {

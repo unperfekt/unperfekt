@@ -1,13 +1,12 @@
-<script lang="ts" strictEvents>
+<svelte:options runes={true} />
+
+<script lang="ts" >
   import Sdk from "$lib/Map/Sdk.svelte"
   import Map from "$lib/Map/index.svelte"
   import CustomMarker from "$lib/Map/CustomMarker.svelte"
 
-  let ready = false
+  let ready = $state(false)
 
-  /**
-   *
-   */
   function init() {
     ready = true
   }
@@ -21,7 +20,7 @@
   ]
 </script>
 
-<Sdk on:ready={init} />
+<Sdk ready={init} />
 
 <main class="relative z-20 mx-auto max-w-3xl pt-10 xl:max-w-none">
   <header id="header" class="mb-10 md:flex md:items-start">

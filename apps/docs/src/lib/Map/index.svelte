@@ -1,20 +1,28 @@
-<script lang="ts" strictEvents>
-  import { onMount, setContext } from "svelte"
+<svelte:options runes={true} />
+
+<script lang="ts">
+  import { setContext } from "svelte"
 
   import { key, type MapContext } from "./context.js"
 
-  let container: HTMLDivElement
-  let map: google.maps.Map
+  let container: HTMLDivElement | undefined = $state()
+  let map: google.maps.Map | undefined = $state()
 
-  export let zoom = 12
-  export let center = { lat: -34.397, lng: 150.644 }
+  interface MapProps {
+    zoom?: number
+    center?: google.maps.LatLngLiteral
+    children: () => any
+  }
+
+  let { zoom = 12, center = { lat: -34.397, lng: 150.644 }, children }: MapProps =
+    $props()
 
   setContext<MapContext>(key, {
-    getMap: () => map,
-    getGoogleMap: () => container,
+    getMap: () => map!,
+    getGoogleMap: () => container!,
   })
 
-  onMount(() => {
+  $effect(() => {
     const options: google.maps.MapOptions = {
       // disableDefaultUI: true,
       fullscreenControl: false,
@@ -26,12 +34,12 @@
       center,
       mapId: "d2c30be342f3b206",
     }
-    map = new window.google.maps.Map(container, options)
+    map = new window.google.maps.Map(container!, options)
   })
 </script>
 
 <div class="gmap" bind:this={container}>
-  {#if map}
-    <slot />
+  {#if map && typeof children === "function"}
+    {@render children()}
   {/if}
 </div>
