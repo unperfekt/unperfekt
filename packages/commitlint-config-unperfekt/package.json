@@ -16,7 +16,7 @@
   },
   "license": "ISC",
   "author": "Martin Broder <hello@martinbroder.com> (https://martinbroder.com)",
-  "type": "commonjs",
+  "type": "module",
   "main": "lib/index.js",
   "files": [
     "lib",
@@ -24,8 +24,8 @@
     "README.md"
   ],
   "dependencies": {
-    "@commitlint/config-conventional": "^17.3.0",
-    "commitlint": "^17.3.0"
+    "@commitlint/config-conventional": "^19.8.0",
+    "commitlint": "^19.8.0"
   },
   "peerDependencies": {
     "commitlint": "^16"
@@ -35,7 +35,6 @@
       "optional": true
     }
   },
-  "packageManager": "pnpm@7.27.0",
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"

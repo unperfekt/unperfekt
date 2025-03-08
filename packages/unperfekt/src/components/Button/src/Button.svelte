@@ -1,4 +1,6 @@
-<script lang="ts" strictEvents>
+<svelte:options runes={true} />
+
+<script lang="ts" >
   /**
    * @name Button
    *
@@ -10,19 +12,24 @@
   import { default as cn } from "classnames"
 
   import { SIZE, VARIANT } from "./constants.js"
+  import type { HTMLAttributes } from "svelte/elements"
 
-  /** Space-separated list of the case-sensitive classes of the element. */
-  let _class: string | undefined = undefined
-  export { _class as class }
+  interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
+    /** Space-separated list of the case-sensitive classes of the element. */
+    class?: string
+    /** The visual appeareance of the button. */
+    variant?: keyof typeof VARIANT
+    /** The size of the button. */
+    size?: keyof typeof SIZE
+    /** Whether the button is disabled. */
+    disabled?: boolean
+    /** The icon to display on the button. */
+    icon?: () => any
+    /** The children to render inside the button. */
+    children?: () => any
+  }
 
-  /** The visual appeareance of the button. */
-  export let variant: keyof typeof VARIANT = "primary"
-
-  /** The size of the button. */
-  export let size: keyof typeof SIZE = "md"
-
-  /** Whether the button is disabled. */
-  export let disabled: boolean | undefined = undefined
+  let { variant = "primary", size = "md", disabled, class: classname, icon, children, onclick, onmouseenter, onmouseleave, ...restProps }: ButtonProps = $props()
 </script>
 
 <button
@@ -33,14 +40,18 @@
     },
     VARIANT[variant],
     SIZE[size],
-    _class,
+    classname,
   )}
   disabled={disabled}
-  on:click
-  on:mouseenter
-  on:mouseleave
-  {...$$restProps}
+  {onclick}
+  {onmouseenter}
+  {onmouseleave}
+  {...restProps}
 >
-  <slot name="icon" />
-  <slot />
+  {#if icon}
+    {@render icon()}
+  {/if}
+  {#if children}
+    {@render children()}
+  {/if}
 </button>

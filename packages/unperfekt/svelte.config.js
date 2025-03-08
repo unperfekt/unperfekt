@@ -1,13 +1,14 @@
 /* eslint-disable import/no-default-export, jsdoc/valid-types */
-import preprocess from "svelte-preprocess"
+import { sveltePreprocess } from "svelte-preprocess"
 
 /**
  * @type {import("@sveltejs/kit").Config}
  */
 const config = {
-  preprocess: preprocess(),
+  preprocess: sveltePreprocess(),
   compilerOptions: {
     immutable: true,
+    // runes: true,
   },
 }
 

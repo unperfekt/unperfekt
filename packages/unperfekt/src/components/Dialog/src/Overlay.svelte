@@ -1,4 +1,4 @@
-<script lang="ts" strictEvents>
+<script lang="ts" >
   import { Portal } from "../../Portal/index.js"
 
   /** Wheter to show the overlay or not. */

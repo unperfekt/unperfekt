@@ -1,5 +1,7 @@
-module.exports = {
-  extends: ["plugin:import/recommended"],
+import importPlugin from "eslint-plugin-import"
+
+export default {
+  ...jsdoc.configs["flat/recommended"],
   rules: {
     "import/no-default-export": "error",
     "import/no-unresolved": "off",

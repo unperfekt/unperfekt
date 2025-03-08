@@ -1,4 +1,4 @@
-<script lang="ts" strictEvents>
+<script lang="ts" >
   import { default as cn } from "classnames"
 
   import { SIZE, VARIANT } from "./constants.js"

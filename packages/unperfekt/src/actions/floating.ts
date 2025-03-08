@@ -1,4 +1,3 @@
-import { noop } from "svelte/internal"
 import {
   autoUpdate,
   computePosition,
@@ -7,6 +6,8 @@ import {
 } from "@floating-ui/dom"
 
 import type { Action } from "svelte/action"
+
+const noop = () => {}
 
 export const createFloating = (
   options: Partial<ComputePositionConfig> = {},

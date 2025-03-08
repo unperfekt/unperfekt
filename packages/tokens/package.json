@@ -11,19 +11,18 @@
     "directory": "packages/tokens"
   },
   "author": "Martin Broder <hello@martinbroder.com> (https://martinbroder.com)",
-  "type": "commonjs",
+  "type": "module",
   "scripts": {
     "_build": "style-dictionary build",
     "build": "node build.js"
   },
   "dependencies": {
-    "yaml": "^2.2.0"
+    "yaml": "^2.7.0"
   },
   "devDependencies": {
     "eslint-config-unperfekt": "workspace:*",
-    "style-dictionary": "^3.7.1"
+    "style-dictionary": "^4.3.3"
   },
-  "packageManager": "pnpm@7.27.0",
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"

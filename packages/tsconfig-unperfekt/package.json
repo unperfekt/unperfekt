@@ -25,17 +25,16 @@
     "README.md"
   ],
   "dependencies": {
-    "typescript": "^4.9.4"
+    "typescript": "catalog:"
   },
   "peerDependencies": {
-    "typescript": "^4"
+    "typescript": "catalog:"
   },
   "peerDependenciesMeta": {
     "typescript": {
       "optional": true
     }
   },
-  "packageManager": "pnpm@7.27.0",
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"

@@ -1,4 +1,4 @@
-<script lang="ts" strictEvents>
+<script lang="ts" >
   import { scale } from "svelte/transition"
   import { sineIn, sineOut } from "svelte/easing"
   import { offset, type Strategy } from "@floating-ui/dom"

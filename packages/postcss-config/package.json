@@ -17,26 +17,24 @@
   "license": "ISC",
   "author": "Martin Broder <hello@martinbroder.com> (https://martinbroder.com)",
   "sideEffects": false,
-  "type": "commonjs",
+  "type": "module",
   "exports": {
     ".": "./index.js"
   },
-  "main": "lib/index.js",
+  "main": "./index.js",
   "files": [
     "index.js",
     "CHANGELOG.md",
     "README.md"
   ],
   "dependencies": {
-    "autoprefixer": "^10.4.13",
-    "postcss": "^8.4.21",
-    "postcss-import": "^15.1.0",
-    "postcss-nesting": "^11.2.1",
-    "tailwindcss": "^3.2.6"
+    "@tailwindcss/postcss": "^latest",
+    "postcss": "^8.5.3",
+    "tailwindcss": "catalog:"
   },
   "peerDependencies": {
     "postcss": "^8.4.21",
-    "tailwindcss": "^3.2.6"
+    "tailwindcss": "catalog:"
   },
   "peerDependenciesMeta": {
     "postcss": {
@@ -46,7 +44,6 @@
       "optional": true
     }
   },
-  "packageManager": "pnpm@7.27.0",
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"

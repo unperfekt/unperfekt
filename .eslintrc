@@ -1,7 +1,0 @@
-{
-  "$schema": "http://json.schemastore.org/eslintrc",
-  "root": true,
-  "parserOptions": {
-    "ecmaVersion": 2023
-  }
-}

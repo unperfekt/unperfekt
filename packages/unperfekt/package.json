@@ -16,7 +16,10 @@
   "sideEffects": false,
   "type": "module",
   "exports": {
-    ".": "./dist/index.js",
+    ".": {
+      "svelte": "./src/index.ts",
+      "default": "./dist/index.js"
+    },
     "./css/*": "./css/*",
     "./src/components/*/docs/*": "./src/components/*/docs/*.svx"
   },
@@ -39,28 +42,24 @@
     "lint:fix": "eslint --fix"
   },
   "dependencies": {
-    "@floating-ui/dom": "^1.0.10",
-    "classnames": "^2.3.2",
-    "svelte": "^3.55.0"
+    "@floating-ui/dom": "^1.6.13",
+    "classnames": "^2.5.1",
+    "svelte": "catalog:"
   },
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^23.0.5",
-    "@rollup/plugin-node-resolve": "^15.0.1",
-    "@rollup/plugin-typescript": "^10.0.1",
+    "@rollup/plugin-commonjs": "^28.0.3",
+    "@rollup/plugin-node-resolve": "^16.0.0",
+    "@rollup/plugin-typescript": "^12.1.2",
     "eslint-config-unperfekt": "workspace:*",
-    "rollup": "^3.7.4",
-    "rollup-plugin-svelte": "^7.1.0",
-    "sveld": "^0.18.0",
-    "svelte-check": "^2.10.2",
-    "svelte-preprocess": "^5.0.0",
-    "svelte2tsx": "^0.5.22",
+    "rollup": "^4.34.9",
+    "rollup-plugin-svelte": "^7.2.2",
+    "sveld": "^0.22.1",
+    "svelte-check": "catalog:",
+    "svelte-preprocess": "^6.0.3",
+    "svelte2tsx": "^0.7.35",
     "tsconfig-unperfekt": "workspace:*",
-    "tslib": "^2.4.1",
-    "typescript": "^4.9.4"
-  },
-  "packageManager": "pnpm@7.27.0",
-  "engines": {
-    "node": ">=17"
+    "tslib": "^2.8.1",
+    "typescript": "catalog:"
   },
   "publishConfig": {
     "access": "public",

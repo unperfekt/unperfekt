@@ -1,4 +1,4 @@
-<script lang="ts" strictEvents>
+<script lang="ts" >
   import { fade, scale } from "svelte/transition"
   import { createEventDispatcher, onDestroy } from "svelte"
   import { default as cn } from "classnames"
