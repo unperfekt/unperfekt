@@ -1,7 +1,7 @@
-import jsdoc from 'eslint-plugin-jsdoc';
+import jsdoc from "eslint-plugin-jsdoc"
 
 export default {
-  ...jsdoc.configs['flat/recommended'],
+  ...jsdoc.configs["flat/recommended"],
   rules: {
     "jsdoc/require-description-complete-sentence": "error",
     "jsdoc/require-param": "off",

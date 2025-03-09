@@ -24,11 +24,11 @@
     "README.md"
   ],
   "dependencies": {
-    "@commitlint/config-conventional": "^19.8.0",
-    "commitlint": "^19.8.0"
+    "@commitlint/config-conventional": "catalog:",
+    "commitlint": "catalog:"
   },
   "peerDependencies": {
-    "commitlint": "^16"
+    "commitlint": "catalog:"
   },
   "peerDependenciesMeta": {
     "commitlint": {

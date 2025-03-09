@@ -28,12 +28,12 @@
     "README.md"
   ],
   "dependencies": {
-    "@tailwindcss/postcss": "^latest",
-    "postcss": "^8.5.3",
+    "@tailwindcss/postcss": "catalog:",
+    "postcss": "catalog:",
     "tailwindcss": "catalog:"
   },
   "peerDependencies": {
-    "postcss": "^8.4.21",
+    "postcss": "catalog:",
     "tailwindcss": "catalog:"
   },
   "peerDependenciesMeta": {

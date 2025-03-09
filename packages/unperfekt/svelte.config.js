@@ -1,4 +1,3 @@
-/* eslint-disable import/no-default-export, jsdoc/valid-types */
 import { sveltePreprocess } from "svelte-preprocess"
 
 /**

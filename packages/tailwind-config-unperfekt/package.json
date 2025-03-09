@@ -24,14 +24,14 @@
     "README.md"
   ],
   "dependencies": {
-    "@tailwindcss/typography": "^0.5.16",
+    "@tailwindcss/typography": "catalog:",
     "tailwindcss": "catalog:"
   },
   "devDependencies": {
-    "postcss": "^8.5.3"
+    "postcss": "catalog:"
   },
   "peerDependencies": {
-    "postcss": "^8.0.0",
+    "postcss": "catalog:",
     "tailwindcss": "catalog:"
   },
   "peerDependenciesMeta": {

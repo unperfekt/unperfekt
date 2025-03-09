@@ -12,8 +12,8 @@ await Promise.all(
           "yaml-parser": {
             pattern: /\.yaml$/,
             parser: ({ contents }) => yaml.parse(contents),
-          }
-        }
+          },
+        },
       },
       source: [
         `src/themes/${theme}.yaml`,

@@ -1,5 +1,5 @@
 /** @type {import('prettier').Options} */
-export default {
+module.exports = {
   $schema: "http://json.schemastore.org/prettierrc",
   arrowParens: "always",
   bracketSameLine: false,
@@ -11,10 +11,9 @@ export default {
   semi: false,
   tabWidth: 2,
   trailingComma: "all",
-  plugins: [
-    "prettier-plugin-svelte",
-    "prettier-plugin-tailwindcss",
-  ],
+  plugins: ["prettier-plugin-svelte", "prettier-plugin-tailwindcss"].map(
+    require.resolve,
+  ),
   pluginSearchDirs: false,
   svelteAllowShorthand: false,
   svelteIndentScriptAndStyle: true,

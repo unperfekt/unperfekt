@@ -16,31 +16,34 @@
   },
   "license": "ISC",
   "author": "Martin Broder <hello@martinbroder.com> (https://martinbroder.com)",
-  "type": "commonjs",
-  "main": "lib/index.js",
+  "type": "module",
+  "exports": {
+    ".": "./flat.js"
+  },
+  "main": "./flat.js",
   "files": [
     "lib",
     "CHANGELOG.md",
     "README.md"
   ],
   "dependencies": {
-    "@eslint/compat": "^1.2.5",
-    "@eslint/js": "^9.18.0",
-    "@typescript-eslint/eslint-plugin": "^8.26.0",
-    "@typescript-eslint/parser": "^8.26.0",
-    "eslint": "^9.21.0",
-    "eslint-config-prettier": "^10.1.1",
-    "eslint-plugin-import": "^2.31.0",
-    "eslint-plugin-jsdoc": "^50.6.3",
-    "eslint-plugin-svelte": "^3.0.0",
-    "globals": "^16.0.0",
+    "@eslint/compat": "catalog:",
+    "@eslint/js": "catalog:",
+    "@typescript-eslint/eslint-plugin": "catalog:",
+    "@typescript-eslint/parser": "catalog:",
+    "eslint": "catalog:",
+    "eslint-config-prettier": "catalog:",
+    "eslint-plugin-import": "catalog:",
+    "eslint-plugin-jsdoc": "catalog:",
+    "eslint-plugin-svelte": "catalog:",
+    "globals": "catalog:",
     "prettier": "catalog:",
     "svelte": "catalog:",
     "typescript": "catalog:",
-    "typescript-eslint": "^8.20.0"
+    "typescript-eslint": "catalog:"
   },
   "peerDependencies": {
-    "eslint": "^8",
+    "eslint": "catalog:",
     "prettier": "catalog:",
     "svelte": "catalog:",
     "typescript": "catalog:"

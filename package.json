@@ -28,22 +28,23 @@
   },
   "lint-staged": {
     "package.json": "sort-package-json",
-    "*.{mjs,js,ts,svelte}": "eslint --cache --report-unused-disable-directives --fix",
+    "*.{mjs,js,ts,svelte}": "eslint --cache --fix --flags unstable_config_lookup_from_file",
     "*.{mjs,js,ts,svelte,css,md,json}": "prettier --cache --write"
   },
   "devDependencies": {
-    "@types/node": "^22.13.9",
-    "auto": "^11.3.0",
-    "commitlint": "^19.8.0",
+    "@types/node": "catalog:",
+    "auto": "catalog:",
+    "commitlint": "catalog:",
     "commitlint-config-unperfekt": "workspace:*",
-    "eslint": "^9.21.0",
-    "husky": "^9.1.7",
-    "lerna": "^8.2.1",
-    "lint-staged": "^15.4.3",
+    "eslint": "catalog:",
+    "husky": "catalog:",
+    "lerna": "catalog:",
+    "lint-staged": "catalog:",
     "prettier": "catalog:",
     "prettier-config-unperfekt": "workspace:*",
-    "sort-package-json": "^3.0.0",
-    "turbo": "^2.4.4"
+    "sort-package-json": "catalog:",
+    "turbo": "catalog:",
+    "typescript-eslint": "catalog:"
   },
   "packageManager": "pnpm@10.6.1",
   "engines": {

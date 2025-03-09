@@ -16,7 +16,10 @@
   },
   "license": "ISC",
   "author": "Martin Broder <hello@martinbroder.com> (https://martinbroder.com)",
-  "type": "module",
+  "type": "commonjs",
+  "exports": {
+    ".": "./lib/index.js"
+  },
   "main": "lib/index.js",
   "files": [
     "lib",
@@ -25,8 +28,8 @@
   ],
   "dependencies": {
     "prettier": "catalog:",
-    "prettier-plugin-svelte": "^3.3.3",
-    "prettier-plugin-tailwindcss": "^0.6.11",
+    "prettier-plugin-svelte": "catalog:",
+    "prettier-plugin-tailwindcss": "catalog:",
     "svelte": "catalog:",
     "typescript": "catalog:"
   },
