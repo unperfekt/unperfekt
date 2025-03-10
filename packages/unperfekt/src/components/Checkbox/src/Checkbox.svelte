@@ -1,4 +1,4 @@
-<script lang="ts" >
+<script lang="ts">
   /**
    * @name Checkbox
    */
@@ -13,13 +13,13 @@
   export let id: string = Math.random().toString(36).substring(2, 15)
 
   /** The label of the checkbox. */
-  export let label: string = ""
+  export let label = ""
 
   /** The value of the checkbox. */
-  export let value: string = ""
+  export let value = ""
 
   /** Additional descriptive text. */
-  export let description: string = ""
+  export let description = ""
 
   /** Whether the checkbox is checked. */
   export let checked: boolean | undefined = undefined

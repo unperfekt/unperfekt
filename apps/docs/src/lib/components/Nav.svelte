@@ -1,30 +1,29 @@
-<svelte:options runes={true} />
-
 <script lang="ts">
   import { default as cn } from "classnames"
 
-  interface Nav {
-    navigation: {
-      [key: string]: {
+  import type { Snippet } from "svelte"
+
+  interface NavProps {
+    navigation: Record<
+      string,
+      {
         href: string
         title: string
       }[]
-    }
-    children: () => any
+    >
+    children?: Snippet
   }
 
-  let props: Nav = $props()
+  const props: NavProps = $props()
 
-  let mobile = false
+  const mobile = false
 </script>
 
 <nav id="nav" class="relative lg:text-sm lg:leading-6">
   <ul>
     <!-- <TopLevelNav mobile={mobile} /> -->
-    {#if props.children}
-      {@render props.children()}
-    {/if}
-    {#each Object.entries(props.navigation) as [title, category]}
+    {@render props.children?.()}
+    {#each Object.entries(props.navigation) as [title, category] (title)}
       <li class="mt-12 lg:mt-8">
         <h5
           class={cn("mb-8 font-semibold lg:mb-3", {
@@ -40,7 +39,7 @@
             mobile ? "dark:border-slate-700" : "dark:border-slate-800",
           )}
         >
-          {#each category as item}
+          {#each category as item (item.href)}
             <a
               class="-ml-px block border-l border-transparent pl-4 text-slate-700 hover:border-slate-400 hover:text-slate-900 dark:text-slate-400 dark:hover:border-slate-500 dark:hover:text-slate-300"
               href={item.href}

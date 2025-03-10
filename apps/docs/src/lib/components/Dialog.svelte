@@ -1,5 +1,3 @@
-<svelte:options runes={true} />
-
 <script lang="ts">
   import { Accordion, LinkButton, Button, Dialog } from "unperfekt"
 
@@ -9,7 +7,7 @@
     { id: "3", title: "Dark Souls 3", description: "Lorem Ipsum" },
   ]
 
-  let isOpen = false
+  let isOpen = $state(false)
 
   const open = (e: MouseEvent) => {
     console.log(e.target)
@@ -19,8 +17,6 @@
   const close = () => {
     isOpen = false
   }
-
-  let name = ""
 </script>
 
 <h1>Welcome to SvelteKit</h1>
@@ -28,10 +24,10 @@
   Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation
 </p>
 
-<Accordion {items} />
+<Accordion items={items} />
 
 <Button
-  on:click={(e) => {
+  on:click={(e: Event) => {
     console.log("e", e)
   }}
   variant="danger">Button</Button
@@ -44,7 +40,7 @@
 
 <button>{isOpen} show modal</button>
 
-<Dialog {isOpen} on:close={close}>
+<Dialog isOpen={isOpen} on:close={close}>
   <h2 slot="header">
     modal
     <small><em>adjective</em> mod&middot;al \&#x2C8;m&omacr;-d&#x259;l\</small>

@@ -1,6 +1,4 @@
-<svelte:options runes={true} />
-
-<script lang="ts" >
+<script lang="ts">
   /**
    * @name Button
    *
@@ -12,6 +10,7 @@
   import { default as cn } from "classnames"
 
   import { SIZE, VARIANT } from "./constants.js"
+
   import type { HTMLAttributes } from "svelte/elements"
 
   interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
@@ -29,7 +28,18 @@
     children?: () => any
   }
 
-  let { variant = "primary", size = "md", disabled, class: classname, icon, children, onclick, onmouseenter, onmouseleave, ...restProps }: ButtonProps = $props()
+  const {
+    variant = "primary",
+    size = "md",
+    disabled,
+    class: classname,
+    icon,
+    children,
+    onclick,
+    onmouseenter,
+    onmouseleave,
+    ...restProps
+  }: ButtonProps = $props()
 </script>
 
 <button
@@ -43,9 +53,9 @@
     classname,
   )}
   disabled={disabled}
-  {onclick}
-  {onmouseenter}
-  {onmouseleave}
+  onclick={onclick}
+  onmouseenter={onmouseenter}
+  onmouseleave={onmouseleave}
   {...restProps}
 >
   {#if icon}

@@ -14,9 +14,10 @@
   "type": "module",
   "scripts": {
     "build": "vite build",
-    "check": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json",
-    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json --watch",
+    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
     "dev": "vite dev",
+    "prepare": "svelte-kit sync || echo ''",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -25,6 +26,8 @@
     "@sveltejs/adapter-auto": "catalog:",
     "@sveltejs/kit": "catalog:",
     "@sveltejs/vite-plugin-svelte": "catalog:",
+    "@tailwindcss/typography": "catalog:",
+    "@tailwindcss/vite": "catalog:",
     "@tsconfig/svelte": "catalog:",
     "@types/google.maps": "catalog:",
     "autoprefixer": "catalog:",
@@ -40,6 +43,7 @@
     "tailwindcss": "catalog:",
     "tslib": "catalog:",
     "typescript": "catalog:",
+    "typescript-eslint": "catalog:",
     "unperfekt": "workspace:*",
     "vite": "catalog:"
   },

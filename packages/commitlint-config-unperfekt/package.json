@@ -17,6 +17,9 @@
   "license": "ISC",
   "author": "Martin Broder <hello@martinbroder.com> (https://martinbroder.com)",
   "type": "module",
+  "exports": {
+    ".": "./lib/index.js"
+  },
   "main": "lib/index.js",
   "files": [
     "lib",

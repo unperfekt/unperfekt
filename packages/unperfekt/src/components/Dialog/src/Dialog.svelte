@@ -1,4 +1,4 @@
-<script lang="ts" >
+<script lang="ts">
   /**
    * @name Dialog
    */
@@ -18,12 +18,12 @@
   export { _class as class }
 
   /** Wheter the dialog is open or not. */
-  export let open: boolean = false
+  export let open = false
 
   /** The size of the dialog. */
   export let size: keyof typeof SIZE = "md"
 
-  let modaltype = {
+  const modaltype = {
     sm: "modal",
     md: "modal",
     lg: "modal",

@@ -1,13 +1,11 @@
 import type { LayoutLoad } from "./$types"
-import type { ComponentMetadata } from "$lib/components/getComponents.js"
+import type { ComponentMetadata } from "$lib/api/getComponents.js"
 
-interface Navigation {
-  [key: string]: ComponentMetadata[]
-}
+type Navigation = Record<string, ComponentMetadata[]>
 
 export const load: LayoutLoad = async ({ fetch }) => {
   const components = await fetch("/api/components.json")
-  const json: ComponentMetadata[] = await components.json()
+  const json = (await components.json()) as ComponentMetadata[]
   const navigation = json.reduce((acc, component) => {
     if (!acc[component.category]) acc[component.category] = []
     acc[component.category].push(component)
@@ -21,3 +19,4 @@ export const load: LayoutLoad = async ({ fetch }) => {
 
 // export const csr = false
 export const prerender = true
+// export const ssr = true

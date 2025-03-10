@@ -1,4 +1,4 @@
-<script lang="ts" >
+<script lang="ts">
   import { fade, scale } from "svelte/transition"
   import { createEventDispatcher, onDestroy } from "svelte"
   import { default as cn } from "classnames"
@@ -12,7 +12,7 @@
   export { _class as class }
 
   /** Wheter the modal is open or not. */
-  export let open: boolean = false
+  export let open = false
 
   /** The type of the modal. */
   export let type: keyof typeof TYPE = "modal"

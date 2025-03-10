@@ -1,6 +1,4 @@
-<svelte:options runes={true} />
-
-<script lang="ts" >
+<script lang="ts">
   import { onMount, getContext, onDestroy } from "svelte"
 
   import { key, type MapContext } from "./context.js"
@@ -13,7 +11,7 @@
     [key: string]: unknown
   }
 
-  let { lat, lng }: MarkerProps = $props()
+  const { lat, lng }: MarkerProps = $props()
 
   const { getMap } = getContext<MapContext>(key)
   const map = getMap()

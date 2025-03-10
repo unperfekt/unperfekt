@@ -1,5 +1,3 @@
-<svelte:options runes={true} />
-
 <script lang="ts">
   import { setContext } from "svelte"
 
@@ -8,9 +6,9 @@
   import { contextKey } from "./context.js"
   import AccordionItem from "./AccordionItem.svelte"
 
+  import type { Key } from "../../../state/collection/selection.js"
   import type { Item } from "./types.js"
   import type { AccordionContext } from "./context.js"
-  import type { Key } from "../../../state/collection/selection.js"
 
   interface AccordionProps {
     /** Wheter to allow multiple items to be open at the same time or not. */
@@ -23,7 +21,12 @@
     children: () => any
   }
 
-  let { multiple = false, items = [], selectedKeys = new Set(), children }: AccordionProps = $props()
+  const {
+    multiple = false,
+    items = [],
+    selectedKeys = new Set(),
+    children,
+  }: AccordionProps = $props()
 
   const selectionStore = createSelectionManager({
     multiple,

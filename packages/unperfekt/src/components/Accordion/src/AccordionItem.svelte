@@ -1,13 +1,11 @@
-<svelte:options runes={true} />
-
 <script lang="ts">
   import { derived } from "svelte/store"
   import { getContext } from "svelte"
 
   import { contextKey } from "./context.js"
 
-  import type { AccordionContext } from "./context.js"
   import type { Key } from "../../../state/collection/selection.js"
+  import type { AccordionContext } from "./context.js"
 
   interface AccordionItemProps {
     /** Unique identifier for this row. */
@@ -16,7 +14,7 @@
     title: string
   }
 
-  let { key, title }: AccordionItemProps = $props()
+  const { key, title }: AccordionItemProps = $props()
 
   const ctx = getContext<AccordionContext>(contextKey)
 

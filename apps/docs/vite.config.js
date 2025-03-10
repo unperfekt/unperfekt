@@ -1,11 +1,11 @@
-/* eslint-disable import/no-default-export */
 import path from "node:path"
 
+import { defineConfig } from "vite"
+import tailwindcss from "@tailwindcss/vite"
 import { sveltekit } from "@sveltejs/kit/vite"
-import { defineConfig } from 'vite';
 
-const config = defineConfig({
-  plugins: [sveltekit()],
+export default defineConfig({
+  plugins: [tailwindcss(), sveltekit()],
   server: {
     port: 3000,
   },
@@ -16,5 +16,3 @@ const config = defineConfig({
     },
   },
 })
-
-export default config

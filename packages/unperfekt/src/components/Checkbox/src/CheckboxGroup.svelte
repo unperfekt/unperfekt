@@ -1,6 +1,5 @@
-<script lang="ts" >
+<script lang="ts">
   /**
-   * @name CheckboxGroup
    */
   import { default as cn } from "classnames"
 
@@ -14,12 +13,12 @@
   export let id: string = Math.random().toString(36).substring(2, 15)
 
   /** The label of the checkbox. */
-  export let label: string = ""
+  export let label = ""
 
   export let group: any[] = []
 
   /** Chekbox objects in the collection. */
-  export let items: any[] = []
+  export let items: { id: string }[] = []
 
   /** The value of the checkbox. */
   // export let value: string = ""
@@ -47,7 +46,7 @@
 <fieldset aria-labelledby={id} class={cn("CheckboxGroup", _class)}>
   <legend id={id}>{label}</legend>
   {#each items as item (item.id)}
-    <Checkbox {...item} id={item.id} bind:group />
+    <Checkbox {...item} id={item.id} bind:group={group} />
   {:else}
     <slot />
   {/each}

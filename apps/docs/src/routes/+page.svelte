@@ -1,5 +1,3 @@
-<svelte:options runes={true} />
-
 <main class="relative z-20 mx-auto max-w-3xl pt-10 xl:max-w-none">
   <header id="header" class="mb-10 md:flex md:items-start">
     <div class="max-w-4xl flex-auto">
@@ -9,7 +7,7 @@
         Installation
       </p>
       <h1
-        class="text-3xl font-extrabold tracking-tight text-slate-900 dark:text-slate-200 sm:text-4xl"
+        class="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl dark:text-slate-200"
       >
         Unperfekt Design System
       </h1>

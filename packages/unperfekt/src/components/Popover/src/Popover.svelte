@@ -1,4 +1,4 @@
-<script lang="ts" >
+<script lang="ts">
   import { fade, scale } from "svelte/transition"
   import { createEventDispatcher } from "svelte"
   import { default as cn } from "classnames"
@@ -13,7 +13,7 @@
   export { _class as class }
 
   /** Wheter the popover is open or not. */
-  export let open: boolean = false
+  export let open = false
 
   /** Placement of the popover. */
   export let placement: Placement = "bottom-start"

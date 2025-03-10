@@ -18,16 +18,15 @@
   "author": "Martin Broder <hello@martinbroder.com> (https://martinbroder.com)",
   "type": "module",
   "exports": {
-    ".": "./flat.js"
+    ".": "./lib/index.js"
   },
-  "main": "./flat.js",
+  "main": "./lib/index.js",
   "files": [
     "lib",
     "CHANGELOG.md",
     "README.md"
   ],
   "dependencies": {
-    "@eslint/compat": "catalog:",
     "@eslint/js": "catalog:",
     "@typescript-eslint/eslint-plugin": "catalog:",
     "@typescript-eslint/parser": "catalog:",

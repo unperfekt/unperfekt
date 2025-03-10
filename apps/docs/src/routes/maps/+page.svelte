@@ -1,12 +1,13 @@
-<svelte:options runes={true} />
-
-<script lang="ts" >
+<script lang="ts">
   import Sdk from "$lib/Map/Sdk.svelte"
   import Map from "$lib/Map/index.svelte"
   import CustomMarker from "$lib/Map/CustomMarker.svelte"
 
   let ready = $state(false)
 
+  /**
+   *
+   */
   function init() {
     ready = true
   }
@@ -27,7 +28,7 @@
     <div class="max-w-4xl flex-auto">
       {#if ready}
         <Map center={center}>
-          {#each neighborhoods as { lat, lng }}
+          {#each neighborhoods as { lat, lng }, i (i)}
             <CustomMarker lat={lat} lng={lng} />z
           {/each}
         </Map>

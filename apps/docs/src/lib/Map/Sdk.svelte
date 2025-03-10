@@ -1,16 +1,15 @@
-<svelte:options runes={true} />
-
 <script lang="ts">
+  import { onMount } from "svelte"
+
   import { mapsLoaded } from "./store.js"
 
   import { browser } from "$app/environment"
-  import { onMount } from "svelte"
 
   interface SdkProps {
     ready: () => void
   }
 
-  let { ready }: SdkProps = $props()
+  const { ready }: SdkProps = $props()
 
   onMount(() => {
     if ($mapsLoaded) {
@@ -18,8 +17,8 @@
     } else {
       window.initMap = () => {
         mapsLoaded.set(true)
-        delete window.initMap
         ready()
+        delete window.initMap
       }
     }
   })

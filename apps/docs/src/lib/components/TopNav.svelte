@@ -1,11 +1,9 @@
-<svelte:options runes={true} />
-
 <div
-  class="supports-backdrop-blur:bg-white/60 sticky top-0 z-40 h-16 w-full flex-none bg-white/95 backdrop-blur transition-colors duration-500 dark:border-slate-50/[0.06] dark:bg-transparent lg:z-50 lg:border-b lg:border-slate-900/10"
+  class="supports-backdrop-blur:bg-white/60 sticky top-0 z-40 h-16 w-full flex-none bg-white/95 backdrop-blur transition-colors duration-500 lg:z-50 lg:border-b lg:border-slate-900/10 dark:border-slate-50/[0.06] dark:bg-transparent"
 >
   <div class="mx-auto h-full max-w-7xl">
     <div
-      class="mx-4 h-full border-b border-slate-900/10 dark:border-slate-300/10 lg:mx-0 lg:border-0 lg:px-8"
+      class="mx-4 h-full border-b border-slate-900/10 lg:mx-0 lg:border-0 lg:px-8 dark:border-slate-300/10"
     >
       <div class="relative flex h-full items-center">
         <a
@@ -59,7 +57,7 @@
         </div>
         <button
           type="button"
-          class="-my-1 ml-auto flex h-8 w-8 items-center justify-center text-slate-500 hover:text-slate-600 dark:text-slate-400 dark:hover:text-slate-300 lg:hidden"
+          class="-my-1 ml-auto flex h-8 w-8 items-center justify-center text-slate-500 hover:text-slate-600 lg:hidden dark:text-slate-400 dark:hover:text-slate-300"
           ><span class="sr-only">Search</span><svg
             width="24"
             height="24"
@@ -94,7 +92,7 @@
       </div>
     </div>
     <div
-      class="flex items-center border-b border-slate-900/10 p-4 dark:border-slate-50/[0.06] lg:hidden"
+      class="flex items-center border-b border-slate-900/10 p-4 lg:hidden dark:border-slate-50/[0.06]"
     >
       <button
         type="button"

@@ -1,10 +1,9 @@
-<svelte:options runes={true} />
-
-<script lang="ts" >
+<script lang="ts">
   import type { PageData } from "./$types"
 
-  let { component }: PageData = $props()
-  let Comp: any = $derived(component)
+  const props: PageData = $props()
+  console.log("component", props)
+  // const Comp: any = $derived(props.component)
 </script>
 
-<Comp />
+<!-- <Comp /> -->

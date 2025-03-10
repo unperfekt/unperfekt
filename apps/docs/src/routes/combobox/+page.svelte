@@ -1,12 +1,12 @@
-<script lang="ts" >
-  import { Button, Combobox, createAsyncList } from "unperfekt"
+<script lang="ts">
+  // import { Button, Combobox, createAsyncList } from "unperfekt"
 
-  interface Character {
-    id: string
-    name: string
-    gender: string
-    // url: string
-  }
+  // interface Character {
+  //   id: string
+  //   name: string
+  //   gender: string
+  //   // url: string
+  // }
 
   // interface Country {
   //   id: string
@@ -15,9 +15,9 @@
   //   // url: string
   // }
 
-  interface StarWarsResponse {
-    results: Character[]
-  }
+  // interface StarWarsResponse {
+  //   results: Character[]
+  // }
 
   // let isOpen = false
 
@@ -87,25 +87,25 @@
 
   // const toLower = (str: string) => str.toLowerCase()
 
-  const { items, filterText, loadingState } = createAsyncList<Character>({
-    // initialItems: countries,
-    // initialFilterText: "L",
-    async load(state) {
-      // console.log("state", state)
-      const swapi = new URL("https://swapi.dev/api/people")
-      swapi.searchParams.set("search", state.filterText as string)
-      const response = await fetch(swapi.toString(), { signal: state.signal })
-      const data = (await response.json()) as unknown as StarWarsResponse
-      // await delay(2000)
-      console.log("data", data)
+  // const { items, filterText, loadingState } = createAsyncList<Character>({
+  //   // initialItems: countries,
+  //   // initialFilterText: "L",
+  //   async load(state) {
+  //     // console.log("state", state)
+  //     const swapi = new URL("https://swapi.dev/api/people")
+  //     swapi.searchParams.set("search", state.filterText as string)
+  //     const response = await fetch(swapi.toString(), { signal: state.signal })
+  //     const data = (await response.json()) as unknown as StarWarsResponse
+  //     // await delay(2000)
+  //     console.log("data", data)
 
-      return { items: data.results }
-    },
-    // filter: (item, filterText) => {
-    // 	// console.log('item', item, 'filterText', filterText)
-    // 	return toLower(item.name).includes(toLower(filterText))
-    // }
-  })
+  //     return { items: data.results }
+  //   },
+  //   // filter: (item, filterText) => {
+  //   // 	// console.log('item', item, 'filterText', filterText)
+  //   // 	return toLower(item.name).includes(toLower(filterText))
+  //   // }
+  // })
 
   // const { items, filterText, setFilterText } = createListData<Country>({
   //   initialItems: countries,
@@ -126,28 +126,28 @@
   //   },
   // })
 
-  const _setFilterText = (event: Event) => {
-    console.log("event", event)
-    // const text: string = event.currentTargetvalue
+  // const _setFilterText = (event: Event) => {
+  //   console.log("event", event)
+  //   // const text: string = event.currentTargetvalue
 
-    // setFilterText(text)
-  }
+  //   // setFilterText(text)
+  // }
 
-  const onSubmit = (event: SubmitEvent) => {
-    event.preventDefault()
-    console.log("submit", event)
-    // const formData = new FormData(event.target as HTMLFormElement)
-    // let obj = {}
-    // for (var key of formData.keys()) {
-    //   obj[key] = formData.get(key)
-    // }
-    // console.log("formData", obj)
-  }
+  // const onSubmit = (event: SubmitEvent) => {
+  //   event.preventDefault()
+  //   console.log("submit", event)
+  //   // const formData = new FormData(event.target as HTMLFormElement)
+  //   // let obj = {}
+  //   // for (var key of formData.keys()) {
+  //   //   obj[key] = formData.get(key)
+  //   // }
+  //   // console.log("formData", obj)
+  // }
 
   // $: console.log("loadingState", $loadingState, $loading)
 </script>
 
-<form on:submit={onSubmit}>
+<!-- <form on:submit={onSubmit}>
   <div class="mx-auto w-64 pt-6">
     <h1 class="mb-6 font-sans text-2xl">Combobox</h1>
     <div class="mb-4 block">
@@ -176,9 +176,7 @@
       >
         <span slot="item" let:item>
           <div class="flex">
-            <!-- Selected: "font-semibold" -->
             <span class="truncate">{item.name}</span>
-            <!-- Active: "text-indigo-200", Not Active: "text-gray-500" -->
             <span class="ml-2 truncate text-gray-500">{item.gender}</span>
           </div>
         </span>
@@ -186,7 +184,7 @@
     </div>
     <Button type="submit" size="lg">Submit</Button>
   </div>
-</form>
+</form> -->
 
 <!-- <button on:click={open}>{isOpen} show modal</button>
 

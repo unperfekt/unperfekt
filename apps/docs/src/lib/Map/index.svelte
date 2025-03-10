@@ -1,5 +1,3 @@
-<svelte:options runes={true} />
-
 <script lang="ts">
   import { setContext } from "svelte"
 
@@ -14,8 +12,11 @@
     children: () => any
   }
 
-  let { zoom = 12, center = { lat: -34.397, lng: 150.644 }, children }: MapProps =
-    $props()
+  const {
+    zoom = 12,
+    center = { lat: -34.397, lng: 150.644 },
+    children,
+  }: MapProps = $props()
 
   setContext<MapContext>(key, {
     getMap: () => map!,

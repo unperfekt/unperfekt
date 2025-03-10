@@ -1,0 +1,9 @@
+@import "tailwindcss";
+@plugin '@tailwindcss/typography';
+
+@import "unperfekt/css/index.css";
+
+.gmap {
+  width: 100%;
+  height: 60vh;
+}

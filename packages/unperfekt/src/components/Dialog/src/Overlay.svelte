@@ -1,8 +1,8 @@
-<script lang="ts" >
+<script lang="ts">
   import { Portal } from "../../Portal/index.js"
 
   /** Wheter to show the overlay or not. */
-  export let open: boolean = false
+  export let open = false
 
   /** DOM Element or CSS Selector. */
   export let target: HTMLElement | string = "body"

@@ -6,6 +6,6 @@
 
 ```jsonc
 {
-  "extends": "tsconfig-unperfekt/svelte.json"
+  "extends": "tsconfig-unperfekt/svelte.json",
 }
 ```

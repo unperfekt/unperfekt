@@ -33,7 +33,7 @@ export const createFloating = (
     }
   }
 
-  /** Creates a reference to the anchor element. */
+  // Creates a reference to the anchor element.
   const createAnchor: Action<ReferenceElement> = (node) => {
     anchor = node
 
@@ -42,11 +42,11 @@ export const createFloating = (
     }
   }
 
-  /** Creates a reference to the target element. */
+  // Creates a reference to the target element.
   const createTarget: Action = (node) => {
     target = node
     cleanup =
-      (anchor && target && autoUpdate(anchor, target, () => void update())) ||
+      (anchor && target && autoUpdate(anchor, target, () => void update())) ??
       noop
 
     return {

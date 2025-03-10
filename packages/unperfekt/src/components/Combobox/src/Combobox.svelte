@@ -1,4 +1,4 @@
-<script lang="ts" >
+<script lang="ts" generics="T extends Item">
   import { scale } from "svelte/transition"
   import { sineIn, sineOut } from "svelte/easing"
   import { offset, type Strategy } from "@floating-ui/dom"
@@ -7,29 +7,29 @@
   import { composedPathContains } from "../../../utils/composedPathContains.js"
   import { createFloating } from "../../../actions/floating.js"
 
-  import type { Item } from "./types.js"
   import type { LoadingState } from "../../../state/collection/loadingState.js"
+  import type { Item } from "./types.js"
 
   // --- Public State ----
-  type T = $$Generic<Item>
+  // type T = $$Generic<Item>
 
   /** The id of the element. */
   export let id: string = Math.random().toString(36).substring(2, 15)
 
   /** The value of the Combobox input. */
-  export let value: string = ""
+  export let value = ""
 
   /** The name of the Combobox input. */
-  export let name: string = ""
+  export let name = ""
 
   /** The current loading state of the list. */
   export let loadingState: LoadingState | undefined = undefined
 
   /** The Combobox label. */
-  export let label: string = ""
+  export let label = ""
 
   /** The Combobox input placeholder. */
-  export let placeholder: string = ""
+  export let placeholder = ""
 
   /** The Combobox floating strategy. Change this to 'fixed' when the combobox resides on a fixed container. */
   export let strategy: Strategy = "absolute"
@@ -102,7 +102,7 @@
     return e
   }
 
-  let onKeyDown = (e: KeyEvent) => {
+  const onKeyDown = (e: KeyEvent) => {
     const fnmap = {
       Tab: close,
       ArrowDown: () => {
@@ -130,13 +130,16 @@
     }
   }
 
-  let onKeyUp = (e: KeyEvent) => {
+  const onKeyUp = (e: KeyEvent) => {
     if (e.key === "Enter") {
       onEnter(e)
     }
   }
 
-  /** Get the label. */
+  /**
+   * Get the label.
+   * @param item
+   */
   export let getLabel = (item: Item): string => item.name
 
   const getItem = (index: number): Item | undefined =>
@@ -209,6 +212,7 @@
 
   $: isLoading = loadingState === "loading"
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-expressions
   $: highlightIndex, listboxNode, highlight()
 </script>
 
@@ -228,7 +232,7 @@
     use:anchorRef
   >
     <input
-      bind:value
+      bind:value={value}
       bind:this={inputNode}
       disabled={disabled}
       placeholder={placeholder}
@@ -301,7 +305,7 @@
       role="listbox"
       use:targetRef
     >
-      {#each items as item, i}
+      {#each items as item, i (item.id)}
         <li
           class:selected={i === highlightIndex}
           class="Combobox-option"

@@ -1,4 +1,4 @@
-<script lang="ts" >
+<script lang="ts">
   import { default as cn } from "classnames"
 
   import { SIZE, VARIANT } from "./constants.js"
@@ -18,12 +18,11 @@
 
   /**
    * The URL that the hyperlink points to.
-   *
    * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#attr-href
    */
   export let href: string | undefined = undefined
 
-  let className = cn(
+  const className = cn(
     "Button",
     {
       "is-disabled": disabled,

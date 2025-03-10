@@ -6,6 +6,6 @@
 
 ```jsonc
 {
-  "extends": "@polygon/tsconfig/strict.json"
+  "extends": "@polygon/tsconfig/strict.json",
 }
 ```

@@ -1,4 +1,4 @@
-<script lang="ts" >
+<script lang="ts">
   /**
    * @name ButtonGroup
    *
@@ -14,7 +14,12 @@
     children?: () => any
   }
 
-  let { class: _class, disabled, children, ...restProps }: ButtonGroupProps = $props()
+  const {
+    class: _class,
+    disabled,
+    children,
+    ...restProps
+  }: ButtonGroupProps = $props()
 </script>
 
 <div

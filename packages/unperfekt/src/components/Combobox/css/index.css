@@ -24,7 +24,7 @@
   }
 
   .Combobox-option {
-    @apply flex cursor-pointer items-center py-1 px-2 font-sans text-base;
+    @apply flex cursor-pointer items-center px-2 py-1 font-sans text-base;
     @apply hover:bg-red-100;
     @apply bg-white;
   }
