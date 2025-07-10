@@ -230,6 +230,9 @@ importers:
       eslint:
         specifier: 'catalog:'
         version: 9.22.0(jiti@2.4.2)
+      eslint-config-unperfekt:
+        specifier: workspace:*
+        version: link:packages/eslint-config-unperfekt
       husky:
         specifier: 'catalog:'
         version: 9.1.7

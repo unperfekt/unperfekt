@@ -1,5 +1,7 @@
-export default {
-  // extends: ["gitmoji"],
-  // extends: ["commitlint-config-gitmoji"],
+/* eslint-disable import/no-default-export */
+
+const config = {
   extends: ["@commitlint/config-conventional"],
 }
+
+export default config

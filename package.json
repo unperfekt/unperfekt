@@ -37,6 +37,7 @@
     "commitlint": "catalog:",
     "commitlint-config-unperfekt": "workspace:*",
     "eslint": "catalog:",
+    "eslint-config-unperfekt": "workspace:*",
     "husky": "catalog:",
     "lerna": "catalog:",
     "lint-staged": "catalog:",

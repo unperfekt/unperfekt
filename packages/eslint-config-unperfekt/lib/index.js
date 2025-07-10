@@ -1,3 +1,5 @@
+/* eslint-disable import/no-default-export */
+
 import { fileURLToPath } from "node:url"
 
 import tseslint from "typescript-eslint"
@@ -8,12 +10,6 @@ import importPlugin from "eslint-plugin-import"
 import prettierConfig from "eslint-config-prettier"
 import { globalIgnores } from "eslint/config"
 import js from "@eslint/js"
-
-// import svelteConfig from "./svelte.config.js"
-
-// const typeScriptExtensions = ['.ts', '.cts', '.mts', '.tsx'];
-
-// const allExtensions = [...typeScriptExtensions, '.js', '.jsx', '.mjs', '.cjs'];
 
 export const gitignore = globalIgnores([
   fileURLToPath(new URL("../../.gitignore", import.meta.url)),
