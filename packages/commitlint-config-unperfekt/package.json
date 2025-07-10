@@ -1,7 +1,7 @@
 {
   "name": "commitlint-config-unperfekt",
-  "version": "1.0.0",
-  "description": "commitlint config for unperfekt",
+  "version": "0.1.0",
+  "description": "unperfekt commitlint configuration",
   "keywords": [
     "commitlint"
   ],
