@@ -12,7 +12,7 @@ import { globalIgnores } from "eslint/config"
 import js from "@eslint/js"
 
 export const gitignore = globalIgnores([
-  fileURLToPath(new URL("../../.gitignore", import.meta.url)),
+  fileURLToPath(new URL("gitignore", import.meta.url)),
 ])
 
 export const allJSOverrides = {
