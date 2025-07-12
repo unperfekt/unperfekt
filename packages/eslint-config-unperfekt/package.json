@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-unperfekt",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "eslint config for unperfekt",
   "keywords": [
     "eslint"
@@ -27,6 +27,7 @@
     "README.md"
   ],
   "dependencies": {
+    "@eslint-react/eslint-plugin": "catalog:",
     "@eslint/js": "catalog:",
     "@typescript-eslint/eslint-plugin": "catalog:",
     "@typescript-eslint/parser": "catalog:",

@@ -9,6 +9,7 @@ import jsdocPlugin from "eslint-plugin-jsdoc"
 import importPlugin from "eslint-plugin-import"
 import prettierConfig from "eslint-config-prettier"
 import { globalIgnores } from "eslint/config"
+import eslintReact from "@eslint-react/eslint-plugin"
 import js from "@eslint/js"
 
 export const gitignore = globalIgnores([
@@ -72,6 +73,7 @@ export const allJS = {
   files: ["**/*.{js,jsx,mjs,cjs}"],
   extends: [
     js.configs.recommended,
+    eslintReact.configs.recommended,
     importPlugin.flatConfigs.recommended,
     jsdocPlugin.configs["flat/recommended"],
     allJSOverrides,
@@ -83,6 +85,8 @@ export const allTS = {
   files: ["**/*.{ts,tsx,mts,cts}"],
   extends: [
     js.configs.recommended,
+    // eslintReact.configs['recommended-typescript'],
+    eslintReact.configs["recommended-type-checked"],
     tseslint.configs.recommended,
     tseslint.configs.recommendedTypeChecked,
     // tseslint.configs.strictTypeChecked,
