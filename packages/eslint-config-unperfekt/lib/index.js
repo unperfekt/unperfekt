@@ -11,7 +11,6 @@ import jsdocPlugin from "eslint-plugin-jsdoc"
 import importPlugin from "eslint-plugin-import"
 import prettierConfig from "eslint-config-prettier"
 import { globalIgnores } from "eslint/config"
-import eslintReact from "@eslint-react/eslint-plugin"
 import js from "@eslint/js"
 
 export const gitignore = globalIgnores([fileURLToPath(new URL("gitignore", import.meta.url))])
@@ -77,16 +76,27 @@ export const reactOverrides = {
   },
 }
 
-export const allJS = {
-  files: ["**/*.{js,jsx,mjs,cjs}"],
+export const allJSPlain = {
+  files: ["**/*.{js,mjs,cjs}"],
+  extends: [
+    js.configs.recommended,
+    importPlugin.flatConfigs.recommended,
+    jsdocPlugin.configs["flat/recommended"],
+    allJSOverrides,
+    prettierConfig,
+  ],
+}
+
+export const allJSReact = {
+  files: ["**/*.jsx"],
   plugins: {
     "react": reactPlugin,
     "react-hooks": reactHooksPlugin,
   },
   extends: [
     js.configs.recommended,
-    eslintReact.configs.recommended,
     reactPlugin.configs.flat.recommended,
+    reactPlugin.configs.flat["jsx-runtime"],
     importPlugin.flatConfigs.recommended,
     jsdocPlugin.configs["flat/recommended"],
     allJSOverrides,
@@ -95,16 +105,38 @@ export const allJS = {
   ],
 }
 
-export const allTS = {
-  files: ["**/*.{ts,tsx,mts,cts}"],
+export const allTSPlain = {
+  files: ["**/*.{ts,mts,cts}"],
+  extends: [
+    js.configs.recommended,
+    tseslint.configs.recommended,
+    tseslint.configs.recommendedTypeChecked,
+    // tseslint.configs.strictTypeChecked,
+    tseslint.configs.stylisticTypeChecked,
+    importPlugin.flatConfigs.recommended,
+    importPlugin.flatConfigs.typescript,
+    jsdocPlugin.configs["flat/recommended"],
+    jsdocPlugin.configs["flat/recommended-typescript"],
+    allJSOverrides,
+    allTSOverrides,
+    prettierConfig,
+  ],
+  languageOptions: {
+    parserOptions: {
+      projectService: true,
+      tsconfigRootDir: import.meta.dirname,
+    },
+  },
+}
+
+export const allTSReact = {
+  files: ["**/*.tsx"],
   plugins: {
     "react": reactPlugin,
     "react-hooks": reactHooksPlugin,
   },
   extends: [
     js.configs.recommended,
-    // eslintReact.configs['recommended-typescript'],
-    eslintReact.configs["recommended-type-checked"],
     reactPlugin.configs.flat.recommended,
     reactPlugin.configs.flat["jsx-runtime"],
     tseslint.configs.recommended,
@@ -123,14 +155,14 @@ export const allTS = {
   languageOptions: {
     parserOptions: {
       projectService: true,
-      // tsconfigRootDir: import.meta.dirname,
+      tsconfigRootDir: import.meta.dirname,
     },
   },
 }
 
 export const allSvelte = {
   files: ["**/*.{svelte,svelte.ts,svelte.js}"],
-  extends: [...allTS.extends, ...sveltePlugin.configs.recommended, ...sveltePlugin.configs.prettier],
+  extends: [...allTSPlain.extends, ...sveltePlugin.configs.recommended, ...sveltePlugin.configs.prettier],
   languageOptions: {
     parserOptions: {
       projectService: true,
@@ -144,8 +176,10 @@ export const allSvelte = {
 /** @type {import('@typescript-eslint/utils').TSESLint.FlatConfig.ConfigFile} */
 export const rawConfig = [
   gitignore,
-  allJS,
-  allTS,
+  allJSPlain,
+  allJSReact,
+  allTSPlain,
+  allTSReact,
   allSvelte,
   {
     languageOptions: {
