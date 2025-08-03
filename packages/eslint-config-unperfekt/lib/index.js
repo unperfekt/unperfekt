@@ -11,15 +11,16 @@ import jsxA11yPlugin from "eslint-plugin-jsx-a11y"
 import jsdocPlugin from "eslint-plugin-jsdoc"
 import importPlugin from "eslint-plugin-import"
 import prettierConfig from "eslint-config-prettier"
+import nextPlugin from "@next/eslint-plugin-next"
 import js from "@eslint/js"
 import { includeIgnoreFile } from "@eslint/compat"
 
 /**
- * Find gitignore files in the directory tree starting from the given directory
- * @param {string} fromDir - Directory to start searching from (defaults to process.cwd())
- * @returns {string[]} Array of gitignore file paths
+ * Include the root .gitignore file if it exists.
+ * @param {string} fromDir - The directory to start looking for .gitignore from.
+ * @returns {object} The ESLint ignore configuration.
  */
-function findGitignoreFiles(fromDir = process.cwd()) {
+function includeRootGitignore(fromDir = process.cwd()) {
   // Add the root .gitignore if it exists
   const rootGitignore = resolve(fromDir, ".gitignore")
 
@@ -94,7 +95,6 @@ export const allJSPlain = {
     importPlugin.flatConfigs.recommended,
     jsdocPlugin.configs["flat/recommended"],
     allJSOverrides,
-    prettierConfig,
   ],
 }
 
@@ -112,9 +112,9 @@ export const allJSReact = {
     jsxA11yPlugin.flatConfigs.recommended,
     importPlugin.flatConfigs.recommended,
     jsdocPlugin.configs["flat/recommended"],
+    nextPlugin.flatConfig.coreWebVitals,
     allJSOverrides,
     reactOverrides,
-    prettierConfig,
   ],
 }
 
@@ -132,7 +132,6 @@ export const allTSPlain = {
     jsdocPlugin.configs["flat/recommended-typescript"],
     allJSOverrides,
     allTSOverrides,
-    prettierConfig,
   ],
   languageOptions: {
     parserOptions: {
@@ -161,10 +160,10 @@ export const allTSReact = {
     importPlugin.flatConfigs.typescript,
     jsdocPlugin.configs["flat/recommended"],
     jsdocPlugin.configs["flat/recommended-typescript"],
+    nextPlugin.flatConfig.coreWebVitals,
     allJSOverrides,
     allTSOverrides,
     reactOverrides,
-    prettierConfig,
   ],
   languageOptions: {
     parserOptions: {
@@ -187,15 +186,22 @@ export const allSvelte = {
   },
 }
 
+export const allNext = {
+  files: ["**/*.{js,jsx,ts,tsx}"],
+  extends: [nextPlugin.flatConfig.coreWebVitals],
+}
+
 /** @type {import('@typescript-eslint/utils').TSESLint.FlatConfig.ConfigFile} */
 export const rawConfig = [
   // Include all gitignore files found in the directory tree
-  findGitignoreFiles(),
+  includeRootGitignore(),
   allJSPlain,
   allJSReact,
   allTSPlain,
   allTSReact,
   allSvelte,
+  // allNext,
+  prettierConfig,
   {
     languageOptions: {
       ecmaVersion: "latest",
