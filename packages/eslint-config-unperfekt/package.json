@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-unperfekt",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "eslint config for unperfekt",
   "keywords": [
     "eslint"
@@ -21,6 +21,7 @@
     ".": "./lib/index.js"
   },
   "main": "./lib/index.js",
+  "module": "./lib/index.js",
   "files": [
     "lib",
     "CHANGELOG.md",
@@ -35,6 +36,7 @@
     "eslint-config-prettier": "catalog:",
     "eslint-plugin-import": "catalog:",
     "eslint-plugin-jsdoc": "catalog:",
+    "eslint-plugin-jsx-a11y": "catalog:",
     "eslint-plugin-react": "catalog:",
     "eslint-plugin-react-hooks": "catalog:",
     "eslint-plugin-svelte": "catalog:",

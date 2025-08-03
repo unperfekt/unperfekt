@@ -7,6 +7,7 @@ import globals from "globals"
 import sveltePlugin from "eslint-plugin-svelte"
 import reactHooksPlugin from "eslint-plugin-react-hooks"
 import reactPlugin from "eslint-plugin-react"
+import jsxA11yPlugin from "eslint-plugin-jsx-a11y"
 import jsdocPlugin from "eslint-plugin-jsdoc"
 import importPlugin from "eslint-plugin-import"
 import prettierConfig from "eslint-config-prettier"
@@ -92,11 +93,13 @@ export const allJSReact = {
   plugins: {
     "react": reactPlugin,
     "react-hooks": reactHooksPlugin,
+    "jsx-a11y": jsxA11yPlugin,
   },
   extends: [
     js.configs.recommended,
     reactPlugin.configs.flat.recommended,
     reactPlugin.configs.flat["jsx-runtime"],
+    jsxA11yPlugin.flatConfigs.recommended,
     importPlugin.flatConfigs.recommended,
     jsdocPlugin.configs["flat/recommended"],
     allJSOverrides,
@@ -134,11 +137,13 @@ export const allTSReact = {
   plugins: {
     "react": reactPlugin,
     "react-hooks": reactHooksPlugin,
+    "jsx-a11y": jsxA11yPlugin,
   },
   extends: [
     js.configs.recommended,
     reactPlugin.configs.flat.recommended,
     reactPlugin.configs.flat["jsx-runtime"],
+    jsxA11yPlugin.flatConfigs.recommended,
     tseslint.configs.recommended,
     tseslint.configs.recommendedTypeChecked,
     // tseslint.configs.strictTypeChecked,
