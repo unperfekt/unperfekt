@@ -1,6 +1,6 @@
 /* eslint-disable import/no-default-export */
 
-import { fileURLToPath } from "node:url"
+import { resolve } from "node:path"
 
 import tseslint from "typescript-eslint"
 import globals from "globals"
@@ -11,10 +11,20 @@ import jsxA11yPlugin from "eslint-plugin-jsx-a11y"
 import jsdocPlugin from "eslint-plugin-jsdoc"
 import importPlugin from "eslint-plugin-import"
 import prettierConfig from "eslint-config-prettier"
-import { globalIgnores } from "eslint/config"
 import js from "@eslint/js"
+import { includeIgnoreFile } from "@eslint/compat"
 
-export const gitignore = globalIgnores([fileURLToPath(new URL("gitignore", import.meta.url))])
+/**
+ * Find gitignore files in the directory tree starting from the given directory
+ * @param {string} fromDir - Directory to start searching from (defaults to process.cwd())
+ * @returns {string[]} Array of gitignore file paths
+ */
+function findGitignoreFiles(fromDir = process.cwd()) {
+  // Add the root .gitignore if it exists
+  const rootGitignore = resolve(fromDir, ".gitignore")
+
+  return includeIgnoreFile(rootGitignore)
+}
 
 export const allJSOverrides = {
   rules: {
@@ -127,7 +137,7 @@ export const allTSPlain = {
   languageOptions: {
     parserOptions: {
       projectService: true,
-      // tsconfigRootDir: import.meta.dirname,
+      tsconfigRootDir: import.meta.dirname,
     },
   },
 }
@@ -159,7 +169,7 @@ export const allTSReact = {
   languageOptions: {
     parserOptions: {
       projectService: true,
-      // tsconfigRootDir: import.meta.dirname,
+      tsconfigRootDir: import.meta.dirname,
     },
   },
 }
@@ -179,7 +189,8 @@ export const allSvelte = {
 
 /** @type {import('@typescript-eslint/utils').TSESLint.FlatConfig.ConfigFile} */
 export const rawConfig = [
-  gitignore,
+  // Include all gitignore files found in the directory tree
+  findGitignoreFiles(),
   allJSPlain,
   allJSReact,
   allTSPlain,

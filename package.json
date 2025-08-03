@@ -20,7 +20,7 @@
     "check": "turbo run check",
     "dev": "turbo run dev --parallel",
     "format": "prettier --cache --write",
-    "lint": "turbo run lint",
+    "lint": "eslint --cache --fix --flag unstable_config_lookup_from_file",
     "prepare": "husky install",
     "preview": "turbo run preview --parallel",
     "release": "auto shipit",
