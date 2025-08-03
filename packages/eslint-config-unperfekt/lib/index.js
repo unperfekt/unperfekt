@@ -127,7 +127,7 @@ export const allTSPlain = {
   languageOptions: {
     parserOptions: {
       projectService: true,
-      tsconfigRootDir: import.meta.dirname,
+      // tsconfigRootDir: import.meta.dirname,
     },
   },
 }
@@ -137,7 +137,6 @@ export const allTSReact = {
   plugins: {
     "react": reactPlugin,
     "react-hooks": reactHooksPlugin,
-    "jsx-a11y": jsxA11yPlugin,
   },
   extends: [
     js.configs.recommended,
@@ -160,7 +159,7 @@ export const allTSReact = {
   languageOptions: {
     parserOptions: {
       projectService: true,
-      tsconfigRootDir: import.meta.dirname,
+      // tsconfigRootDir: import.meta.dirname,
     },
   },
 }

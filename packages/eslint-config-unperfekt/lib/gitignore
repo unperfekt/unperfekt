@@ -93,3 +93,6 @@ vite.config.ts.timestamp-*
 
 # Turbo
 .turbo
+
+# WXT
+.wxt

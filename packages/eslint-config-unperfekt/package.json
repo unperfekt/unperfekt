@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-unperfekt",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "eslint config for unperfekt",
   "keywords": [
     "eslint"
