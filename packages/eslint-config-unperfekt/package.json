@@ -35,6 +35,8 @@
     "eslint-config-prettier": "catalog:",
     "eslint-plugin-import": "catalog:",
     "eslint-plugin-jsdoc": "catalog:",
+    "eslint-plugin-react": "catalog:",
+    "eslint-plugin-react-hooks": "catalog:",
     "eslint-plugin-svelte": "catalog:",
     "globals": "catalog:",
     "prettier": "catalog:",

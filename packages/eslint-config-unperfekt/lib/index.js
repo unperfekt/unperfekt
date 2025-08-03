@@ -5,6 +5,8 @@ import { fileURLToPath } from "node:url"
 import tseslint from "typescript-eslint"
 import globals from "globals"
 import sveltePlugin from "eslint-plugin-svelte"
+import reactHooksPlugin from "eslint-plugin-react-hooks"
+import reactPlugin from "eslint-plugin-react"
 import jsdocPlugin from "eslint-plugin-jsdoc"
 import importPlugin from "eslint-plugin-import"
 import prettierConfig from "eslint-config-prettier"
@@ -12,9 +14,7 @@ import { globalIgnores } from "eslint/config"
 import eslintReact from "@eslint-react/eslint-plugin"
 import js from "@eslint/js"
 
-export const gitignore = globalIgnores([
-  fileURLToPath(new URL("gitignore", import.meta.url)),
-])
+export const gitignore = globalIgnores([fileURLToPath(new URL("gitignore", import.meta.url))])
 
 export const allJSOverrides = {
   rules: {
@@ -38,16 +38,7 @@ export const allJSOverrides = {
     "import/order": [
       "error",
       {
-        "groups": [
-          "builtin",
-          "external",
-          "internal",
-          "parent",
-          "sibling",
-          "index",
-          "object",
-          "type",
-        ],
+        "groups": ["builtin", "external", "internal", "parent", "sibling", "index", "object", "type"],
         "newlines-between": "always",
         "alphabetize": {
           order: "desc",
@@ -69,24 +60,53 @@ export const allTSOverrides = {
   },
 }
 
+export const reactOverrides = {
+  settings: {
+    react: {
+      version: "detect",
+    },
+  },
+  rules: {
+    // React-specific rules
+    "react/prop-types": "off", // TypeScript handles prop validation
+    "react/react-in-jsx-scope": "off", // React 17+ doesn't require import
+    "react/jsx-uses-react": "off", // React 17+ doesn't require import
+    // React Hooks rules
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+  },
+}
+
 export const allJS = {
   files: ["**/*.{js,jsx,mjs,cjs}"],
+  plugins: {
+    "react": reactPlugin,
+    "react-hooks": reactHooksPlugin,
+  },
   extends: [
     js.configs.recommended,
     eslintReact.configs.recommended,
+    reactPlugin.configs.flat.recommended,
     importPlugin.flatConfigs.recommended,
     jsdocPlugin.configs["flat/recommended"],
     allJSOverrides,
+    reactOverrides,
     prettierConfig,
   ],
 }
 
 export const allTS = {
   files: ["**/*.{ts,tsx,mts,cts}"],
+  plugins: {
+    "react": reactPlugin,
+    "react-hooks": reactHooksPlugin,
+  },
   extends: [
     js.configs.recommended,
     // eslintReact.configs['recommended-typescript'],
     eslintReact.configs["recommended-type-checked"],
+    reactPlugin.configs.flat.recommended,
+    reactPlugin.configs.flat["jsx-runtime"],
     tseslint.configs.recommended,
     tseslint.configs.recommendedTypeChecked,
     // tseslint.configs.strictTypeChecked,
@@ -97,6 +117,7 @@ export const allTS = {
     jsdocPlugin.configs["flat/recommended-typescript"],
     allJSOverrides,
     allTSOverrides,
+    reactOverrides,
     prettierConfig,
   ],
   languageOptions: {
@@ -109,11 +130,7 @@ export const allTS = {
 
 export const allSvelte = {
   files: ["**/*.{svelte,svelte.ts,svelte.js}"],
-  extends: [
-    ...allTS.extends,
-    ...sveltePlugin.configs.recommended,
-    ...sveltePlugin.configs.prettier,
-  ],
+  extends: [...allTS.extends, ...sveltePlugin.configs.recommended, ...sveltePlugin.configs.prettier],
   languageOptions: {
     parserOptions: {
       projectService: true,
