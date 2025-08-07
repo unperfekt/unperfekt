@@ -42,6 +42,7 @@
     "eslint-plugin-react": "catalog:",
     "eslint-plugin-react-hooks": "catalog:",
     "eslint-plugin-svelte": "catalog:",
+    "eslint-plugin-unicorn": "catalog:",
     "globals": "catalog:",
     "prettier": "catalog:",
     "svelte": "catalog:",

@@ -1,9 +1,10 @@
 /* eslint-disable import/no-default-export */
 
-import { resolve } from "node:path"
+import path from "node:path"
 
 import tseslint from "typescript-eslint"
 import globals from "globals"
+import eslintPluginUnicorn from "eslint-plugin-unicorn"
 import sveltePlugin from "eslint-plugin-svelte"
 import reactHooksPlugin from "eslint-plugin-react-hooks"
 import reactPlugin from "eslint-plugin-react"
@@ -18,11 +19,12 @@ import { includeIgnoreFile } from "@eslint/compat"
 /**
  * Include the root .gitignore file if it exists.
  * @param {string} fromDir - The directory to start looking for .gitignore from.
+ * @param fromDirectory
  * @returns {object} The ESLint ignore configuration.
  */
-function includeRootGitignore(fromDir = process.cwd()) {
+function includeRootGitignore(fromDirectory = process.cwd()) {
   // Add the root .gitignore if it exists
-  const rootGitignore = resolve(fromDir, ".gitignore")
+  const rootGitignore = path.resolve(fromDirectory, ".gitignore")
 
   return includeIgnoreFile(rootGitignore)
 }
@@ -94,6 +96,7 @@ export const allJSPlain = {
     js.configs.recommended,
     importPlugin.flatConfigs.recommended,
     jsdocPlugin.configs["flat/recommended"],
+    eslintPluginUnicorn.configs.recommended,
     allJSOverrides,
   ],
 }
@@ -113,6 +116,7 @@ export const allJSReact = {
     importPlugin.flatConfigs.recommended,
     jsdocPlugin.configs["flat/recommended"],
     nextPlugin.flatConfig.coreWebVitals,
+    eslintPluginUnicorn.configs.recommended,
     allJSOverrides,
     reactOverrides,
   ],
@@ -130,6 +134,7 @@ export const allTSPlain = {
     importPlugin.flatConfigs.typescript,
     jsdocPlugin.configs["flat/recommended"],
     jsdocPlugin.configs["flat/recommended-typescript"],
+    eslintPluginUnicorn.configs.recommended,
     allJSOverrides,
     allTSOverrides,
   ],
@@ -161,6 +166,7 @@ export const allTSReact = {
     jsdocPlugin.configs["flat/recommended"],
     jsdocPlugin.configs["flat/recommended-typescript"],
     nextPlugin.flatConfig.coreWebVitals,
+    eslintPluginUnicorn.configs.recommended,
     allJSOverrides,
     allTSOverrides,
     reactOverrides,

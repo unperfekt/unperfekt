@@ -45,6 +45,7 @@ catalog:
   eslint-plugin-react-hooks: ^5.1.0
   eslint-plugin-react: ^7.37.2
   eslint-plugin-svelte: ^3.0.3
+  eslint-plugin-unicorn: ^60.0.0
   eslint: ^9.22.0
   fast-glob: ^3.3.3
   globals: ^16.0.0
