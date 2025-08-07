@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-unperfekt",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "description": "eslint config for unperfekt",
   "keywords": [
     "eslint"
@@ -30,7 +30,6 @@
   "dependencies": {
     "@eslint-react/eslint-plugin": "catalog:",
     "@eslint/compat": "catalog:",
-    "@eslint/css": "catalog:",
     "@eslint/js": "catalog:",
     "@next/eslint-plugin-next": "catalog:",
     "@typescript-eslint/eslint-plugin": "catalog:",
@@ -47,7 +46,6 @@
     "globals": "catalog:",
     "prettier": "catalog:",
     "svelte": "catalog:",
-    "tailwind-csstree": "catalog:",
     "typescript": "catalog:",
     "typescript-eslint": "catalog:"
   },

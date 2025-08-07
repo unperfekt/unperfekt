@@ -3,7 +3,6 @@
 import path from "node:path"
 
 import tseslint from "typescript-eslint"
-import { tailwind4 } from "tailwind-csstree"
 import globals from "globals"
 import eslintPluginUnicorn from "eslint-plugin-unicorn"
 import sveltePlugin from "eslint-plugin-svelte"
@@ -15,7 +14,6 @@ import importPlugin from "eslint-plugin-import"
 import prettierConfig from "eslint-config-prettier"
 import nextPlugin from "@next/eslint-plugin-next"
 import js from "@eslint/js"
-import css from "@eslint/css"
 import { includeIgnoreFile } from "@eslint/compat"
 
 /**
@@ -199,18 +197,6 @@ export const allNext = {
   extends: [nextPlugin.flatConfig.coreWebVitals],
 }
 
-export const allCSS = {
-  files: ["**/*.css"],
-  language: "css/css",
-  languageOptions: {
-    customSyntax: tailwind4,
-  },
-  plugins: {
-    css,
-  },
-  extends: [css.configs.recommended],
-}
-
 /** @type {import('@typescript-eslint/utils').TSESLint.FlatConfig.ConfigFile} */
 export const rawConfig = [
   // Include all gitignore files found in the directory tree
@@ -220,7 +206,6 @@ export const rawConfig = [
   allTSPlain,
   allTSReact,
   allSvelte,
-  allCSS,
   // allNext,
   prettierConfig,
   {
