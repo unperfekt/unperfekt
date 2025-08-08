@@ -11,25 +11,55 @@ import reactPlugin from "eslint-plugin-react"
 import jsxA11yPlugin from "eslint-plugin-jsx-a11y"
 import jsdocPlugin from "eslint-plugin-jsdoc"
 import importPlugin from "eslint-plugin-import"
-import prettierConfig from "eslint-config-prettier"
+import prettierConfig from "eslint-config-prettier/flat"
+import { defineConfig } from "eslint/config"
 import nextPlugin from "@next/eslint-plugin-next"
 import js from "@eslint/js"
 import { includeIgnoreFile } from "@eslint/compat"
 
+import { merge, mergeAll } from "./merge.js"
+
 /**
  * Include the root .gitignore file if it exists.
- * @param {string} fromDir - The directory to start looking for .gitignore from.
- * @param fromDirectory
+ * @param {string} fromDirectory - The directory to start looking for .gitignore from.
  * @returns {object} The ESLint ignore configuration.
  */
-function includeRootGitignore(fromDirectory = process.cwd()) {
+function globalIgnore(fromDirectory = process.cwd()) {
   // Add the root .gitignore if it exists
   const rootGitignore = path.resolve(fromDirectory, ".gitignore")
 
   return includeIgnoreFile(rootGitignore)
 }
 
+const CJS = {
+  name: "CJS Files",
+  files: ["**/*.{.cts,cjs}"],
+  languageOptions: {
+    ecmaVersion: "latest",
+    sourceType: "commonjs",
+  },
+}
+
+const ESM = {
+  name: "ESM Files",
+  files: ["**/*.{js,mjs,jsx,ts,mts,tsx}"],
+  languageOptions: {
+    ecmaVersion: "latest",
+    sourceType: "module",
+  },
+}
+const GLOBALS = {
+  name: "Global Variables",
+  languageOptions: {
+    globals: {
+      ...globals.browser,
+      ...globals.node,
+    },
+  },
+}
+
 export const allJSOverrides = {
+  name: "js/unperfekt",
   rules: {
     // js-recommended
     "no-param-reassign": "error",
@@ -37,7 +67,6 @@ export const allJSOverrides = {
     // "prefer-const": "off",
     // import-recommended
     // XXX: https://typescript-eslint.io/troubleshooting/typed-linting/performance#eslint-plugin-import
-    "import/named": "off",
     "import/namespace": "off",
     "import/default": "off",
     "import/no-named-as-default-member": "off",
@@ -63,6 +92,7 @@ export const allJSOverrides = {
 }
 
 export const allTSOverrides = {
+  name: "ts/unperfekt",
   rules: {
     "@typescript-eslint/no-explicit-any": "off",
     // typescript-recommended
@@ -74,6 +104,7 @@ export const allTSOverrides = {
 }
 
 export const reactOverrides = {
+  name: "react/unperfekt",
   settings: {
     react: {
       version: "detect",
@@ -91,50 +122,64 @@ export const reactOverrides = {
 }
 
 export const allJSPlain = {
+  name: "JavaScript",
   files: ["**/*.{js,mjs,cjs}"],
+  plugins: {
+    js,
+  },
   extends: [
-    js.configs.recommended,
+    "js/recommended",
     importPlugin.flatConfigs.recommended,
     jsdocPlugin.configs["flat/recommended"],
     eslintPluginUnicorn.configs.recommended,
+    prettierConfig,
     allJSOverrides,
   ],
 }
 
+const reactConfig = {
+  name: "react/recommended",
+  ...merge(reactPlugin.configs.flat.recommended, reactPlugin.configs.flat["jsx-runtime"]),
+}
+
 export const allJSReact = {
+  name: "JavaScript React",
   files: ["**/*.jsx"],
   plugins: {
+    "js": js,
     "react": reactPlugin,
     "react-hooks": reactHooksPlugin,
     "jsx-a11y": jsxA11yPlugin,
   },
   extends: [
-    js.configs.recommended,
-    reactPlugin.configs.flat.recommended,
-    reactPlugin.configs.flat["jsx-runtime"],
-    jsxA11yPlugin.flatConfigs.recommended,
+    "js/recommended",
     importPlugin.flatConfigs.recommended,
     jsdocPlugin.configs["flat/recommended"],
-    nextPlugin.flatConfig.coreWebVitals,
     eslintPluginUnicorn.configs.recommended,
+    reactConfig,
+    jsxA11yPlugin.flatConfigs.recommended,
+    prettierConfig,
     allJSOverrides,
     reactOverrides,
   ],
 }
 
 export const allTSPlain = {
+  name: "TypeScript",
   files: ["**/*.{ts,mts,cts}"],
+  plugins: {
+    js,
+  },
   extends: [
-    js.configs.recommended,
-    tseslint.configs.recommended,
-    tseslint.configs.recommendedTypeChecked,
-    // tseslint.configs.strictTypeChecked,
-    tseslint.configs.stylisticTypeChecked,
-    importPlugin.flatConfigs.recommended,
-    importPlugin.flatConfigs.typescript,
-    jsdocPlugin.configs["flat/recommended"],
-    jsdocPlugin.configs["flat/recommended-typescript"],
+    "js/recommended",
     eslintPluginUnicorn.configs.recommended,
+    tseslint.configs.recommendedTypeChecked,
+    tseslint.configs.stylisticTypeChecked[2],
+    mergeAll(importPlugin.flatConfigs.recommended, importPlugin.flatConfigs.typescript, {
+      name: "import/recommended-typescript",
+    }),
+    merge(jsdocPlugin.configs["flat/recommended"], jsdocPlugin.configs["flat/recommended-typescript"]),
+    prettierConfig,
     allJSOverrides,
     allTSOverrides,
   ],
@@ -147,26 +192,26 @@ export const allTSPlain = {
 }
 
 export const allTSReact = {
+  name: "TypeScript React",
   files: ["**/*.tsx"],
   plugins: {
+    "js": js,
     "react": reactPlugin,
     "react-hooks": reactHooksPlugin,
+    "jsx-a11y": jsxA11yPlugin,
   },
   extends: [
-    js.configs.recommended,
-    reactPlugin.configs.flat.recommended,
-    reactPlugin.configs.flat["jsx-runtime"],
+    "js/recommended",
+    reactConfig,
     jsxA11yPlugin.flatConfigs.recommended,
-    tseslint.configs.recommended,
-    tseslint.configs.recommendedTypeChecked,
-    // tseslint.configs.strictTypeChecked,
-    tseslint.configs.stylisticTypeChecked,
-    importPlugin.flatConfigs.recommended,
-    importPlugin.flatConfigs.typescript,
-    jsdocPlugin.configs["flat/recommended"],
-    jsdocPlugin.configs["flat/recommended-typescript"],
-    nextPlugin.flatConfig.coreWebVitals,
     eslintPluginUnicorn.configs.recommended,
+    tseslint.configs.recommendedTypeChecked,
+    tseslint.configs.stylisticTypeChecked[2],
+    mergeAll(importPlugin.flatConfigs.recommended, importPlugin.flatConfigs.typescript, {
+      name: "import/recommended-typescript",
+    }),
+    merge(jsdocPlugin.configs["flat/recommended"], jsdocPlugin.configs["flat/recommended-typescript"]),
+    prettierConfig,
     allJSOverrides,
     allTSOverrides,
     reactOverrides,
@@ -179,20 +224,27 @@ export const allTSReact = {
   },
 }
 
-export const allSvelte = {
+export const FRAMEWORK_SVELTE = (svelteConfig = {}) => ({
+  ...allTSPlain,
+  name: "Svelte",
   files: ["**/*.{svelte,svelte.ts,svelte.js}"],
-  extends: [...allTSPlain.extends, ...sveltePlugin.configs.recommended, ...sveltePlugin.configs.prettier],
+  extends: [
+    ...allTSPlain.extends,
+    sveltePlugin.configs["flat/base"],
+    sveltePlugin.configs["flat/recommended"][3],
+    sveltePlugin.configs["flat/prettier"][3],
+  ],
   languageOptions: {
     parserOptions: {
       projectService: true,
       extraFileExtensions: [".svelte"],
       parser: tseslint.parser,
-      // svelteConfig,
+      svelteConfig,
     },
   },
-}
+})
 
-export const allNext = {
+export const FRAMEWORK_NEXTJS = {
   files: ["**/*.{js,jsx,ts,tsx}"],
   extends: [nextPlugin.flatConfig.coreWebVitals],
 }
@@ -200,24 +252,15 @@ export const allNext = {
 /** @type {import('@typescript-eslint/utils').TSESLint.FlatConfig.ConfigFile} */
 export const rawConfig = [
   // Include all gitignore files found in the directory tree
-  includeRootGitignore(),
-  allJSPlain,
-  allJSReact,
-  allTSPlain,
-  allTSReact,
-  allSvelte,
-  // allNext,
-  prettierConfig,
-  {
-    languageOptions: {
-      ecmaVersion: "latest",
-      sourceType: "module",
-      globals: {
-        ...globals.browser,
-        ...globals.node,
-      },
-    },
-  },
+  globalIgnore(),
+  defineConfig(allJSPlain),
+  defineConfig(allJSReact),
+  defineConfig(allTSPlain),
+  defineConfig(allTSReact),
+  defineConfig(FRAMEWORK_SVELTE()),
+  CJS,
+  ESM,
+  GLOBALS,
 ]
 
 export default tseslint.config(rawConfig)

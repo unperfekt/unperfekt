@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-unperfekt",
-  "version": "0.8.0",
+  "version": "0.8.1",
   "description": "eslint config for unperfekt",
   "keywords": [
     "eslint"
@@ -18,7 +18,8 @@
   "author": "Martin Broder <hello@martinbroder.com> (https://martinbroder.com)",
   "type": "module",
   "exports": {
-    ".": "./lib/index.js"
+    ".": "./lib/index.js",
+    "./package.json": "./package.json"
   },
   "main": "./lib/index.js",
   "module": "./lib/index.js",
