@@ -149,7 +149,6 @@ export const allJSReact = {
     "js": js,
     "react": reactPlugin,
     "react-hooks": reactHooksPlugin,
-    "jsx-a11y": jsxA11yPlugin,
   },
   extends: [
     "js/recommended",
@@ -198,7 +197,6 @@ export const allTSReact = {
     "js": js,
     "react": reactPlugin,
     "react-hooks": reactHooksPlugin,
-    "jsx-a11y": jsxA11yPlugin,
   },
   extends: [
     "js/recommended",
